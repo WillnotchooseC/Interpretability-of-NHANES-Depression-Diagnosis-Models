@@ -4,6 +4,15 @@ nhanes_model/*/checkpoint-*/
 nhanes_model/*/merged_model/
 nhanes_model/grpo/
 
+# Large result files (keep only raw/truncated metrics.json)
+nhanes_model/*/detailed_results.json
+nhanes_model/*/test_predictions.json
+nhanes_model/*/training_history.json
+nhanes_model/*/metrics.json
+nhanes_model/*/metrics_both.json
+nhanes_model/*/raw/detailed_results.json
+nhanes_model/*/truncated/detailed_results.json
+
 # Python
 __pycache__/
 *.pyc
