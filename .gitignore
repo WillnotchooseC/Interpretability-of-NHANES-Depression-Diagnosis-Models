@@ -1,0 +1,40 @@
+# Model weights & checkpoints (too large for GitHub)
+nhanes_model/*/best_model/
+nhanes_model/*/checkpoint-*/
+nhanes_model/*/merged_model/
+nhanes_model/grpo/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Environment
+.env
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
+
+# Lightning Studio system files
+.lightning_studio/
+.cursor-server
+.claude.json
+
+# Caches
+.triton/
+.cache/
+wandb/
+
+# IDE servers
+.vscode-server
+.windsurf-server

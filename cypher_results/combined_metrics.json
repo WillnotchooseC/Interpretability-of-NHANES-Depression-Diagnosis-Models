@@ -1,0 +1,30 @@
+{
+  "reference": {
+    "total": 232,
+    "exec_success": 179,
+    "has_results": 167,
+    "exec_rate": 0.7716,
+    "valid_rate": 0.7198
+  },
+  "exp1_test_predictions": {
+    "total": 233,
+    "exec_success": 186,
+    "has_results": 172,
+    "exec_rate": 0.7983,
+    "valid_rate": 0.7382
+  },
+  "exp5_test_predictions": {
+    "total": 235,
+    "exec_success": 185,
+    "has_results": 173,
+    "exec_rate": 0.7872,
+    "valid_rate": 0.7362
+  },
+  "exp6_test_predictions": {
+    "total": 253,
+    "exec_success": 205,
+    "has_results": 192,
+    "exec_rate": 0.8103,
+    "valid_rate": 0.7589
+  }
+}

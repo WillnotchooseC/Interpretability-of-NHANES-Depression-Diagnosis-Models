@@ -1,0 +1,2099 @@
+{
+  "metrics": {
+    "total": 232,
+    "exec_success": 179,
+    "has_results": 167,
+    "exec_rate": 0.7716,
+    "valid_rate": 0.7198
+  },
+  "queries": [
+    {
+      "question": "What is the probability of patient 113 having depression in the logistic regression algorithm with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_4) where shap.id = 113 return shap.probability",
+      "exec_success": false,
+      "has_results": false,
+      "error": "Failed to read from defunct connection IPv4Address(('0.tcp.ngrok.io', 11660)) (ResolvedIPv4Address(('18.190.63.84', 11660)))",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 34's blood mercury level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 34 return p.blood_mercury",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was logistic regression's prediction at 1:3 accurate for patient 34?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_3) where p.id = 34 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the definition of vitamin d2?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"vitamin d2\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the vitamin d2 level of patient 26?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 26 return p.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of vitamin d2 for patient 26 in the random forest model with a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_1) where shap.id = 26 return shap.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of vitamin d2 for patient 26 in the decision tree model with a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_1) where shap.id = 26 return shap.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of vitamin d2 for patient 26 in the logistic regression model with a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_1) where shap.id = 26 return shap.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Did the logistic regression model make a correct prediction for patient 103 at a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_1) where p.id = 103 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Did the decision tree model make a correct prediction for patient 103 at a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_1) where p.id = 103 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Did the random forest model make a correct prediction for patient 103 at a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_1) where p.id = 103 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is HDL?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"HDL\" return b.description",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "How important is HDL in logistic regression at 1:2?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name=\"HDL\" and alg.model_name=\"logisticregression_1_2\" return r.importance",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "Can you explain what creatinine is?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"creatinine\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 184's creatinine value?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 184 return p.creatinine",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How does increasing glycohemoglobin affect the naive bayes algorithm's prediction with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What does blood manganese measure in the body?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"blood manganese\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 72's blood manganese level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 72 return p.blood_manganese",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the random forest model's prediction correct for patient 290 at a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_2) where p.id = 290 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the naive bayes model's prediction correct for patient 290 at a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_2) where p.id = 290 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the decision tree model's prediction correct for patient 290 at a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_2) where p.id = 290 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the definition of direct hdl-cholesterol?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"direct hdl-cholesterol\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 143's direct hdl-cholesterol level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 143 return p.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is rbc folate in the logistic regression model with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How important is rbc folate in the logistic regression model with a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the definition of rbc folate?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the direct hdl-cholesterol level of patient 133?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 133 return p.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of direct hdl-cholesterol for patient 133 in the random forest model with a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_1) where shap.id = 133 return shap.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of direct hdl-cholesterol for patient 133 in the logistic regression model with a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_1) where shap.id = 133 return shap.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of direct hdl-cholesterol for patient 133 in the decision tree model with a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_1) where shap.id = 133 return shap.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of direct hdl-cholesterol for patient 133 in the naive bayes model with a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_1) where shap.id = 133 return shap.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 237's HDL level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 237 return p.hdl_level",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the clinical definition of HDL?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"HDL\" return b.description",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "How would an increase in HDL affect the decision tree model's predictions at a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the definition of blood manganese?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"blood manganese\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 244's blood manganese level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 244 return p.blood_manganese",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does total cholesterol measure in the body?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"total cholesterol\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 42's total cholesterol level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 42 return p.total_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 85's rbc folate value?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 85 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does rbc folate measure?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing rbc folate affect the logistic regression model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 219's albumin level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 219 return p.albumin",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing albumin affect the random forest model's prediction at a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Assess whether the decision tree model with 1:3 class ratio correctly classified patient 227.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_3) where p.id = 227 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Determine the correctness of patient 227's prediction using the decision tree model trained at 1:2 ratio.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_2) where p.id = 227 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Determine the correctness of patient 227's prediction using the decision tree model trained at 1:5 ratio.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_5) where p.id = 227 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Which biological indicators contribute to the decision tree model's prediction that patient 282 is likely to have depression under the 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_5) where shap.id = 282 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:decisiontree_1_5) where shap.id = 282 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:decisiontree_1_5) where shap.id = 282 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Tell me patient 162's blood manganese level.",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 162 return p.blood_manganese",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Can you give me the rbc folate reading for patient 240?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 240 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 81's diagnosis probability in the logistic regression model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_1) where shap.id = 81 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 81's diagnosis probability in the logistic regression model at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_2) where shap.id = 81 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 17's blood mercury level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 17 return p.blood_mercury",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the vitamin d2 level of patient 273?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 273 return p.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of vitamin d2 for patient 273 in the decision tree model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_5) where shap.id = 273 return shap.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of vitamin d2 for patient 273 in the naive bayes model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_5) where shap.id = 273 return shap.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of vitamin d2 for patient 273 in the logistic regression model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_5) where shap.id = 273 return shap.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 170's diagnosis probability in the logistic regression model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_1) where shap.id = 170 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 281's diagnosis probability in the naive bayes model at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_2) where shap.id = 281 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the definition of HDL-C?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"HDL-C\" return b.description",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of HDL-C in the random forest model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of HDL-C in the logistic regression model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of HDL-C in the naive bayes model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name=\"HDL-C\" and alg.model_name=\"naivebayes_1_5\" return r.importance",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of HDL-C in the decision tree model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 249's blood manganese value?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 249 return p.blood_manganese",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does blood manganese measure?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"blood manganese\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing blood manganese affect the decision tree model at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Which biological indicators contribute to the random forest model's prediction that patient 13 is likely to have depression under the 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_4) where shap.id = 13 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_4) where shap.id = 13 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_4) where shap.id = 13 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 276's rbc folate value?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 276 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does rbc folate measure?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing rbc folate affect the logistic regression model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the definition of rbc folate?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is rbc folate in the logistic regression model with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How would increasing rbc folate affect the logistic regression model's prediction at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Check: was patient 94 correctly predicted by decision tree at 1:3?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_3) where p.id = 94 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Check: was patient 94 correctly predicted by decision tree at 1:5?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_5) where p.id = 94 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Check: was patient 94 correctly predicted by decision tree at 1:4?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_4) where p.id = 94 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Verify the decision tree model's prediction accuracy for patient 94 at 1:5 ratio.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_5) where p.id = 94 return r.accuracy",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the probability that patient 42 is predicted to have depression by the random forest model with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_1) where shap.id = 42 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 42 accurate in the random forest model trained with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_1) where p.id = 42 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the total cholesterol level of patient 208?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 208 return p.total_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of total cholesterol for patient 208 in the logistic regression model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_5) where shap.id = 208 return shap.total_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of total cholesterol for patient 208 in the decision tree model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_5) where shap.id = 208 return shap.total_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of total cholesterol for patient 208 in the random forest model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_5) where shap.id = 208 return shap.total_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the prediction outcome for patient 224 in the decision tree model with a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_4) where p.id = 224 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 224 correct in the decision tree model trained with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_4) where p.id = 224 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the blood mercury level of patient 224?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 224 return p.blood_mercury",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of blood mercury for patient 224 in the decision tree model trained with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_4) where shap.id = 224 return shap.blood_mercury",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the prediction probability for patient 251 in the random forest model at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_4) where shap.id = 251 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the prediction probability for patient 251 in the logistic regression model at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_4) where shap.id = 251 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How does increasing blood manganese affect the random forest algorithm's prediction with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does increasing hdl affect the random forest algorithm's prediction with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name='hdl' and alg.model_name='randomforest_1_4' return r.influence",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "What is patient 55's rbc folate level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 55 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing rbc folate affect the logistic regression model's prediction at a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does increasing rbc folate affect the logistic regression model's prediction at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does increasing rbc folate affect the naive bayes model's prediction at a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 108's HDL-C level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 108 return p.hdl_c",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is HDL-C in naive bayes at 1:4?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name=\"HDL-C\" and alg.model_name=\"naivebayes_1_4\" return r.rank",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "What does random forest predict for patient 128 at 1:3?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_3) where p.id = 128 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the random forest prediction accurate for patient 128 at 1:3?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_3) where p.id = 128 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the predicted probability of depression for patient 195 according to the naive bayes model with a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_2) where shap.id = 195 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the naive bayes model's prediction (1:2 ratio) accurate for patient 195?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_2) where p.id = 195 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What features caused patient 284's depression prediction in the decision tree model with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_4) where shap.id = 284 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:decisiontree_1_4) where shap.id = 284 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:decisiontree_1_4) where shap.id = 284 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does increasing blood mercury affect the decision tree model's prediction at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does increasing blood mercury affect the random forest model's prediction at a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 233's rbc folate level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 233 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing rbc folate affect the logistic regression model's prediction at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 223's total cholesterol level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 223 return p.total_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does total cholesterol measure clinically?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"total cholesterol\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How critical is total cholesterol in the decision tree model at a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does the naive bayes algorithm predict patient 198 with a class ratio of 1:2?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_2)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_2)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_2)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does the naive bayes algorithm predict patient 220 with a class ratio of 1:4?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_4) where p.id = 220 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the definition of vitamin d2?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"vitamin d2\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 102's vitamin d2 level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 102 return p.vitamin_d2",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 95's blood manganese level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 95 return p.blood_manganese",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does blood manganese measure clinically?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"blood manganese\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would elevating blood manganese impact the decision tree model's predictions at a 1:1 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How important is blood manganese in logistic regression at 1:5?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name=\"blood manganese\" and alg.model_name=\"logisticregression_1_5\" return r.rank",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is blood manganese in naive bayes at 1:3?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name=\"blood manganese\" and alg.model_name=\"naivebayes_1_3\" return r.rank",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the clinical definition of blood manganese?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"blood manganese\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the definition of direct hdl-cholesterol?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"direct hdl-cholesterol\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the direct hdl-cholesterol level of patient 69?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 69 return p.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of direct hdl-cholesterol for patient 69 in the naive bayes model with a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_2) where shap.id = 69 return shap.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of direct hdl-cholesterol for patient 69 in the random forest model with a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_2) where shap.id = 69 return shap.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of direct hdl-cholesterol for patient 69 in the logistic regression model with a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_2) where shap.id = 69 return shap.direct_hdl_cholesterol",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the prediction result for patient 279 using logistic regression at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_2) where p.id = 279 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 279 using logistic regression at a 1:2 ratio accurate?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_2) where p.id = 279 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How does the random forest algorithm predict patient 192 with a class ratio of 1:1?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_1)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (p:patient)-[r:predicted_by]-(shap:randomforest_1_1)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (p:patient)-[r:predicted_by]-(shap:randomforest_1_1)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 146's blood lead level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 146 return p.blood_lead",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does blood lead measure?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"blood lead\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is blood lead in the naive bayes model with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name = \"blood lead\" and alg.model_name = \"naivebayes_1_4\" return r.rank",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What would happen if blood lead increased in the naive bayes model at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_influence]-(alg:algorithm) where b.name='blood lead' and alg.model_name='naivebayes_1_4' return r.effect",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "Was the prediction for patient 280 correct in the random forest model trained with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_1) where p.id = 280 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 280 correct in the random forest model trained with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_4) where p.id = 280 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 280 correct in the random forest model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_5) where p.id = 280 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How does increasing high-density lipoprotein affect the random forest algorithm's prediction with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name='high-density lipoprotein' and alg.model_name='randomforest_1_4' return r.influence",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "What does random forest predict for patient 259 at 1:1?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_1) where p.id = 259 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Which biomarkers may have led patient 259 to develop depression in the random forest model at 1:1?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_1) where shap.id = 259 and any(key in keys(shap) where shap[key] < 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_1) where shap.id = 259 and any(key in keys(shap) where shap[key] < 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_1) where shap.id = 259 and any(key in keys(shap) where shap[key] < 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How important is blood mercury in the logistic regression model with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 64's diagnosis probability in the naive bayes model at a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_3) where shap.id = 64 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 64's diagnosis probability in the naive bayes model at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_4) where shap.id = 64 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the definition of rbc folate?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is rbc folate in the logistic regression model with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name = \"rbc folate\" and alg.model_name = \"logisticregression_1_4\" return r.rank",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing rbc folate affect the logistic regression model's prediction at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What does the naive bayes model at a 1:3 ratio predict for patient 286?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_3) where p.id = 286 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does the decision tree model at a 1:3 ratio predict for patient 286?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_3) where p.id = 286 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Is the naive bayes prediction at a 1:3 ratio correct for patient 286?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_3) where p.id = 286 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Is the decision tree prediction at a 1:3 ratio correct for patient 286?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_3) where p.id = 286 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the medical definition of TC?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"TC\" return b.description",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "How important is TC as a predictive feature in the decision tree model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the TC level of patient 55?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 55 return p.tc",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the SHAP value of TC for patient 55 in the decision tree model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_5) where shap.id = 55 return shap.tc",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Has patient 61 been predicted to have depression by the logistic regression at a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_5) where p.id = 61 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 61's blood mercury level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 61 return p.blood_mercury",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Would increasing blood mercury change the prediction outcome in the logistic regression at a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_5)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:logisticregression_1_5)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:logisticregression_1_5)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Was the logistic regression model's prediction correct for patient 220 at a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_4) where p.id = 220 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the random forest model's prediction correct for patient 220 at a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_4) where p.id = 220 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the decision tree model's prediction correct for patient 220 at a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_4) where p.id = 220 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What impact does increasing blood mercury have on the decision tree model at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 105's diagnosis probability in the random forest model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_1) where shap.id = 105 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 105's diagnosis probability in the random forest model at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_2) where shap.id = 105 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 27's creatinine level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 27 return p.creatinine",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Did the random forest algorithm at a 1:5 ratio make an accurate prediction for patient 27?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_5) where p.id = 27 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the prediction result for patient 55 using logistic regression at a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_5) where p.id = 55 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 55 using logistic regression at a 1:5 ratio accurate?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_5) where p.id = 55 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Assess whether the decision tree model with 1:1 class ratio correctly classified patient 92.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_1) where p.id = 92 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Determine the correctness of patient 92's prediction using the decision tree model trained at 1:2 ratio.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_2) where p.id = 92 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Determine the correctness of patient 92's prediction using the decision tree model trained at 1:3 ratio.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_3) where p.id = 92 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Assess whether the decision tree model with 1:4 class ratio correctly classified patient 92.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_4) where p.id = 92 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Determine the correctness of patient 92's prediction using the decision tree model trained at 1:5 ratio.",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_5) where p.id = 92 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is rbc folate?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What impact does increasing blood mercury have on the decision tree model at a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 149's albumin level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 149 return p.albumin",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is albumin in the naive bayes model with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name = \"albumin\" and alg.model_name = \"naivebayes_1_1\" return r.rank",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is albumin in the naive bayes model with a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name = \"albumin\" and alg.model_name = \"naivebayes_1_3\" return r.rank",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is albumin in the naive bayes model with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name = \"albumin\" and alg.model_name = \"naivebayes_1_5\" return r.rank",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Which features led to depression prediction for patient 53 in the random forest model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_1) where shap.id = 53 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_1) where shap.id = 53 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_1) where shap.id = 53 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Which features led to depression prediction for patient 53 in the logistic regression model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_1) where shap.id = 53 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:logisticregression_1_1) where shap.id = 53 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:logisticregression_1_1) where shap.id = 53 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What does the random forest model with a 1:5 ratio predict for patient 182?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_5) where p.id = 182 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Which biological features may have led patient 182 to develop depression in the random forest model with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_5) where shap.id = 182 and any(key in keys(shap) where shap[key] < 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_5) where shap.id = 182 and any(key in keys(shap) where shap[key] < 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_5) where shap.id = 182 and any(key in keys(shap) where shap[key] < 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How does increasing creatinine affect the random forest algorithm's prediction with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What does naive bayes predict for patient 222 at 1:1?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_1) where p.id = 222 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the naive bayes prediction accurate for patient 222 at 1:1?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_1) where p.id = 222 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Can you explain what creatinine is?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"creatinine\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 221's creatinine value?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 221 return p.creatinine",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the prediction result for patient 112 using random forest at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_4) where p.id = 112 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 112 using random forest at a 1:4 ratio accurate?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_4) where p.id = 112 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 221's blood manganese value?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 221 return p.blood_manganese",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 221's depression probability in the random forest model with a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_3) where shap.id = 221 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Which biological features contributed to patient 221's prediction in the random forest model with a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_3) where shap.id = 221 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_3) where shap.id = 221 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_3) where shap.id = 221 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Would increasing blood manganese change the outcome for patient 221 in the random forest model with a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_3)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_3)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:randomforest_1_3)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the likelihood of patient 173 being diagnosed with depression using the random forest model at a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:randomforest_1_3) where shap.id = 173 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the definition of blood manganese?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"blood manganese\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the importance of blood manganese in the random forest model with a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of blood manganese in the logistic regression model with a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of blood manganese in the naive bayes model with a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of blood manganese in the decision tree model with a 1:4 training ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 278's albumin value?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 278 return p.albumin",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does albumin measure?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"albumin\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How would increasing albumin affect the naive bayes model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Can you give me the rbc folate reading for patient 103?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 103 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the random forest model's prediction accurate for patient 37 at a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_2) where p.id = 37 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the decision tree model's prediction accurate for patient 37 at a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_2) where p.id = 37 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the logistic regression model's prediction accurate for patient 37 at a 1:2 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_2) where p.id = 37 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 237's rbc folate level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 237 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does rbc folate measure?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is rbc folate in the logistic regression model with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What would happen if rbc folate increased in the logistic regression model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_influence]-(alg:algorithm) where b.name='rbc folate' and alg.model_name='logisticregression_1_1' return r.effect",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "What is the importance of rbc folate in the logistic regression model with a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name = \"rbc folate\" and alg.model_name = \"logisticregression_1_3\" return r.importance",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Which features led to depression prediction for patient 200 in the naive bayes model at a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_3) where shap.id = 200 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:naivebayes_1_3) where shap.id = 200 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:naivebayes_1_3) where shap.id = 200 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "Which features led to depression prediction for patient 200 in the decision tree model at a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_3) where shap.id = 200 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:decisiontree_1_3) where shap.id = 200 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:decisiontree_1_3) where shap.id = 200 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is the probability of patient 195 having depression in the logistic regression algorithm with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:logisticregression_1_1) where shap.id = 195 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 175 correct in the logistic regression model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_5) where p.id = 175 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 175 correct in the random forest model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_5) where p.id = 175 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 16 correct in the logistic regression model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:logisticregression_1_5) where p.id = 16 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 16 correct in the decision tree model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:decisiontree_1_5) where p.id = 16 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 16 correct in the naive bayes model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_5) where p.id = 16 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 16 correct in the random forest model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:randomforest_1_5) where p.id = 16 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Has patient 44 been predicted to have depression by the naive bayes at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_2) where p.id = 44 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 44's blood lead level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 44 return p.blood_lead",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Would increasing blood lead change the prediction outcome in the naive bayes at a 1:2 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_influence]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_influence]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_influence]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How important is blood manganese in the decision tree model with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "How important is blood manganese in the random forest model with a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm) where b.name = \"blood manganese\" and alg.model_name = \"randomforest_1_4\" return r.importance",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Which biological indicators contribute to the naive bayes model's prediction that patient 265 is likely to have depression under the 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (shap:naivebayes_1_5) where shap.id = 265 and any(key in keys(shap) where shap[key] > 0)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:naivebayes_1_5) where shap.id = 265 and any(key in keys(shap) where shap[key] > 0)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (shap:naivebayes_1_5) where shap.id = 265 and any(key in keys(shap) where shap[key] > 0)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What is patient 62's diagnosis probability in the decision tree model at a 1:3 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_3) where shap.id = 62 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 62's diagnosis probability in the decision tree model at a 1:4 ratio?",
+      "type": "searching",
+      "cypher": "match (shap:decisiontree_1_4) where shap.id = 62 return shap.probability",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is patient 37's rbc folate level?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 37 return p.rbc_folate",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What does rbc folate measure?",
+      "type": "searching",
+      "cypher": "match (b:biomarker) where b.name = \"rbc folate\" return b.description",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "How important is rbc folate in the logistic regression model with a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_importance]-(alg:algorithm)",
+      "exec_success": false,
+      "has_results": false,
+      "error": "{neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^} {gql_status: 50N42} {gql_status_description: error: general processing exception - unexpected error. Query cannot conclude with MATCH (must be a RETURN clause, an update clause, a unit subquery call, or a procedure call with no YIELD) (line 1, column 1 (offset: 0))\n\"match (b:biomarker)-[r:feature_importance]-(alg:algorithm)\"\n ^}",
+      "rows": 0
+    },
+    {
+      "question": "What would happen if rbc folate increased in the logistic regression model at a 1:1 ratio?",
+      "type": "searching",
+      "cypher": "match (b:biomarker)-[r:feature_influence]-(alg:algorithm) where b.name='rbc folate' and alg.model_name='logisticregression_1_1' return r.effect",
+      "exec_success": true,
+      "has_results": false,
+      "error": null,
+      "rows": 0
+    },
+    {
+      "question": "What is the prediction outcome for patient 82 in the naive bayes model with a 1:5 training ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_5) where p.id = 82 return r.predict_result",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "Was the prediction for patient 82 correct in the naive bayes model trained with a 1:5 ratio?",
+      "type": "searching",
+      "cypher": "match (p:patient)-[r:predicted_by]-(shap:naivebayes_1_5) where p.id = 82 return r.correct",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    },
+    {
+      "question": "What is the vitamin d3 level of patient 82?",
+      "type": "searching",
+      "cypher": "match (p:patient) where p.id = 82 return p.vitamin_d3",
+      "exec_success": true,
+      "has_results": true,
+      "error": null,
+      "rows": 1
+    }
+  ]
+}
