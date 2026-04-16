@@ -32,7 +32,7 @@ from neo4j import GraphDatabase
 # ─── Configuration ───────────────────────────────────────────────────────────
 
 MODEL_NAME = "Qwen/Qwen3-8B-Base"
-NEO4J_URI = "bolt://0.tcp.ngrok.io:11660"
+NEO4J_URI = "bolt://6.tcp.ngrok.io:17035"
 NEO4J_USER = "neo4j"
 NEO4J_PASSWORD = "12345678"
 
