@@ -1,0 +1,51 @@
+
+======================================================================
+  inference: ood_curriculum_progressive_corrected on ood_data/curriculum_test_250.json (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 49s)
+  Test samples: 250
+  Done! 250 samples in 552.7s (0.5 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_250/test_predictions.json  (0 empty)
+
+======================================================================
+  inference: ood_curriculum_baseline_mixed1076_corrected on ood_data/curriculum_test_250.json (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 61s)
+  Test samples: 250
+  Done! 250 samples in 552.7s (0.5 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_250/test_predictions.json  (0 empty)
+Judging progressive_corrected: 250 samples ...
+  done in 35s
+Judging baseline_corrected: 250 samples ...
+  done in 31s
+
+====================================================================================================
+  SUB-QUESTION COMPARISON on ood_data/curriculum_test_250.json (1 rep, temperature=0, GPT-4o judge)
+  value  [95% CI: cluster bootstrap over samples, B=10000]
+====================================================================================================
+
+  ===== overall  (n=250) =====
+    Sub-Q recall        
+      progressive_corrected     82.0  [ 77.7,  86.0]  (400/488)
+      baseline_corrected        78.5  [ 74.0,  82.9]  (383/488)
+      Δ (prog - base)           +3.4  [ -0.6,  +7.5]    wilcoxon_p=0.1551
+    Sub-Q hallucination 
+      progressive_corrected     18.9  [ 14.7,  23.1]  (89/471)
+      baseline_corrected        26.9  [ 21.7,  32.0]  (140/520)
+      Δ (prog - base)           -8.0  [-12.5,  -3.5] *  wilcoxon_p=0.001251
+    Full-coverage samples
+      progressive_corrected     74.8  [ 69.2,  80.0]  (187/250)
+      baseline_corrected        69.6  [ 64.0,  75.2]  (174/250)
+      Δ (prog - base)           +5.1  [ -0.8, +10.8]    mcnemar_p=0.1048
+
+Saved -> cypher_results/corrected_test250_subq_summary.json

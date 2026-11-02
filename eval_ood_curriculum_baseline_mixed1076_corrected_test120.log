@@ -1,0 +1,47 @@
+Launching SGLang for nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model...
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 300s)...
+  Server ready! (took 49s)
+  Test samples: 120
+  Done! 120 samples in 275.8s (0.4 samples/s)
+Predictions saved: nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_120/test_predictions.json
+
+  <PLAN> block present:        100.0%
+  BINDINGS valid JSON:         100.0%
+
+======================================================================
+  Evaluating Experiment ood_curriculum_baseline_mixed1076_corrected (120 samples)
+======================================================================
+  Embedding sub-questions (text-embedding-3-large)...
+    Unique: 382
+  Semantic alignment (Hungarian)...
+  Redundancy detection: skipped
+
+======================================================================
+  EXPERIMENT ood_curriculum_baseline_mixed1076_corrected RESULTS
+======================================================================
+
+  ┌─ Dim 1: Semantic Similarity (cosine, text-embedding-3-large)
+  │  Per sub-Q mean:         0.7968 ± 0.1672
+  │  Per sample mean:        0.8246 ± 0.1223
+  │  ≥0.92 (near-perfect):  27.4%
+  │  ≥0.85 (high match):    46.6%
+  │  <0.6 (low):             25
+  ├─ Dim 2: Count Accuracy
+  │  Exact match:            99/120 (82.5%)
+  │  Avg steps ref/pred:     1.92 / 1.92
+  │  Mean diff:              +0.00  |abs|=0.18
+  │  Over/Under:             10 / 11
+  ├─ Dim 3: Redundancy
+  │  Samples w/ redundancy:  0/120 (0.0%)
+  │  Total pairs:            0  (avg 0.000/sample)
+  └─ Supplementary
+     Format valid:           120/120 (100.0%)
+     Type accuracy (S/A):    90.9%
+======================================================================
+  Saved to nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_120/
+
+Saved metrics to nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_120/metrics.json
+  Shutting down sglang server...
+  Server stopped.

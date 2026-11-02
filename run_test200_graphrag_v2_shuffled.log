@@ -1,0 +1,141 @@
+########## graphrag_v2 shuffled seed 42  2026-09-13T03:15:06Z ##########
+shuffled input: ood_data/progressive_corrected_decomp_test200_shuf42.json (first 10 orig idx: [66, 187, 101, 193, 111, 121, 13, 2, 64, 44])
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment2_fewshot_graphrag_v2.py --files ood_data/progressive_corrected_decomp_test200_shuf42.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp2_fewshot_graphrag_v2_test200_shuf42
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag_v2] ood_data/progressive_corrected_decomp_test200_shuf42.json: 200 samples
+  processed 10/200 samples (103.1s)
+  processed 20/200 samples (221.5s)
+  processed 30/200 samples (316.3s)
+  processed 40/200 samples (436.0s)
+  processed 50/200 samples (556.1s)
+  processed 60/200 samples (679.8s)
+  processed 70/200 samples (779.5s)
+  processed 80/200 samples (874.4s)
+  processed 90/200 samples (1016.0s)
+  processed 100/200 samples (1154.0s)
+  processed 110/200 samples (1290.2s)
+  processed 120/200 samples (1405.5s)
+  processed 130/200 samples (1491.5s)
+  processed 140/200 samples (1627.2s)
+  processed 150/200 samples (1742.4s)
+  processed 160/200 samples (1899.5s)
+  processed 170/200 samples (2027.8s)
+  processed 180/200 samples (2198.9s)
+  processed 190/200 samples (2309.4s)
+  processed 200/200 samples (2410.7s)
+{
+  "experiment": "exp2_fewshot_graphrag_v2",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 287,
+  "exec_rate": 0.9931,
+  "nonempty_results": 287,
+  "valid_rate": 0.9931,
+  "samples_all_searching_steps_nonempty": 197,
+  "sample_all_steps_rate": 0.985,
+  "steps_using_original_input_entity_recovery": 171
+}
+Saved: results_exp2_fewshot_graphrag_v2_test200_shuf42/progressive_corrected_decomp_test200_shuf42_exp2_fewshot_graphrag_v2.json
+  Shutting down sglang server...
+  Server stopped.
+
+===== graphrag_v2: rep1 (original order) vs shuffled pass (seed=42) =====
+  steps: 289 | Cypher text differs: 34 | returned rows differ: 27 | non-empty flag flips: 3
+  samples with any changed Cypher: 31/200 -> [10, 27, 36, 51, 75, 80, 85, 113, 115, 119, 122, 126, 139, 150, 152, 153, 156, 158, 161, 171, 175, 176, 177, 178, 183, 185, 190, 196, 197, 198, 199]
+  graph_coverage overall : rep1=0.8495  shuffled=0.8485  delta=-0.0010  (samples better/worse/same = 2/2/196)
+  graph_coverage seen    : rep1=0.9542  shuffled=0.9592  delta=+0.0050  (samples better/worse/same = 1/0/99)
+  graph_coverage unseen  : rep1=0.7449  shuffled=0.7379  delta=-0.0070  (samples better/worse/same = 1/2/97)
+
+  e.g. idx 10 [seen] For patient 198 and models trained with a 1:5 positive-to-negative ratio, what local SHAP 
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 198 AND mr.modelType IN ['logisticregression', 'randomfores
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 198 AND mr.modelType IN ['logisticregression', 'randomfores
+
+  e.g. idx 27 [seen] For patient 256 in random forest trained with a 1:5 positive-to-negative ratio, what is th
+     rep1:     MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 256 AND m.name = 'RBC Folate' AND b.name = 'RBC Folate' AND fi.scope = 'local' AND fi.direction = 'positive' RETURN b.name AS biomarker, fi.s
+     shuffled: MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker) MATCH (p)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 256 AND mr.
+
+  e.g. idx 36 [seen] What depression probability does naive bayes predict for patient 183 when trained with pos
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 183 AND mr.modelType = 'naivebayes' AND mr.classRatio IN ['1:1', '1:2', '1:3', '1:4'] AND c.name = 'depress
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 183 AND mr.modelType = 'naivebayes' AND mr.classRatio IN ['1:1', '1:2', '1:3', '1:4'] AND c.name = 'depress
+
+  e.g. idx 51 [seen] What depression probability does logistic regression predict for patient 7 when trained wi
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 7 AND mr.modelType = 'logisticregression' AND mr.classRatio IN ['1:1', '1:2', '1:3', '1:5'] AND c.name = 'd
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 7 AND mr.modelType = 'logisticregression' AND mr.classRatio IN ['1:1', '1:2', '1:3', '1:5'] AND c.name = 'd
+########## graphrag_v2 shuffled seed 43  2026-09-13T03:56:19Z ##########
+shuffled input: ood_data/progressive_corrected_decomp_test200_shuf43.json (first 10 orig idx: [35, 139, 40, 21, 160, 162, 132, 89, 189, 163])
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment2_fewshot_graphrag_v2.py --files ood_data/progressive_corrected_decomp_test200_shuf43.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp2_fewshot_graphrag_v2_test200_shuf43
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag_v2] ood_data/progressive_corrected_decomp_test200_shuf43.json: 200 samples
+  processed 10/200 samples (101.4s)
+  processed 20/200 samples (233.9s)
+  processed 30/200 samples (361.2s)
+  processed 40/200 samples (466.7s)
+  processed 50/200 samples (562.1s)
+  processed 60/200 samples (689.9s)
+  processed 70/200 samples (805.6s)
+  processed 80/200 samples (926.9s)
+  processed 90/200 samples (1053.5s)
+  processed 100/200 samples (1194.6s)
+  processed 110/200 samples (1337.8s)
+  processed 120/200 samples (1466.2s)
+  processed 130/200 samples (1551.9s)
+  processed 140/200 samples (1661.5s)
+  processed 150/200 samples (1767.1s)
+  processed 160/200 samples (1893.0s)
+  processed 170/200 samples (2036.4s)
+  processed 180/200 samples (2152.8s)
+  processed 190/200 samples (2283.4s)
+  processed 200/200 samples (2411.3s)
+{
+  "experiment": "exp2_fewshot_graphrag_v2",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 288,
+  "exec_rate": 0.9965,
+  "nonempty_results": 288,
+  "valid_rate": 0.9965,
+  "samples_all_searching_steps_nonempty": 198,
+  "sample_all_steps_rate": 0.99,
+  "steps_using_original_input_entity_recovery": 171
+}
+Saved: results_exp2_fewshot_graphrag_v2_test200_shuf43/progressive_corrected_decomp_test200_shuf43_exp2_fewshot_graphrag_v2.json
+  Shutting down sglang server...
+  Server stopped.
+
+===== graphrag_v2: rep1 (original order) vs shuffled pass (seed=43) =====
+  steps: 289 | Cypher text differs: 28 | returned rows differ: 20 | non-empty flag flips: 2
+  samples with any changed Cypher: 26/200 -> [17, 24, 27, 29, 36, 75, 100, 102, 113, 115, 119, 122, 126, 150, 152, 154, 156, 161, 173, 175, 176, 183, 184, 185, 186, 196]
+  graph_coverage overall : rep1=0.8495  shuffled=0.8486  delta=-0.0009  (samples better/worse/same = 2/1/197)
+  graph_coverage seen    : rep1=0.9542  shuffled=0.9592  delta=+0.0050  (samples better/worse/same = 1/0/99)
+  graph_coverage unseen  : rep1=0.7449  shuffled=0.7380  delta=-0.0069  (samples better/worse/same = 1/1/98)
+
+  e.g. idx 17 [seen] What local SHAP value and direction does creatinine have for patient 35 in naive bayes tra
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 35 AND mr.modelType = 'naivebayes' AND mr.classRatio IN ['1
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 35 AND mr.modelType = 'naivebayes' AND mr.classRatio IN ['1
+
+  e.g. idx 24 [seen] For patient 14 and models trained with a 1:1 positive-to-negative ratio, what local SHAP v
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 14 AND mr.modelType IN ['logisticregression', 'randomforest
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 14 AND mr.modelType IN ['logisticregression', 'randomforest
+
+  e.g. idx 27 [seen] For patient 256 in random forest trained with a 1:5 positive-to-negative ratio, what is th
+     rep1:     MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 256 AND m.name = 'RBC Folate' AND b.name = 'RBC Folate' AND fi.scope = 'local' AND fi.direction = 'positive' RETURN b.name AS biomarker, fi.s
+     shuffled: MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker) MATCH (p)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 256 AND mr.
+
+  e.g. idx 29 [seen] What local SHAP value and direction does total cholesterol have for patient 140 in random 
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 140 AND mr.modelType = 'randomforest' AND mr.classRatio IN 
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 140 AND mr.modelType = 'randomforest' AND mr.classRatio IN 
+graphrag_v2: 200 records x 3 reps -> cypher_results/test200_graphrag_v2_exp2_3orders.json (6775 KB)
+  samples with identical Cypher across reps: {'rep1_vs_rep2': 169, 'rep1_vs_rep3': 174, 'rep2_vs_rep3': 171}
+ALL DONE 2026-09-13T04:37:31Z

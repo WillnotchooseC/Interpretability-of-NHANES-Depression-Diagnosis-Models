@@ -1,0 +1,66 @@
+shuffled input: ood_data/progressive_corrected_decomp_test200_shuf42.json (first 10 orig idx: [66, 187, 101, 193, 111, 121, 13, 2, 64, 44])
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 52s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment1_5_baseline_original_input.py --files ood_data/progressive_corrected_decomp_test200_shuf42.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp1_5_baseline_original_input_test200_shuf42
+Neo4j connected: bolt://localhost:7687
+
+[exp1_5_baseline_original_input] ood_data/progressive_corrected_decomp_test200_shuf42.json: 200 samples
+  processed 10/200 samples (103.5s)
+  processed 20/200 samples (217.4s)
+  processed 30/200 samples (309.5s)
+  processed 40/200 samples (425.4s)
+  processed 50/200 samples (537.7s)
+  processed 60/200 samples (652.7s)
+  processed 70/200 samples (745.3s)
+  processed 80/200 samples (837.5s)
+  processed 90/200 samples (975.9s)
+  processed 100/200 samples (1107.2s)
+  processed 110/200 samples (1233.2s)
+  processed 120/200 samples (1341.1s)
+  processed 130/200 samples (1425.4s)
+  processed 140/200 samples (1557.7s)
+  processed 150/200 samples (1666.9s)
+  processed 160/200 samples (1813.1s)
+  processed 170/200 samples (1934.8s)
+  processed 180/200 samples (2096.9s)
+  processed 190/200 samples (2204.9s)
+  processed 200/200 samples (2304.9s)
+{
+  "experiment": "exp1_5_baseline_original_input",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 280,
+  "exec_rate": 0.9689,
+  "nonempty_results": 278,
+  "valid_rate": 0.9619,
+  "samples_all_searching_steps_nonempty": 188,
+  "sample_all_steps_rate": 0.94
+}
+Saved: results_exp1_5_baseline_original_input_test200_shuf42/progressive_corrected_decomp_test200_shuf42_exp1_5_baseline_original_input.json
+  Shutting down sglang server...
+  Server stopped.
+
+===== fewshot: rep1 (original order) vs shuffled pass (seed=42) =====
+  steps: 289 | Cypher text differs: 24 | returned rows differ: 9 | non-empty flag flips: 1
+  samples with any changed Cypher: 23/200 -> [0, 2, 9, 24, 42, 60, 72, 88, 94, 100, 109, 113, 120, 124, 129, 133, 138, 167, 172, 174, 179, 183, 186]
+  graph_coverage overall : rep1=0.7513  shuffled=0.7515  delta=+0.0003  (samples better/worse/same = 2/0/198)
+  graph_coverage seen    : rep1=0.9542  shuffled=0.9542  delta=+0.0000  (samples better/worse/same = 0/0/100)
+  graph_coverage unseen  : rep1=0.5484  shuffled=0.5489  delta=+0.0005  (samples better/worse/same = 2/0/98)
+
+  e.g. idx 0 [seen] What is patient 123's direct HDL-cholesterol value?
+     rep1:     MATCH (p:patient)-[m:HAS_BIOMARKER_VALUE]->(b:biomarker) WHERE toInteger(p.id) = 123 AND b.name = 'HDL-Cholesterol' RETURN b.name AS biomarker, m.value AS value
+     shuffled: MATCH (p:patient)-[m:HAS_BIOMARKER_VALUE]->(b:biomarker) WHERE toInteger(p.id) = 123 AND b.name = 'HDL-cholesterol' RETURN b.name AS biomarker, m.value AS value
+
+  e.g. idx 2 [seen] For patient 194 and a 1:4 positive-to-negative training ratio, what local SHAP value and d
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 194 AND mr.classRatio = '1:4' AND b.name = 'Creatinine' AND
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 194 AND mr.classRatio = '1:4' AND b.name = 'Creatinine' AND
+
+  e.g. idx 9 [seen] What prediction label does naive bayes trained with a 1:5 positive-to-negative ratio assig
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 50 AND mr.modelType IN ['naivebayes'] AND mr.classRatio IN ['1:5'] AND c.name = 'depression' RETURN mr.mode
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 50 AND mr.modelType = 'naivebayes' AND mr.classRatio = '1:5' AND c.name = 'depression' RETURN mr.modelFamil
+
+  e.g. idx 24 [seen] For patient 14 and models trained with a 1:1 positive-to-negative ratio, what local SHAP v
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 14 AND mr.modelType IN ['logisticregression', 'decisiontree
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 14 AND mr.modelType IN ['logisticregression', 'decisiontree

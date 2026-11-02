@@ -106,7 +106,12 @@ def parse_output(text: str) -> List[SubQuestion]:
         if m:
             step_num, desc = int(m.group(1)), m.group(2).strip()
             continue
-        m = re.match(r"Sub-question:\s*(.+?)\s*#\s*Type:\s*(\w+)\s*$", line)
+        # Matches the literal type keyword only (not `\w+` to end-of-line): under
+        # sampling (temperature > 0) the model sometimes glues a stray token
+        # directly onto this line with no separator (e.g. "aggregationكُمْ"), and
+        # since Python's \w is Unicode-aware, a `(\w+)$` capture would swallow
+        # that garbage into the type value and silently fail to match "aggregation".
+        m = re.match(r"Sub-question:\s*(.+?)\s*#\s*Type:\s*(searching|aggregation)", line)
         if m:
             subs.append(SubQuestion(step_num, desc, m.group(1).strip(), m.group(2).strip().lower()))
             continue
@@ -285,11 +290,27 @@ def truncate_output(text: str) -> str:
         cut_pos = user_turn.start()
 
     clean_text = text[:cut_pos]
-
-    # Step 2: Find last valid # Type: line in clean portion
     lines = clean_text.split("\n")
-    last_valid_idx = -1
 
+    # Step 2: under sampling (temperature > 0) the model sometimes doesn't
+    # stop after a complete decomposition and loops into a second,
+    # near-duplicate (or outright different) attempt starting again from
+    # "Step 1:". Cut at the first such restart so the selected text is
+    # always the model's *first* complete answer, never a looped re-attempt.
+    loop_cut_idx = len(lines)
+    last_step_num = 0
+    for i, line in enumerate(lines):
+        m = re.match(r"\s*Step\s+(\d+):", line)
+        if m:
+            step_num = int(m.group(1))
+            if step_num <= last_step_num:
+                loop_cut_idx = i
+                break
+            last_step_num = step_num
+    lines = lines[:loop_cut_idx]
+
+    # Step 3: find last valid # Type: line in the (now loop-free) portion
+    last_valid_idx = -1
     for i, line in enumerate(lines):
         if re.search(r"#\s*Type:\s*(searching|aggregation)", line.strip()):
             last_valid_idx = i
@@ -298,7 +319,7 @@ def truncate_output(text: str) -> str:
         return "\n".join(lines[:last_valid_idx + 1]).strip()
 
     # Fallback
-    return clean_text.strip()
+    return "\n".join(lines).strip()
 
 
 # ====================================================================
@@ -316,9 +337,29 @@ def launch_sglang_server(model_path, lora_paths=None, port=SGLANG_PORT, dtype="b
     Returns the process handle (call .terminate() to stop).
     """
     import subprocess
+    import sys
+    import requests
 
+    # Refuse to silently "reuse" a server that is already up on this port: the
+    # health poll below would return in ~1s and, if it serves a different model,
+    # every request of this run would go to the wrong model. (Happened
+    # 2026-09-12 when a previous server survived terminate() -- see
+    # shutdown_sglang_server.) Callers that want to reuse a server pass its URL
+    # explicitly instead of calling this.
+    try:
+        info = requests.get(f"http://localhost:{port}/get_model_info", timeout=3).json()
+        raise RuntimeError(
+            f"port {port} already has an SGLang server up (serving "
+            f"{info.get('model_path')}); kill it first "
+            f"(pkill -9 -f sglang.launch_server) -- refusing to launch {model_path} on top of it")
+    except requests.RequestException:
+        pass  # nothing listening -> launch
+
+    # sys.executable, NOT "python": on Lightning Studios "python" can resolve to
+    # the /commands/python bash wrapper, which runs the interpreter as a child
+    # (not exec), so terminate() would only kill the wrapper and orphan the server.
     cmd = [
-        "python", "-m", "sglang.launch_server",
+        sys.executable, "-m", "sglang.launch_server",
         "--model-path", model_path,
         "--port", str(port),
         "--dtype", dtype,
@@ -332,20 +373,26 @@ def launch_sglang_server(model_path, lora_paths=None, port=SGLANG_PORT, dtype="b
     print(f"  Launching sglang server...")
     print(f"  Command: {' '.join(cmd)}")
 
+    # Redirect to a real file, NOT subprocess.PIPE: nothing drains the pipe once
+    # the server is up, so after ~64KB of SGLang logging the server blocks on its
+    # own writes and freezes (0% GPU, every request times out). Same fix as
+    # few_shot_cypher.launch_sglang_server.
+    log_path = f"/tmp/sglang_server_{port}.log"
+    log_file = open(log_path, "w")
     process = subprocess.Popen(
         cmd,
-        stdout=subprocess.PIPE,
+        stdout=log_file,
         stderr=subprocess.STDOUT,
         text=True,
+        start_new_session=True,  # own process group -> shutdown can kill scheduler/detokenizer too
     )
 
     # Wait for server to be ready
-    import requests
     url = f"http://localhost:{port}/health"
-    max_wait = 300  # 5 minutes max
+    max_wait = 900  # cold model load on an L4 can exceed 300s
     start = time.time()
 
-    print(f"  Waiting for server to start (max {max_wait}s)...")
+    print(f"  Waiting for server to start (max {max_wait}s)... (log: {log_path})")
     while time.time() - start < max_wait:
         try:
             resp = requests.get(url, timeout=3)
@@ -357,7 +404,8 @@ def launch_sglang_server(model_path, lora_paths=None, port=SGLANG_PORT, dtype="b
 
         # Check if process died
         if process.poll() is not None:
-            output = process.stdout.read()
+            with open(log_path) as f:
+                output = f.read()
             print(f"  ERROR: sglang server exited with code {process.returncode}")
             print(f"  Output:\n{output[-2000:]}")
             return None
@@ -372,12 +420,22 @@ def launch_sglang_server(model_path, lora_paths=None, port=SGLANG_PORT, dtype="b
 def shutdown_sglang_server(process):
     """Gracefully shutdown sglang server."""
     if process and process.poll() is None:
+        import signal
         print(f"  Shutting down sglang server...")
-        process.terminate()
+        # Signal the whole process group: SGLang forks sglang::scheduler /
+        # sglang::detokenizer children, and a wrapper shell may sit above python.
         try:
-            process.wait(timeout=10)
+            os.killpg(process.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            process.terminate()
+        try:
+            process.wait(timeout=15)
         except Exception:
-            process.kill()
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                process.kill()
+            process.wait(timeout=10)
         print(f"  Server stopped.")
 
 
@@ -528,7 +586,7 @@ def run_inference_sglang_batch(exp_id, sglang_url=SGLANG_URL, lora_name=None):
 # Evaluation Pipeline
 # ====================================================================
 
-def evaluate_experiment(exp_id, predictions, client, emb_model, gpt_model):
+def evaluate_experiment(exp_id, predictions, client, emb_model, gpt_model, skip_redundancy=False):
     print(f"\n{'='*70}")
     print(f"  Evaluating Experiment {exp_id} ({len(predictions)} samples)")
     print(f"{'='*70}")
@@ -578,24 +636,30 @@ def evaluate_experiment(exp_id, predictions, client, emb_model, gpt_model):
         se.unmatched_pred = res["unmatched_pred"]
         se.unmatched_ref = res["unmatched_ref"]
 
-    # Redundancy
-    print(f"  Redundancy detection (threshold={REDUNDANCY_SIM_THRESHOLD})...")
-    gpt_calls = 0
-    for se in evals:
-        if se.count_pred <= 1:
+    # Redundancy (skippable -- it's the only dimension needing GPT-4o calls,
+    # not just embeddings, so skipping it noticeably cuts eval time/cost)
+    if skip_redundancy:
+        print(f"  Redundancy detection: skipped")
+        for se in evals:
             se.has_redundancy, se.redundancy_count = False, 0
-            continue
-        p_e = np.stack([get_e(sq.sub_question) for sq in se.pred_subs])
-        cands = find_redundancy_candidates(se.pred_subs, p_e, REDUNDANCY_SIM_THRESHOLD)
-        if cands:
-            gpt_calls += 1
-            verified = gpt_verify_redundancy(client, se.input_text, cands, se.pred_subs, model=gpt_model)
-            se.redundant_pairs = [v for v in verified if v.get("confirmed")]
-            se.redundancy_count = len(se.redundant_pairs)
-            se.has_redundancy = se.redundancy_count > 0
-        else:
-            se.has_redundancy, se.redundancy_count = False, 0
-    print(f"    GPT verification calls: {gpt_calls}")
+    else:
+        print(f"  Redundancy detection (threshold={REDUNDANCY_SIM_THRESHOLD})...")
+        gpt_calls = 0
+        for se in evals:
+            if se.count_pred <= 1:
+                se.has_redundancy, se.redundancy_count = False, 0
+                continue
+            p_e = np.stack([get_e(sq.sub_question) for sq in se.pred_subs])
+            cands = find_redundancy_candidates(se.pred_subs, p_e, REDUNDANCY_SIM_THRESHOLD)
+            if cands:
+                gpt_calls += 1
+                verified = gpt_verify_redundancy(client, se.input_text, cands, se.pred_subs, model=gpt_model)
+                se.redundant_pairs = [v for v in verified if v.get("confirmed")]
+                se.redundancy_count = len(se.redundant_pairs)
+                se.has_redundancy = se.redundancy_count > 0
+            else:
+                se.has_redundancy, se.redundancy_count = False, 0
+        print(f"    GPT verification calls: {gpt_calls}")
 
     metrics = aggregate_metrics(evals)
     return evals, metrics

@@ -1,0 +1,17 @@
+{
+  "label": "progressive_corrected",
+  "threshold": 0.85,
+  "n_samples": 120,
+  "coverage_overall_pct": 46.95652173913044,
+  "coverage_searching_pct": 74.48275862068967,
+  "coverage_aggregation_pct": 0.0,
+  "full_coverage_samples_pct": 38.333333333333336,
+  "full_coverage_and_type_samples_pct": 38.333333333333336,
+  "type_consistency_pct": 96.29629629629629,
+  "covered_pair_cosine_mean": 0.9214690194723258,
+  "count_exact_pct": 80.0,
+  "avg_ref_count": 1.9166666666666667,
+  "avg_pred_count": 1.7083333333333333,
+  "count_over": 0,
+  "count_under": 24
+}

@@ -1,0 +1,84 @@
+Loaded 120 samples from ood_data/test_dataset_ood_rebalanced.json
+Launching SGLang for ./nhanes_model/decomp_v1_ood/merged_model ...
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path ./nhanes_model/decomp_v1_ood/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0 --max-running-requests 64 --mem-fraction-static 0.88
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 49s)
+    [decomp_ood] 20/120  (44s elapsed)
+    [decomp_ood] 40/120  (65s elapsed)
+    [decomp_ood] 60/120  (86s elapsed)
+    [decomp_ood] 80/120  (108s elapsed)
+    [decomp_ood] 100/120  (150s elapsed)
+    [decomp_ood] 120/120  (171s elapsed)
+Tearing down SGLang server...
+  GPU memory confirmed free (1s after kill).
+Saved raw outputs to nhanes_model/decomp_v1_ood/decomp_v1_ood_raw_outputs.json
+
+======================================================================
+  Evaluating Experiment decomp_v1_ood_raw (120 samples)
+======================================================================
+  Embedding sub-questions (text-embedding-3-large)...
+    Unique: 588
+  Semantic alignment (Hungarian)...
+  Redundancy detection (threshold=0.9)...
+    GPT verify failed (attempt 1): Expecting value: line 1 column 1 (char 0)
+    GPT verification calls: 88
+
+======================================================================
+  EXPERIMENT decomp_v1_ood (raw) RESULTS
+======================================================================
+
+  ┌─ Dim 1: Semantic Similarity (cosine, text-embedding-3-large)
+  │  Per sub-Q mean:         0.7363 ± 0.0959
+  │  Per sample mean:        0.7450 ± 0.0875
+  │  ≥0.92 (near-perfect):  3.6%
+  │  ≥0.85 (high match):    17.4%
+  │  <0.6 (low):             18
+  ├─ Dim 2: Count Accuracy
+  │  Exact match:            30/120 (25.0%)
+  │  Avg steps ref/pred:     2.33 / 3.40
+  │  Mean diff:              +1.07  |abs|=1.13
+  │  Over/Under:             86 / 4
+  ├─ Dim 3: Redundancy
+  │  Samples w/ redundancy:  11/120 (9.2%)
+  │  Total pairs:            12  (avg 0.100/sample)
+  └─ Supplementary
+     Format valid:           113/120 (94.2%)
+     Type accuracy (S/A):    82.6%
+======================================================================
+  Saved to nhanes_model/decomp_v1_ood/raw/
+
+======================================================================
+  Evaluating Experiment decomp_v1_ood_truncated (120 samples)
+======================================================================
+  Embedding sub-questions (text-embedding-3-large)...
+    Unique: 507
+  Semantic alignment (Hungarian)...
+  Redundancy detection (threshold=0.9)...
+    GPT verification calls: 66
+
+======================================================================
+  EXPERIMENT decomp_v1_ood (truncated) RESULTS
+======================================================================
+
+  ┌─ Dim 1: Semantic Similarity (cosine, text-embedding-3-large)
+  │  Per sub-Q mean:         0.7327 ± 0.1010
+  │  Per sample mean:        0.7402 ± 0.0912
+  │  ≥0.92 (near-perfect):  3.7%
+  │  ≥0.85 (high match):    17.2%
+  │  <0.6 (low):             19
+  ├─ Dim 2: Count Accuracy
+  │  Exact match:            74/120 (61.7%)
+  │  Avg steps ref/pred:     2.33 / 2.65
+  │  Mean diff:              +0.32  |abs|=0.43
+  │  Over/Under:             39 / 7
+  ├─ Dim 3: Redundancy
+  │  Samples w/ redundancy:  4/120 (3.3%)
+  │  Total pairs:            4  (avg 0.033/sample)
+  └─ Supplementary
+     Format valid:           113/120 (94.2%)
+     Type accuracy (S/A):    83.5%
+======================================================================
+  Saved to nhanes_model/decomp_v1_ood/truncated/
+
+Saved summary to nhanes_model/decomp_v1_ood/decomp_v1_ood_eval_summary.json

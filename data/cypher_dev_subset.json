@@ -1,0 +1,202 @@
+[
+  {
+    "input": "What is patient 146's creatinine value, and how does this feature influence the naive bayes model's prediction?",
+    "output": "Step 1: Retrieve patient 146's creatinine measurement.\nSub-question: What is patient 146's creatinine value?  # Type: searching\nStep 2: Retrieve the patient-specific local SHAP effect of creatinine in the requested model setting.\nSub-question: For patient 146 in naive bayes trained with a 1:1 positive-to-negative ratio, what is the local SHAP value of creatinine, and is its contribution positive or negative?  # Type: searching"
+  },
+  {
+    "input": "For patient 231, what does decision tree predict when trained with a 1:2 positive-to-negative ratio, and how does blood mercury affect that prediction?",
+    "output": "Step 1: Retrieve the prediction result for patient 231 from decision tree trained with a 1:2 positive-to-negative ratio.\nSub-question: For patient 231, what prediction does decision tree trained with a 1:2 positive-to-negative ratio make?  # Type: searching\nStep 2: Retrieve the patient-specific effect of blood mercury on that prediction.\nSub-question: For patient 231 in decision tree trained with a 1:2 positive-to-negative ratio, what is the local SHAP value and direction of blood mercury?  # Type: searching"
+  },
+  {
+    "input": "For patient 80, separate the biomarkers that increase the random forest model's depression prediction from those that decrease it when the model is trained with a 1:5 positive-to-negative ratio.",
+    "output": "Step 1: Retrieve the patient-specific local SHAP values for all available biomarkers in the requested model setting.\nSub-question: For patient 80 in random forest trained with a 1:5 positive-to-negative ratio, what local SHAP value does each available biomarker have?  # Type: searching\nStep 2: Group the biomarkers by the direction of their patient-specific contributions.\nSub-question: For patient 80 in random forest trained with a 1:5 positive-to-negative ratio, which biomarkers have positive local SHAP values and therefore push the model toward predicting depression, and which have negative local SHAP values and therefore push the model away from predicting depression?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 64, what does random forest predict when trained with a 1:4 positive-to-negative ratio, and how does albumin affect that prediction?",
+    "output": "Step 1: Retrieve the prediction result for patient 64 from random forest trained with a 1:4 positive-to-negative ratio.\nSub-question: For patient 64, what prediction does random forest trained with a 1:4 positive-to-negative ratio make?  # Type: searching\nStep 2: Retrieve the patient-specific effect of albumin on that prediction.\nSub-question: For patient 64 in random forest trained with a 1:4 positive-to-negative ratio, what is the local SHAP value and direction of albumin?  # Type: searching"
+  },
+  {
+    "input": "At a 1:4 positive-to-negative training ratio, how do the top 5 most important biomarkers differ across naive bayes and decision tree? Also compare what increasing each biomarker generally does to the depression prediction.",
+    "output": "Step 1: Retrieve the top global-SHAP biomarkers for each requested algorithm at the fixed training ratio.\nSub-question: For naive bayes and decision tree trained with a 1:4 positive-to-negative ratio, what are the top 5 biomarkers ranked by global SHAP importance, what is each biomarker's global SHAP importance, and what is its global SHAP tendency as the biomarker value increases?  # Type: searching\nStep 2: Compare the global-SHAP profiles across algorithms.\nSub-question: At 1:4, how do the top-5 biomarker set, ranking, global SHAP importance, and increase-related global SHAP tendency differ across naive bayes and decision tree?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 82, what does logistic regression predict, and how does vitamin D2 affect that prediction?",
+    "output": "Step 1: Retrieve the prediction result for patient 82 from logistic regression trained with a 1:1 positive-to-negative ratio.\nSub-question: For patient 82, what prediction does logistic regression trained with a 1:1 positive-to-negative ratio make?  # Type: searching\nStep 2: Retrieve the patient-specific effect of vitamin D2 on that prediction.\nSub-question: For patient 82 in logistic regression trained with a 1:1 positive-to-negative ratio, what is the local SHAP value and direction of vitamin D2?  # Type: searching"
+  },
+  {
+    "input": "What is patient 11's blood mercury value, and does this feature push the random forest prediction toward or away from depression when the model is trained with a 1:5 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve patient 11's blood mercury measurement.\nSub-question: What is patient 11's blood mercury value?  # Type: searching\nStep 2: Retrieve only the direction of the local SHAP effect for blood mercury in the requested model setting.\nSub-question: For patient 11 in random forest trained with a 1:5 positive-to-negative ratio, is the local SHAP effect of blood mercury positive or negative?  # Type: searching"
+  },
+  {
+    "input": "For the logistic regression model trained with a 1:4 positive-to-negative ratio, which 5 biomarkers are most important overall, and what happens to the depression prediction as each biomarker increases (case 40)?",
+    "output": "Step 1: Retrieve the global SHAP ranking for the requested model setting.\nSub-question: For logistic regression trained with a 1:4 positive-to-negative ratio, what are the top 5 biomarkers ranked by global SHAP importance, and what is the global SHAP importance of each?  # Type: searching\nStep 2: Retrieve the global SHAP tendency for those top-ranked biomarkers.\nSub-question: For those top 5 biomarkers in logistic regression trained with a 1:4 positive-to-negative ratio, as each biomarker value increases, does its global SHAP tendency increase or decrease the depression prediction?  # Type: searching"
+  },
+  {
+    "input": "If increasing albumin generally lowers the model's predicted depression risk, which trained model settings are consistent with that relationship (case 35)?",
+    "output": "Step 1: Retrieve the global SHAP tendency of albumin across all model and training-ratio settings.\nSub-question: For albumin, what is the global SHAP tendency as the biomarker value increases in random forest, naive bayes, logistic regression, and decision tree at training ratios 1:1, 1:2, 1:3, 1:4, and 1:5?  # Type: searching\nStep 2: Identify the model settings whose global tendency matches the user's stated relationship.\nSub-question: Which algorithm-and-ratio settings show SHAP values decreasing as albumin increases, and therefore agree with the user's stated pattern that increasing albumin lowers the predicted depression risk? Summarize the matching models and ratios.  # Type: aggregation"
+  },
+  {
+    "input": "Where does creatinine rank in overall feature importance for naive bayes (case 13)?",
+    "output": "Step 1: Retrieve the global SHAP importance rank of creatinine for naive bayes trained with a 1:1 positive-to-negative ratio.\nSub-question: What global SHAP importance rank does creatinine have in naive bayes trained with a 1:1 positive-to-negative ratio?  # Type: searching"
+  },
+  {
+    "input": "What does random forest predict for patient 112?",
+    "output": "Step 1: Retrieve the prediction label for patient 112 from random forest trained with a 1:1 positive-to-negative ratio.\nSub-question: What prediction label does random forest trained with a 1:1 positive-to-negative ratio assign to patient 112?  # Type: searching"
+  },
+  {
+    "input": "Based on the logistic regression model trained with a 1:2 positive-to-negative ratio, what model-based adjustment directions could be suggested for patient 27 to reduce the factors pushing the prediction toward depression?",
+    "output": "Step 1: Retrieve the strongest patient-specific features pushing the prediction toward depression.\nSub-question: For patient 27 in logistic regression trained with a 1:2 positive-to-negative ratio, which 3 biomarkers have the largest positive local SHAP values?  # Type: searching\nStep 2: Retrieve the global SHAP tendency for those biomarkers in the same model setting.\nSub-question: For those 3 biomarkers in logistic regression trained with a 1:2 positive-to-negative ratio, as each biomarker value increases, does its global SHAP tendency increase or decrease the depression prediction?  # Type: searching\nStep 3: Convert the local drivers and global tendencies into model-based adjustment directions.\nSub-question: For each selected biomarker, if increasing it is associated with lower SHAP values, suggest increasing it; if increasing it is associated with higher SHAP values, suggest decreasing it. Summarize these as model-based feature adjustment directions for patient 27, not as causal or clinical recommendations.  # Type: aggregation"
+  },
+  {
+    "input": "For patient 19, how does blood lead's influence differ across naive bayes and logistic regression when each model is trained with a 1:2 positive-to-negative ratio? Compare both direction and strength.",
+    "output": "Step 1: Retrieve the local SHAP value for blood lead for patient 19 in each requested algorithm trained with a 1:2 positive-to-negative ratio.\nSub-question: For models trained with a 1:2 positive-to-negative ratio, what local SHAP value and direction does blood lead have for patient 19 in naive bayes and logistic regression?  # Type: searching\nStep 2: Compare the feature's influence across algorithms.\nSub-question: For models trained with a 1:2 positive-to-negative ratio, how do the absolute local SHAP magnitude and sign of blood lead differ across naive bayes and logistic regression for patient 19?  # Type: aggregation"
+  },
+  {
+    "input": "What is patient 17's direct HDL-cholesterol value?",
+    "output": "Step 1: Retrieve patient 17's direct HDL-cholesterol measurement.\nSub-question: What is patient 17's direct HDL-cholesterol value?  # Type: searching"
+  },
+  {
+    "input": "For patient 177, compare the direction of each biomarker's influence across random forest, naive bayes, logistic regression, and decision tree when the models are trained with a 1:5 positive-to-negative ratio. Which biomarkers agree in direction and which do not?",
+    "output": "Step 1: Retrieve the patient-specific direction of influence for each available biomarker across the requested algorithms at the same training ratio.\nSub-question: For patient 177, is each available biomarker's local SHAP contribution positive or negative in random forest, naive bayes, logistic regression, and decision tree, when each model is trained with a 1:5 positive-to-negative ratio?  # Type: searching\nStep 2: Compare the contribution directions across algorithms.\nSub-question: For patient 177 at a 1:5 positive-to-negative training ratio, which biomarkers have the same local SHAP direction across random forest, naive bayes, logistic regression, and decision tree, and which biomarkers have different directions across the models?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 103, which features most strongly push the decision tree model toward predicting depression and away from predicting depression when the model is trained with a 1:4 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the local SHAP values of all available features for patient 103 in decision tree trained with a 1:4 positive-to-negative ratio.\nSub-question: For patient 103, what local SHAP value does each available feature have in decision tree trained with a 1:4 positive-to-negative ratio?  # Type: searching\nStep 2: Identify the strongest positive and strongest negative contributors.\nSub-question: Which feature has the largest positive local SHAP value, and which feature has the largest absolute local SHAP value among the negative contributions, for patient 103 in decision tree?  # Type: aggregation"
+  },
+  {
+    "input": "What is patient 131's albumin value, and how does this feature influence the random forest model's prediction when trained with a 1:3 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve patient 131's albumin measurement.\nSub-question: What is patient 131's albumin value?  # Type: searching\nStep 2: Retrieve the patient-specific local SHAP effect of albumin in the requested model setting.\nSub-question: For patient 131 in random forest trained with a 1:3 positive-to-negative ratio, what is the local SHAP value of albumin, and is its contribution positive or negative?  # Type: searching"
+  },
+  {
+    "input": "For patient 87, which features most strongly push the decision tree model toward predicting depression and away from predicting depression when the model is trained with a 1:1 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the local SHAP values of all available features for patient 87 in decision tree trained with a 1:1 positive-to-negative ratio.\nSub-question: For patient 87, what local SHAP value does each available feature have in decision tree trained with a 1:1 positive-to-negative ratio?  # Type: searching\nStep 2: Identify the strongest positive and strongest negative contributors.\nSub-question: Which feature has the largest positive local SHAP value, and which feature has the largest absolute local SHAP value among the negative contributions, for patient 87 in decision tree?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 3, what is the measured creatinine value?",
+    "output": "Step 1: Retrieve patient 3's creatinine measurement.\nSub-question: What is patient 3's creatinine value?  # Type: searching"
+  },
+  {
+    "input": "For patient 154, how does the random forest model's predicted probability of depression change when its training ratio varies across 1:1, 1:3, and 1:5?",
+    "output": "Step 1: Retrieve the depression probabilities predicted for patient 154 by random forest trained under each requested positive-to-negative ratio.\nSub-question: What depression probability does random forest predict for patient 154 when trained with positive-to-negative ratios of 1:1, 1:3, and 1:5?  # Type: searching\nStep 2: Analyze how the predicted probability changes across training ratios.\nSub-question: Across 1:1, 1:3, and 1:5, how does random forest's predicted depression probability for patient 154 change, including increases, decreases, or reversals in trend?  # Type: aggregation"
+  },
+  {
+    "input": "For the naive bayes model trained with a 1:1 positive-to-negative ratio, which 4 biomarkers are most important overall, and what happens to the depression prediction as each biomarker increases?",
+    "output": "Step 1: Retrieve the global SHAP ranking for the requested model setting.\nSub-question: For naive bayes trained with a 1:1 positive-to-negative ratio, what are the top 4 biomarkers ranked by global SHAP importance, and what is the global SHAP importance of each?  # Type: searching\nStep 2: Retrieve the global SHAP tendency for those top-ranked biomarkers.\nSub-question: For those top 4 biomarkers in naive bayes trained with a 1:1 positive-to-negative ratio, as each biomarker value increases, does its global SHAP tendency increase or decrease the depression prediction?  # Type: searching"
+  },
+  {
+    "input": "For patient 87, how does the decision tree model's predicted probability of depression change when its training ratio varies across 1:2, 1:4, and 1:5?",
+    "output": "Step 1: Retrieve the depression probabilities predicted for patient 87 by decision tree trained under each requested positive-to-negative ratio.\nSub-question: What depression probability does decision tree predict for patient 87 when trained with positive-to-negative ratios of 1:2, 1:4, and 1:5?  # Type: searching\nStep 2: Analyze how the predicted probability changes across training ratios.\nSub-question: Across 1:2, 1:4, and 1:5, how does decision tree's predicted depression probability for patient 87 change, including increases, decreases, or reversals in trend?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 11, what probabilities of depression are predicted by random forest and logistic regression?",
+    "output": "Step 1: Retrieve the depression probability predicted for patient 11 by each requested model.\nSub-question: For models trained with a 1:1 positive-to-negative ratio, what depression probability does each of random forest and logistic regression predict for patient 11?  # Type: searching"
+  },
+  {
+    "input": "Was logistic regression's prediction for patient 225 correct?",
+    "output": "Step 1: Retrieve whether the prediction for patient 225 from logistic regression trained with a 1:1 positive-to-negative ratio was correct.\nSub-question: Was the logistic regression prediction for patient 225, using a model trained with a 1:1 positive-to-negative ratio, correct?  # Type: searching"
+  },
+  {
+    "input": "For patient 180, which features most strongly push the random forest model toward predicting depression and away from predicting depression when the model is trained with a 1:5 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the local SHAP values of all available features for patient 180 in random forest trained with a 1:5 positive-to-negative ratio.\nSub-question: For patient 180, what local SHAP value does each available feature have in random forest trained with a 1:5 positive-to-negative ratio?  # Type: searching\nStep 2: Identify the strongest positive and strongest negative contributors.\nSub-question: Which feature has the largest positive local SHAP value, and which feature has the largest absolute local SHAP value among the negative contributions, for patient 180 in random forest?  # Type: aggregation"
+  },
+  {
+    "input": "Based on the decision tree model trained with a 1:1 positive-to-negative ratio, what model-based adjustment directions could be suggested for patient 36 to reduce the factors pushing the prediction toward depression?",
+    "output": "Step 1: Retrieve the strongest patient-specific features pushing the prediction toward depression.\nSub-question: For patient 36 in decision tree trained with a 1:1 positive-to-negative ratio, which 3 biomarkers have the largest positive local SHAP values?  # Type: searching\nStep 2: Retrieve the global SHAP tendency for those biomarkers in the same model setting.\nSub-question: For those 3 biomarkers in decision tree trained with a 1:1 positive-to-negative ratio, as each biomarker value increases, does its global SHAP tendency increase or decrease the depression prediction?  # Type: searching\nStep 3: Convert the local drivers and global tendencies into model-based adjustment directions.\nSub-question: For each selected biomarker, if increasing it is associated with lower SHAP values, suggest increasing it; if increasing it is associated with higher SHAP values, suggest decreasing it. Summarize these as model-based feature adjustment directions for patient 36, not as causal or clinical recommendations.  # Type: aggregation"
+  },
+  {
+    "input": "Was naive bayes's prediction for patient 64 correct when the model was trained with a 1:2 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve whether the prediction for patient 64 from naive bayes trained with a 1:2 positive-to-negative ratio was correct.\nSub-question: Was the naive bayes prediction for patient 64, using a model trained with a 1:2 positive-to-negative ratio, correct?  # Type: searching"
+  },
+  {
+    "input": "For random forest, how do the top 2 most important biomarkers change across training ratios 1:1, 1:3, and 1:5? Include both their overall importance and what happens to the depression prediction as each biomarker increases. (case 33)?",
+    "output": "Step 1: Retrieve the top global-SHAP biomarkers for random forest at each requested training ratio.\nSub-question: For random forest trained at 1:1, 1:3, and 1:5, what are the top 2 biomarkers ranked by global SHAP importance, what is each biomarker's global SHAP importance, and what is its global SHAP tendency as the biomarker value increases?  # Type: searching\nStep 2: Compare the global-SHAP profiles across training ratios.\nSub-question: Across 1:1, 1:3, and 1:5, how do the top-2 biomarker set, ranking, global SHAP importance, and increase-related global SHAP tendency change for random forest?  # Type: aggregation"
+  },
+  {
+    "input": "Was naive bayes's prediction for patient 188 correct when the model was trained with a 1:5 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve whether the prediction for patient 188 from naive bayes trained with a 1:5 positive-to-negative ratio was correct.\nSub-question: Was the naive bayes prediction for patient 188, using a model trained with a 1:5 positive-to-negative ratio, correct?  # Type: searching"
+  },
+  {
+    "input": "For patient 111, how does the decision tree model's predicted probability of depression change when its training ratio varies across 1:2, 1:4, and 1:5?",
+    "output": "Step 1: Retrieve the depression probabilities predicted for patient 111 by decision tree trained under each requested positive-to-negative ratio.\nSub-question: What depression probability does decision tree predict for patient 111 when trained with positive-to-negative ratios of 1:2, 1:4, and 1:5?  # Type: searching\nStep 2: Analyze how the predicted probability changes across training ratios.\nSub-question: Across 1:2, 1:4, and 1:5, how does decision tree's predicted depression probability for patient 111 change, including increases, decreases, or reversals in trend?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 67, which biomarkers push the naive bayes model toward predicting depression, and which push it away from depression?",
+    "output": "Step 1: Retrieve the patient-specific local SHAP values for all available biomarkers in the requested model setting.\nSub-question: For patient 67 in naive bayes trained with a 1:1 positive-to-negative ratio, what local SHAP value does each available biomarker have?  # Type: searching\nStep 2: Group the biomarkers by the direction of their patient-specific contributions.\nSub-question: For patient 67 in naive bayes trained with a 1:1 positive-to-negative ratio, which biomarkers have positive local SHAP values and therefore push the model toward predicting depression, and which have negative local SHAP values and therefore push the model away from predicting depression?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 223, how does blood lead's influence differ across random forest and naive bayes when each model is trained with a 1:1 positive-to-negative ratio? Compare both direction and strength.",
+    "output": "Step 1: Retrieve the local SHAP value for blood lead for patient 223 in each requested algorithm trained with a 1:1 positive-to-negative ratio.\nSub-question: For models trained with a 1:1 positive-to-negative ratio, what local SHAP value and direction does blood lead have for patient 223 in random forest and naive bayes?  # Type: searching\nStep 2: Compare the feature's influence across algorithms.\nSub-question: For models trained with a 1:1 positive-to-negative ratio, how do the absolute local SHAP magnitude and sign of blood lead differ across random forest and naive bayes for patient 223?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 105, how does blood selenium influence the logistic regression model's prediction when the model is trained with a 1:3 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the patient-specific local SHAP effect of blood selenium for patient 105 in logistic regression trained with a 1:3 positive-to-negative ratio.\nSub-question: For patient 105 in logistic regression trained with a 1:3 positive-to-negative ratio, what is the local SHAP value and direction of blood selenium?  # Type: searching"
+  },
+  {
+    "input": "For patient 91, how does the decision tree model's predicted probability of depression change when its training ratio varies across 1:1, 1:2, 1:3, and 1:4?",
+    "output": "Step 1: Retrieve the depression probabilities predicted for patient 91 by decision tree trained under each requested positive-to-negative ratio.\nSub-question: What depression probability does decision tree predict for patient 91 when trained with positive-to-negative ratios of 1:1, 1:2, 1:3, and 1:4?  # Type: searching\nStep 2: Analyze how the predicted probability changes across training ratios.\nSub-question: Across 1:1, 1:2, 1:3, and 1:4, how does decision tree's predicted depression probability for patient 91 change, including increases, decreases, or reversals in trend?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 217, what probabilities of depression are predicted by random forest and logistic regression when each model is trained with a 1:3 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the depression probability predicted for patient 217 by each requested model.\nSub-question: For models trained with a 1:3 positive-to-negative ratio, what depression probability does each of random forest and logistic regression predict for patient 217?  # Type: searching"
+  },
+  {
+    "input": "For naive bayes, how do the top 3 most important biomarkers change across training ratios 1:2, 1:3, 1:4, and 1:5? Include both their overall importance and what happens to the depression prediction as each biomarker increases. (case 14)?",
+    "output": "Step 1: Retrieve the top global-SHAP biomarkers for naive bayes at each requested training ratio.\nSub-question: For naive bayes trained at 1:2, 1:3, 1:4, and 1:5, what are the top 3 biomarkers ranked by global SHAP importance, what is each biomarker's global SHAP importance, and what is its global SHAP tendency as the biomarker value increases?  # Type: searching\nStep 2: Compare the global-SHAP profiles across training ratios.\nSub-question: Across 1:2, 1:3, 1:4, and 1:5, how do the top-3 biomarker set, ranking, global SHAP importance, and increase-related global SHAP tendency change for naive bayes?  # Type: aggregation"
+  },
+  {
+    "input": "Where does blood selenium rank in overall feature importance for logistic regression trained with a 1:1 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the global SHAP importance rank of blood selenium for logistic regression trained with a 1:1 positive-to-negative ratio.\nSub-question: What global SHAP importance rank does blood selenium have in logistic regression trained with a 1:1 positive-to-negative ratio?  # Type: searching"
+  },
+  {
+    "input": "For random forest, which training ratio gives the highest accuracy among 1:2, 1:3, 1:4, and 1:5?",
+    "output": "Step 1: Retrieve the model accuracy for random forest at each requested positive-to-negative training ratio.\nSub-question: What is the accuracy of random forest trained at 1:2, 1:3, 1:4, and 1:5?  # Type: searching\nStep 2: Compare the accuracy scores across training ratios.\nSub-question: Among 1:2, 1:3, 1:4, and 1:5, which training ratio gives the highest accuracy for random forest, and what is that accuracy score?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 169, how does glycohemoglobin's influence differ across random forest and logistic regression when each model is trained with a 1:2 positive-to-negative ratio? Compare both direction and strength.",
+    "output": "Step 1: Retrieve the local SHAP value for glycohemoglobin for patient 169 in each requested algorithm trained with a 1:2 positive-to-negative ratio.\nSub-question: For models trained with a 1:2 positive-to-negative ratio, what local SHAP value and direction does glycohemoglobin have for patient 169 in random forest and logistic regression?  # Type: searching\nStep 2: Compare the feature's influence across algorithms.\nSub-question: For models trained with a 1:2 positive-to-negative ratio, how do the absolute local SHAP magnitude and sign of glycohemoglobin differ across random forest and logistic regression for patient 169?  # Type: aggregation"
+  },
+  {
+    "input": "At a 1:4 positive-to-negative training ratio, how do the top 2 most important biomarkers differ across random forest and decision tree? Also compare what increasing each biomarker generally does to the depression prediction.",
+    "output": "Step 1: Retrieve the top global-SHAP biomarkers for each requested algorithm at the fixed training ratio.\nSub-question: For random forest and decision tree trained with a 1:4 positive-to-negative ratio, what are the top 2 biomarkers ranked by global SHAP importance, what is each biomarker's global SHAP importance, and what is its global SHAP tendency as the biomarker value increases?  # Type: searching\nStep 2: Compare the global-SHAP profiles across algorithms.\nSub-question: At 1:4, how do the top-2 biomarker set, ranking, global SHAP importance, and increase-related global SHAP tendency differ across random forest and decision tree?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 28, what does random forest predict when trained with a 1:5 positive-to-negative ratio, and how does albumin affect that prediction?",
+    "output": "Step 1: Retrieve the prediction result for patient 28 from random forest trained with a 1:5 positive-to-negative ratio.\nSub-question: For patient 28, what prediction does random forest trained with a 1:5 positive-to-negative ratio make?  # Type: searching\nStep 2: Retrieve the patient-specific effect of albumin on that prediction.\nSub-question: For patient 28 in random forest trained with a 1:5 positive-to-negative ratio, what is the local SHAP value and direction of albumin?  # Type: searching"
+  },
+  {
+    "input": "For naive bayes, which training ratio gives the highest model accuracy (case 36)?",
+    "output": "Step 1: Retrieve the model accuracy for naive bayes at each requested positive-to-negative training ratio.\nSub-question: What is the accuracy of naive bayes trained at 1:1, 1:2, 1:3, 1:4, and 1:5?  # Type: searching\nStep 2: Compare the accuracy scores across training ratios.\nSub-question: Among 1:1, 1:2, 1:3, 1:4, and 1:5, which training ratio gives the highest accuracy for naive bayes, and what is that accuracy score?  # Type: aggregation"
+  },
+  {
+    "input": "How do the top 3 most important biomarkers differ across naive bayes and decision tree? Also compare what increasing each biomarker generally does to the depression prediction.",
+    "output": "Step 1: Retrieve the top global-SHAP biomarkers for each requested algorithm at the fixed training ratio.\nSub-question: For naive bayes and decision tree trained with a 1:1 positive-to-negative ratio, what are the top 3 biomarkers ranked by global SHAP importance, what is each biomarker's global SHAP importance, and what is its global SHAP tendency as the biomarker value increases?  # Type: searching\nStep 2: Compare the global-SHAP profiles across algorithms.\nSub-question: At 1:1, how do the top-3 biomarker set, ranking, global SHAP importance, and increase-related global SHAP tendency differ across naive bayes and decision tree?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 221, which features most strongly push the naive bayes model toward predicting depression and away from predicting depression when the model is trained with a 1:3 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the local SHAP values of all available features for patient 221 in naive bayes trained with a 1:3 positive-to-negative ratio.\nSub-question: For patient 221, what local SHAP value does each available feature have in naive bayes trained with a 1:3 positive-to-negative ratio?  # Type: searching\nStep 2: Identify the strongest positive and strongest negative contributors.\nSub-question: Which feature has the largest positive local SHAP value, and which feature has the largest absolute local SHAP value among the negative contributions, for patient 221 in naive bayes?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 105, what probabilities of depression are predicted by naive bayes and decision tree when each model is trained with a 1:1 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the depression probability predicted for patient 105 by each requested model.\nSub-question: For models trained with a 1:1 positive-to-negative ratio, what depression probability does each of naive bayes and decision tree predict for patient 105?  # Type: searching"
+  },
+  {
+    "input": "For patient 192, which biomarker has the strongest influence on the decision tree model's prediction, and what generally happens to the depression prediction as that biomarker increases?",
+    "output": "Step 1: Retrieve the biomarker with the strongest patient-specific local influence.\nSub-question: For patient 192 in decision tree trained with a 1:1 positive-to-negative ratio, which biomarker has the largest absolute local SHAP value?  # Type: searching\nStep 2: Retrieve the global SHAP tendency for that biomarker in the same model setting.\nSub-question: For that biomarker in decision tree trained with a 1:1 positive-to-negative ratio, as the biomarker value increases, what is the global SHAP tendency for the depression prediction?  # Type: searching"
+  },
+  {
+    "input": "For naive bayes, which training ratio gives the highest accuracy among 1:1, 1:2, and 1:3 (case 40)?",
+    "output": "Step 1: Retrieve the model accuracy for naive bayes at each requested positive-to-negative training ratio.\nSub-question: What is the accuracy of naive bayes trained at 1:1, 1:2, and 1:3?  # Type: searching\nStep 2: Compare the accuracy scores across training ratios.\nSub-question: Among 1:1, 1:2, and 1:3, which training ratio gives the highest accuracy for naive bayes, and what is that accuracy score?  # Type: aggregation"
+  },
+  {
+    "input": "For patient 128, which biomarker has the strongest influence on the decision tree model's prediction, and what generally happens to the depression prediction as that biomarker increases?",
+    "output": "Step 1: Retrieve the biomarker with the strongest patient-specific local influence.\nSub-question: For patient 128 in decision tree trained with a 1:1 positive-to-negative ratio, which biomarker has the largest absolute local SHAP value?  # Type: searching\nStep 2: Retrieve the global SHAP tendency for that biomarker in the same model setting.\nSub-question: For that biomarker in decision tree trained with a 1:1 positive-to-negative ratio, as the biomarker value increases, what is the global SHAP tendency for the depression prediction?  # Type: searching"
+  },
+  {
+    "input": "What does naive bayes predict for patient 229 when the model is trained with a 1:5 positive-to-negative ratio?",
+    "output": "Step 1: Retrieve the prediction label for patient 229 from naive bayes trained with a 1:5 positive-to-negative ratio.\nSub-question: What prediction label does naive bayes trained with a 1:5 positive-to-negative ratio assign to patient 229?  # Type: searching"
+  },
+  {
+    "input": "For patient 6, what does logistic regression predict, and how does vitamin D2 affect that prediction?",
+    "output": "Step 1: Retrieve the prediction result for patient 6 from logistic regression trained with a 1:1 positive-to-negative ratio.\nSub-question: For patient 6, what prediction does logistic regression trained with a 1:1 positive-to-negative ratio make?  # Type: searching\nStep 2: Retrieve the patient-specific effect of vitamin D2 on that prediction.\nSub-question: For patient 6 in logistic regression trained with a 1:1 positive-to-negative ratio, what is the local SHAP value and direction of vitamin D2?  # Type: searching"
+  }
+]

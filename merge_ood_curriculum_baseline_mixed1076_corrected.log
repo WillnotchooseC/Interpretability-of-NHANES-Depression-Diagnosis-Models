@@ -1,0 +1,15 @@
+
+============================================================
+  Merging ood_curriculum_baseline_mixed1076_corrected: /teamspace/studios/this_studio/nhanes_model/ood_curriculum_baseline_mixed1076_corrected/best_model
+  Output: /teamspace/studios/this_studio/nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model
+============================================================
+  Loading base model...
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:01<00:05,  1.33s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:02<00:03,  1.31s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:03<00:02,  1.30s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:04<00:01,  1.21s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.09it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.08s/it]
+  Loading LoRA adapter...
+  Merging...
+  Saving merged model...
+  Done! Saved to /teamspace/studios/this_studio/nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model
+  GPU memory cleared.
+
+All done!

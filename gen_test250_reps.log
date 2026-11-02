@@ -1,0 +1,42 @@
+ood_curriculum_progressive_corrected: reps [1, 2, 3] on ood_data/curriculum_test_250.json (250 samples), sequential
+
+======================================================================
+  rep1  (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 61s)
+  Test samples: 250
+  Done! 250 samples in 552.6s (0.5 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_250_rep1/test_predictions.json  (250 samples, 0 empty, 0 with no parseable sub-question, rep took 618s)
+
+======================================================================
+  rep2  (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  Test samples: 250
+  Done! 250 samples in 553.0s (0.5 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_250_rep2/test_predictions.json  (250 samples, 0 empty, 0 with no parseable sub-question, rep took 599s)
+
+======================================================================
+  rep3  (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  Test samples: 250
+  Done! 250 samples in 553.1s (0.5 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_250_rep3/test_predictions.json  (250 samples, 0 empty, 0 with no parseable sub-question, rep took 599s)
+
+Done.

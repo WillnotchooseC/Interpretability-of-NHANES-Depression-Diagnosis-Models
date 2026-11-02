@@ -1,0 +1,87 @@
+
+########## ood_curriculum_progressive_corrected rep2  2026-09-12T14:51:09Z ##########
+ood_curriculum_progressive_corrected: reps [2] on ood_data/curriculum_test_200.json (200 samples), sequential
+
+======================================================================
+  rep2  (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 58s)
+  Test samples: 200
+  Done! 200 samples in 448.4s (0.4 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_200_rep2/test_predictions.json  (200 samples, 0 empty, 0 with no parseable sub-question, rep took 510s)
+
+Done.
+
+########## ood_curriculum_progressive_corrected rep3  2026-09-12T14:59:40Z ##########
+ood_curriculum_progressive_corrected: reps [3] on ood_data/curriculum_test_200.json (200 samples), sequential
+
+======================================================================
+  rep3  (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  Test samples: 200
+  Done! 200 samples in 448.6s (0.4 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_200_rep3/test_predictions.json  (200 samples, 0 empty, 0 with no parseable sub-question, rep took 495s)
+
+Done.
+ood_curriculum_progressive_corrected | ood_data/curriculum_test_200.json | reps [1, 2, 3] | 200 questions (Counter({'seen': 100, 'unseen': 100}))
+  reference sub-Qs: 439
+  rep1: 396 predicted sub-Qs ({'searching': 289, 'aggregation': 105, 'unknown': 2}), 0 samples with none, identical-to-rep1: 200/200
+  rep2: 395 predicted sub-Qs ({'searching': 291, 'aggregation': 104}), 0 samples with none, identical-to-rep1: 126/200
+  rep3: 397 predicted sub-Qs ({'searching': 287, 'aggregation': 108, 'unknown': 2}), 0 samples with none, identical-to-rep1: 132/200
+  cypher_results/test_200_ood_curriculum_progressive_corrected_reps_for_judging.yaml  (637 KB)
+  cypher_results/test_200_ood_curriculum_progressive_corrected_reps_for_judging.json  (811 KB)
+
+########## ood_curriculum_baseline_mixed1076_corrected rep2  2026-09-12T15:07:56Z ##########
+ood_curriculum_baseline_mixed1076_corrected: reps [2] on ood_data/curriculum_test_200.json (200 samples), sequential
+
+======================================================================
+  rep2  (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 61s)
+  Test samples: 200
+  Done! 200 samples in 448.6s (0.4 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_200_rep2/test_predictions.json  (200 samples, 0 empty, 0 with no parseable sub-question, rep took 512s)
+
+Done.
+
+########## ood_curriculum_baseline_mixed1076_corrected rep3  2026-09-12T15:16:28Z ##########
+ood_curriculum_baseline_mixed1076_corrected: reps [3] on ood_data/curriculum_test_200.json (200 samples), sequential
+
+======================================================================
+  rep3  (fresh server)
+======================================================================
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  Test samples: 200
+  Done! 200 samples in 448.6s (0.4 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_200_rep3/test_predictions.json  (200 samples, 0 empty, 0 with no parseable sub-question, rep took 493s)
+
+Done.
+ood_curriculum_baseline_mixed1076_corrected | ood_data/curriculum_test_200.json | reps [1, 2, 3] | 200 questions (Counter({'seen': 100, 'unseen': 100}))
+  reference sub-Qs: 439
+  rep1: 436 predicted sub-Qs ({'searching': 310, 'aggregation': 126}), 0 samples with none, identical-to-rep1: 200/200
+  rep2: 440 predicted sub-Qs ({'searching': 312, 'aggregation': 128}), 0 samples with none, identical-to-rep1: 143/200
+  rep3: 440 predicted sub-Qs ({'searching': 314, 'aggregation': 126}), 0 samples with none, identical-to-rep1: 147/200
+  cypher_results/test_200_ood_curriculum_baseline_mixed1076_corrected_reps_for_judging.yaml  (656 KB)
+  cypher_results/test_200_ood_curriculum_baseline_mixed1076_corrected_reps_for_judging.json  (836 KB)
+ALL DONE 2026-09-12T15:24:42Z

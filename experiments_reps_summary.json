@@ -1,0 +1,458 @@
+{
+  "exp1_5_baseline_original_input": {
+    "all": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.7607,
+          "answer_cosine": 0.7707,
+          "exec_rate": 0.9333,
+          "full_cov_rate": 0.65,
+          "graph_coverage_n": 120,
+          "n": 120
+        },
+        "2": {
+          "graph_coverage": 0.7691,
+          "answer_cosine": 0.7719,
+          "exec_rate": 0.9417,
+          "full_cov_rate": 0.6583,
+          "graph_coverage_n": 120,
+          "n": 120
+        },
+        "3": {
+          "graph_coverage": 0.7691,
+          "answer_cosine": 0.7705,
+          "exec_rate": 0.9417,
+          "full_cov_rate": 0.6583,
+          "graph_coverage_n": 120,
+          "n": 120
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.7663,
+          "std": 0.0048,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.771,
+          "std": 0.0008,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9389,
+          "std": 0.0048,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.6555,
+          "std": 0.0048,
+          "n": 3
+        }
+      }
+    },
+    "seen_80": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.9219,
+          "answer_cosine": 0.7815,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.85,
+          "graph_coverage_n": 80,
+          "n": 80
+        },
+        "2": {
+          "graph_coverage": 0.9344,
+          "answer_cosine": 0.7832,
+          "exec_rate": 0.9625,
+          "full_cov_rate": 0.8625,
+          "graph_coverage_n": 80,
+          "n": 80
+        },
+        "3": {
+          "graph_coverage": 0.9344,
+          "answer_cosine": 0.7806,
+          "exec_rate": 0.9625,
+          "full_cov_rate": 0.8625,
+          "graph_coverage_n": 80,
+          "n": 80
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.9302,
+          "std": 0.0072,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7818,
+          "std": 0.0013,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9583,
+          "std": 0.0072,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.8583,
+          "std": 0.0072,
+          "n": 3
+        }
+      }
+    },
+    "unseen_40": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.4385,
+          "answer_cosine": 0.7492,
+          "exec_rate": 0.9,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        },
+        "2": {
+          "graph_coverage": 0.4385,
+          "answer_cosine": 0.7492,
+          "exec_rate": 0.9,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        },
+        "3": {
+          "graph_coverage": 0.4385,
+          "answer_cosine": 0.7504,
+          "exec_rate": 0.9,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.4385,
+          "std": 0.0,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7496,
+          "std": 0.0007,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9,
+          "std": 0.0,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.25,
+          "std": 0.0,
+          "n": 3
+        }
+      }
+    }
+  },
+  "exp2_fewshot_graphrag": {
+    "all": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.8737,
+          "answer_cosine": 0.7582,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.6333,
+          "graph_coverage_n": 120,
+          "n": 120
+        },
+        "2": {
+          "graph_coverage": 0.8863,
+          "answer_cosine": 0.7734,
+          "exec_rate": 0.9583,
+          "full_cov_rate": 0.6417,
+          "graph_coverage_n": 120,
+          "n": 120
+        },
+        "3": {
+          "graph_coverage": 0.8863,
+          "answer_cosine": 0.7735,
+          "exec_rate": 0.9583,
+          "full_cov_rate": 0.6417,
+          "graph_coverage_n": 120,
+          "n": 120
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.8821,
+          "std": 0.0073,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7684,
+          "std": 0.0088,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9555,
+          "std": 0.0048,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.6389,
+          "std": 0.0048,
+          "n": 3
+        }
+      }
+    },
+    "seen_80": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.9094,
+          "answer_cosine": 0.7544,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.825,
+          "graph_coverage_n": 80,
+          "n": 80
+        },
+        "2": {
+          "graph_coverage": 0.9219,
+          "answer_cosine": 0.7807,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.8375,
+          "graph_coverage_n": 80,
+          "n": 80
+        },
+        "3": {
+          "graph_coverage": 0.9219,
+          "answer_cosine": 0.7814,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.8375,
+          "graph_coverage_n": 80,
+          "n": 80
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.9177,
+          "std": 0.0072,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7722,
+          "std": 0.0154,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.95,
+          "std": 0.0,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.8333,
+          "std": 0.0072,
+          "n": 3
+        }
+      }
+    },
+    "unseen_40": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.8024,
+          "answer_cosine": 0.7656,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        },
+        "2": {
+          "graph_coverage": 0.8152,
+          "answer_cosine": 0.7588,
+          "exec_rate": 0.975,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        },
+        "3": {
+          "graph_coverage": 0.8152,
+          "answer_cosine": 0.7577,
+          "exec_rate": 0.975,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.8109,
+          "std": 0.0074,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7607,
+          "std": 0.0043,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9667,
+          "std": 0.0144,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.25,
+          "std": 0.0,
+          "n": 3
+        }
+      }
+    }
+  },
+  "exp3_fewshot_graphrag_rescue": {
+    "all": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.8802,
+          "answer_cosine": 0.775,
+          "exec_rate": 0.9917,
+          "full_cov_rate": 0.6333,
+          "graph_coverage_n": 120,
+          "n": 120
+        },
+        "2": {
+          "graph_coverage": 0.8854,
+          "answer_cosine": 0.7735,
+          "exec_rate": 0.9583,
+          "full_cov_rate": 0.6417,
+          "graph_coverage_n": 120,
+          "n": 120
+        },
+        "3": {
+          "graph_coverage": 0.8854,
+          "answer_cosine": 0.7732,
+          "exec_rate": 0.9583,
+          "full_cov_rate": 0.6417,
+          "graph_coverage_n": 120,
+          "n": 120
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.8837,
+          "std": 0.003,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7739,
+          "std": 0.001,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9694,
+          "std": 0.0193,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.6389,
+          "std": 0.0048,
+          "n": 3
+        }
+      }
+    },
+    "seen_80": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.9094,
+          "answer_cosine": 0.7809,
+          "exec_rate": 0.9875,
+          "full_cov_rate": 0.825,
+          "graph_coverage_n": 80,
+          "n": 80
+        },
+        "2": {
+          "graph_coverage": 0.9219,
+          "answer_cosine": 0.7813,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.8375,
+          "graph_coverage_n": 80,
+          "n": 80
+        },
+        "3": {
+          "graph_coverage": 0.9219,
+          "answer_cosine": 0.781,
+          "exec_rate": 0.95,
+          "full_cov_rate": 0.8375,
+          "graph_coverage_n": 80,
+          "n": 80
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.9177,
+          "std": 0.0072,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7811,
+          "std": 0.0002,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9625,
+          "std": 0.0217,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.8333,
+          "std": 0.0072,
+          "n": 3
+        }
+      }
+    },
+    "unseen_40": {
+      "per_rep": {
+        "1": {
+          "graph_coverage": 0.8218,
+          "answer_cosine": 0.7633,
+          "exec_rate": 1.0,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        },
+        "2": {
+          "graph_coverage": 0.8126,
+          "answer_cosine": 0.7578,
+          "exec_rate": 0.975,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        },
+        "3": {
+          "graph_coverage": 0.8126,
+          "answer_cosine": 0.7576,
+          "exec_rate": 0.975,
+          "full_cov_rate": 0.25,
+          "graph_coverage_n": 40,
+          "n": 40
+        }
+      },
+      "across_reps": {
+        "graph_coverage": {
+          "mean": 0.8157,
+          "std": 0.0053,
+          "n": 3
+        },
+        "answer_cosine": {
+          "mean": 0.7596,
+          "std": 0.0032,
+          "n": 3
+        },
+        "exec_rate": {
+          "mean": 0.9833,
+          "std": 0.0144,
+          "n": 3
+        },
+        "full_cov_rate": {
+          "mean": 0.25,
+          "std": 0.0,
+          "n": 3
+        }
+      }
+    }
+  }
+}

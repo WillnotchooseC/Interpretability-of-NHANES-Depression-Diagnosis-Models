@@ -1,0 +1,7 @@
+ood_curriculum_progressive_corrected | ood_data/curriculum_test_250.json | reps [1, 2, 3] | 250 questions (Counter({'seen': 150, 'unseen': 100}))
+  reference sub-Qs: 488
+  rep1: 477 predicted sub-Qs ({'searching': 343, 'aggregation': 131, 'unknown': 3}), 0 samples with none, identical-to-rep1: 250/250
+  rep2: 476 predicted sub-Qs ({'searching': 345, 'aggregation': 131}), 0 samples with none, identical-to-rep1: 240/250
+  rep3: 480 predicted sub-Qs ({'searching': 344, 'aggregation': 133, 'unknown': 3}), 0 samples with none, identical-to-rep1: 228/250
+  cypher_results/test250_ood_curriculum_progressive_corrected_reps_for_judging.yaml  (736 KB)
+  cypher_results/test250_ood_curriculum_progressive_corrected_reps_for_judging.json  (941 KB)

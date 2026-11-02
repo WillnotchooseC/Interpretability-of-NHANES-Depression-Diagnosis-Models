@@ -1,0 +1,149 @@
+Loaded 120 samples from ood_data/curriculum_test_120_gold.json
+
+=== PHASE 1: decomposition via ./nhanes_model/ood_curriculum_progressive/merged_model ===
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path ./nhanes_model/ood_curriculum_progressive/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0 --max-running-requests 64 --mem-fraction-static 0.88
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 61s)
+  decomposed 120 in 171s
+  GPU memory confirmed free (1s after kill).
+  avg sub-questions/sample: 1.71 (searching 1.18)
+
+=== PHASE 2: Cypher + exec + selective synthesis (./nhanes_model/base_model_cache/Qwen3-8B-Base) ===
+Neo4j connected; schema card 7715 chars
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path ./nhanes_model/base_model_cache/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0 --max-running-requests 64 --mem-fraction-static 0.88
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 58s)
+
+======================================================================
+  [method1_fewshot] Cypher generation (142 searching sub-questions)
+======================================================================
+    [method1_fewshot-cypher] 20/142  1.5 q/s  ETA 84s
+    [method1_fewshot-cypher] 40/142  1.7 q/s  ETA 61s
+    [method1_fewshot-cypher] 60/142  2.1 q/s  ETA 40s
+    [method1_fewshot-cypher] 80/142  2.0 q/s  ETA 31s
+    [method1_fewshot-cypher] 100/142  2.1 q/s  ETA 20s
+    [method1_fewshot-cypher] 120/142  2.1 q/s  ETA 10s
+    [method1_fewshot-cypher] 140/142  2.4 q/s  ETA 1s
+    [method1_fewshot-cypher] 142/142  2.4 q/s  ETA 0s
+    [method1_fewshot-cypher] finished 142 in 58.2s
+
+  [method1_fewshot] Executing 142 Cypher queries against Neo4j...
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `externalValidation` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=149, offset=148>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 148, 'line': 1, 'column': 149}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (pred:prediction)-[:GENERATED_BY]->(mr:model_run) WHERE mr.modelType = 'logisticregression' AND mr.classRatio IN ['1:2', '1:4', '1:5'] AND mr.externalValidation = true RETURN mr.classRatio AS ratio, avg(CASE WHEN pred.correct THEN 1.0 ELSE 0.0 END) AS accuracy, count(pred) AS prediction_count ORDER BY ratio"
+
+  [method1_fewshot] Repair round 1: retrying 10 failed/empty queries...
+    [method1_fewshot-repair1] 10/10  0.9 q/s  ETA 0s
+    [method1_fewshot-repair1] finished 10 in 10.7s
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `externalValidation` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=149, offset=148>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 148, 'line': 1, 'column': 149}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (pred:prediction)-[:GENERATED_BY]->(mr:model_run) WHERE mr.modelType = 'logisticregression' AND mr.classRatio IN ['1:2', '1:4', '1:5'] AND mr.externalValidation = true RETURN mr.classRatio AS ratio, avg(CASE WHEN pred.correct THEN 1.0 ELSE 0.0 END) AS accuracy, count(pred) AS prediction_count ORDER BY ratio"
+  [method1_fewshot] Repair round 1: 0/10 improved
+
+======================================================================
+  [method1_fewshot] Answer synthesis (120 samples)
+======================================================================
+    [method1_fewshot-answer] 20/120  1.5 q/s  ETA 65s
+    [method1_fewshot-answer] 40/120  1.3 q/s  ETA 63s
+    [method1_fewshot-answer] 60/120  1.9 q/s  ETA 32s
+    [method1_fewshot-answer] 80/120  1.9 q/s  ETA 21s
+    [method1_fewshot-answer] 100/120  2.0 q/s  ETA 10s
+    [method1_fewshot-answer] 120/120  1.9 q/s  ETA 0s
+    [method1_fewshot-answer] finished 120 in 63.6s
+
+======================================================================
+  [method2_schema] Cypher generation (142 searching sub-questions)
+======================================================================
+    [method2_schema-cypher] 20/142  0.4 q/s  ETA 332s
+    [method2_schema-cypher] 40/142  0.3 q/s  ETA 309s
+    [method2_schema-cypher] 60/142  0.5 q/s  ETA 176s
+    [method2_schema-cypher] 80/142  0.6 q/s  ETA 104s
+    [method2_schema-cypher] 100/142  0.7 q/s  ETA 64s
+    [method2_schema-cypher] 120/142  0.7 q/s  ETA 30s
+    [method2_schema-cypher] 140/142  0.8 q/s  ETA 2s
+    [method2_schema-cypher] 142/142  0.8 q/s  ETA 0s
+    [method2_schema-cypher] finished 142 in 174.5s
+
+  [method2_schema] Executing 142 Cypher queries against Neo4j...
+
+  [method2_schema] Repair round 1: retrying 5 failed/empty queries...
+    [method2_schema-repair1] 5/5  0.5 q/s  ETA 0s
+    [method2_schema-repair1] finished 5 in 10.7s
+  [method2_schema] Repair round 1: 2/5 improved
+
+======================================================================
+  [method2_schema] Answer synthesis (120 samples)
+======================================================================
+    [method2_schema-answer] 20/120  1.8 q/s  ETA 55s
+    [method2_schema-answer] 40/120  1.8 q/s  ETA 45s
+    [method2_schema-answer] 60/120  2.6 q/s  ETA 23s
+    [method2_schema-answer] 80/120  2.3 q/s  ETA 17s
+    [method2_schema-answer] 100/120  2.1 q/s  ETA 9s
+    [method2_schema-answer] 120/120  2.1 q/s  ETA 0s
+    [method2_schema-answer] finished 120 in 56.4s
+  GPU memory confirmed free (1s after kill).
+
+Judging method1_fewshot answers with gpt-4o ...
+  judge failed [78]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 29936, Requested 422. Please try again in 716ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [81]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 495. Please try again in 990ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [80]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 483. Please try again in 966ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [90]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 29958, Requested 387. Please try again in 690ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [95]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 387. Please try again in 774ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [101]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 427. Please try again in 854ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [103]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 439. Please try again in 878ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [105]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 578. Please try again in 1.156s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [108]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 477. Please try again in 954ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [110]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 514. Please try again in 1.028s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [112]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 495. Please try again in 990ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+Judging method2_schema answers with gpt-4o ...
+  judge failed [12]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 379. Please try again in 758ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [17]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 366. Please try again in 732ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [20]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 372. Please try again in 744ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [22]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 378. Please try again in 756ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [21]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 381. Please try again in 762ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [23]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 388. Please try again in 776ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [29]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 397. Please try again in 794ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [24]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 377. Please try again in 754ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [35]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 29935, Requested 352. Please try again in 574ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [33]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 29899, Requested 351. Please try again in 500ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [34]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 354. Please try again in 708ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [32]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 352. Please try again in 704ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [37]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 358. Please try again in 716ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [38]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 358. Please try again in 716ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [48]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 323. Please try again in 646ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [62]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 29885, Requested 429. Please try again in 628ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [61]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 29871, Requested 457. Please try again in 656ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [65]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 427. Please try again in 854ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [69]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 29949, Requested 424. Please try again in 746ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [74]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 399. Please try again in 798ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [77]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 397. Please try again in 794ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [79]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 420. Please try again in 840ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [85]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 427. Please try again in 854ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [87]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 392. Please try again in 784ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [84]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 516. Please try again in 1.032s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [96]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 395. Please try again in 790ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [103]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 439. Please try again in 878ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [106]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 546. Please try again in 1.092s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [109]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 482. Please try again in 964ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [110]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 485. Please try again in 970ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [108]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 574. Please try again in 1.148s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+  judge failed [107]: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-C0xJAbLyQrhjrOgUThU8Gm00 on tokens per min (TPM): Limit 30000, Used 30000, Requested 587. Please try again in 1.174s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+
+==========================================================================
+  Progressive + few-shot vs GraphRAG — final-answer quality — ood_data/curriculum_test_120_gold.json
+==========================================================================
+metric                                  method1_fewshot   method2_schema
+------------------------------------------------------------------------
+searching sub-questions                             142              142
+Cypher exec-success rate                          0.993           0.9789
+Cypher non-empty rate                            0.9296           0.9789
+graph-info coverage (mean)                        0.767           0.7861
+answer cosine vs gold (mean)                     0.7425            0.734
+answer cosine vs gold (median)                   0.7597           0.7777
+JUDGE quality score (mean)                       0.7329           0.5479
+  judge: factually correct                       0.6583           0.4917
+  judge: complete                                0.7417           0.5667
+  judge: correct AND complete                    0.6583           0.4917
+  judge: no hallucination                        0.7167           0.5417
+  judge: concise / selective                      0.725            0.525
+
+Saved -> cypher_results_progressive_test120/summary.json  +  per_sample.json

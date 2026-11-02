@@ -47,3 +47,66 @@ wandb/
 # IDE servers
 .vscode-server
 .windsurf-server
+
+# Lightning Studio and local services
+.claude/
+.cloudflared/
+.gradio/
+.lightning_studio/
+.pki/
+.triton/
+
+# Model weights
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.engine
+*.safetensors
+*.h5
+*.pb
+*.tflite
+
+# Generated experiment outputs
+**/weights/
+**/checkpoints/
+**/runs/
+**/wandb/
+**/outputs/
+**/logs/
+cypher_results/
+cypher_results_*/
+
+# Credentials
+.env
+.env.*
+*.pem
+*.key
+credentials*
+secrets*
+
+# Local caches
+.venv/
+venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+# Neo4j runtime data
+/neo4j/data/
+/neo4j/logs/
+/neo4j/metrics/
+/neo4j/run/
+/neo4j/import/
+/neo4j/plugins/
+
+# Downloaded base models and trained checkpoints
+/nhanes_model/base_model_cache/
+/nhanes_model/**/best_model/
+/nhanes_model/**/checkpoint-*/
+/nhanes_model/**/checkpoints/
+
+# Local backup files
+*.bak
+*.bak_*
+*.backup

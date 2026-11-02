@@ -1,0 +1,31 @@
+
+=== re-judging method1_fewshot (120 answers), serial, rate-limit aware ===
+  20/120  (24s)
+  40/120  (52s)
+  60/120  (88s)
+  80/120  (120s)
+  100/120  (157s)
+  120/120  (194s)
+  method1_fewshot: score=0.7408 correct=0.6583 complete=0.7583 corr&comp=0.6583 no_halluc=0.725 concise=0.7333
+
+=== re-judging method2_schema (120 answers), serial, rate-limit aware ===
+  20/120  (33s)
+  40/120  (58s)
+  60/120  (86s)
+  80/120  (116s)
+  100/120  (144s)
+  120/120  (181s)
+  method2_schema: score=0.7338 correct=0.6583 complete=0.775 corr&comp=0.6583 no_halluc=0.7083 concise=0.6833
+
+Rewrote cypher_results_progressive_test120/per_sample.json and cypher_results_progressive_test120/summary.json
+
+metric                                  method1_fewshot   method2_schema
+graph-info coverage (mean)                        0.767           0.7861
+answer cosine vs gold (mean)                     0.7425            0.734
+answer cosine vs gold (median)                   0.7597           0.7777
+JUDGE quality score (mean)                       0.7408           0.7338
+  judge: factually correct                       0.6583           0.6583
+  judge: complete                                0.7583            0.775
+  judge: correct AND complete                    0.6583           0.6583
+  judge: no hallucination                         0.725           0.7083
+  judge: concise / selective                     0.7333           0.6833

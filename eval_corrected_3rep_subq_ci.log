@@ -1,0 +1,65 @@
+cache hit: progressive_corrected rep1
+cache hit: progressive_corrected rep2
+Judging progressive_corrected rep3: 120 samples ...
+  done in 23s
+cache hit: baseline_corrected rep1
+cache hit: baseline_corrected rep2
+Judging baseline_corrected rep3: 120 samples ...
+  done in 30s
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/scipy/stats/_morestats.py:4102: UserWarning: Sample size too small for normal approximation.
+  warnings.warn("Sample size too small for normal approximation.")
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/scipy/stats/_morestats.py:4088: UserWarning: Exact p-value calculation does not work if there are zeros. Switching to normal approximation.
+  warnings.warn("Exact p-value calculation does not work if there are "
+
+====================================================================================================
+  3-REP SUB-QUESTION COMPARISON (temperature=0, 120 questions, GPT-4o judge)
+  mean ± std across 3 reps  [95% CI: cluster bootstrap over samples, B=10000]
+====================================================================================================
+
+  ===== overall  (n=120) =====
+    Sub-Q recall        
+      progressive_corrected     86.7 ± 1.8  [ 80.5,  92.3]  reps=[85.65, 88.7, 85.65]
+      baseline_corrected        83.0 ± 0.4  [ 76.8,  89.0]  reps=[82.61, 83.04, 83.48]
+      Δ (prog - base)           +3.6  [ -1.3,  +8.4]    wilcoxon_p=0.08016
+    Sub-Q hallucination 
+      progressive_corrected     10.1 ± 1.0  [  5.1,  15.6]  reps=[11.22, 9.27, 9.85]
+      baseline_corrected        17.1 ± 1.0  [ 11.1,  23.2]  reps=[16.52, 18.26, 16.52]
+      Δ (prog - base)           -6.9  [-12.2,  -2.0] *  wilcoxon_p=0.01357
+    Full-coverage samples
+      progressive_corrected     86.7 ± 2.2  [ 80.6,  91.9]  reps=[85.0, 89.17, 85.83]
+      baseline_corrected        81.1 ± 1.3  [ 74.2,  87.5]  reps=[80.83, 80.0, 82.5]
+      Δ (prog - base)           +5.5  [ -1.1, +12.5]    mcnemar_p=0.2379
+
+  ===== seen_80  (n=80) =====
+    Sub-Q recall        
+      progressive_corrected     98.6 ± 1.3  [ 97.3,  99.7]  reps=[97.5, 100.0, 98.33]
+      baseline_corrected        99.2 ± 0.8  [ 98.1, 100.0]  reps=[98.33, 100.0, 99.17]
+      Δ (prog - base)           -0.6  [ -1.9,  +0.8]    wilcoxon_p=0.4142
+    Sub-Q hallucination 
+      progressive_corrected      0.3 ± 0.5  [  0.0,   0.9]  reps=[0.83, 0.0, 0.0]
+      baseline_corrected         0.0 ± 0.0  [  0.0,   0.0]  reps=[0.0, 0.0, 0.0]
+      Δ (prog - base)           +0.3  [ +0.0,  +0.9]    wilcoxon_p=0.3173
+    Full-coverage samples
+      progressive_corrected     97.9 ± 1.9  [ 95.8,  99.6]  reps=[96.25, 100.0, 97.5]
+      baseline_corrected        98.8 ± 1.2  [ 97.1, 100.0]  reps=[97.5, 100.0, 98.75]
+      Δ (prog - base)           -0.8  [ -2.9,  +1.2]    mcnemar_p=1
+
+  ===== unseen_40  (n=40) =====
+    Sub-Q recall        
+      progressive_corrected     73.6 ± 2.4  [ 63.0,  84.3]  reps=[72.73, 76.36, 71.82]
+      baseline_corrected        65.5 ± 0.9  [ 55.5,  75.7]  reps=[65.45, 64.55, 66.36]
+      Δ (prog - base)           +8.1  [ -2.1, +17.8]    wilcoxon_p=0.04844
+    Sub-Q hallucination 
+      progressive_corrected     24.1 ± 1.8  [ 13.5,  34.5]  reps=[25.88, 22.35, 24.1]
+      baseline_corrected        35.8 ± 2.1  [ 25.8,  45.5]  reps=[34.55, 38.18, 34.55]
+      Δ (prog - base)          -11.7  [-22.1,  -1.9] *  wilcoxon_p=0.009354
+    Full-coverage samples
+      progressive_corrected     64.2 ± 2.9  [ 50.0,  78.3]  reps=[62.5, 67.5, 62.5]
+      baseline_corrected        45.8 ± 5.2  [ 31.7,  60.0]  reps=[47.5, 40.0, 50.0]
+      Δ (prog - base)          +18.2  [ -1.7, +37.5]    mcnemar_p=0.2379
+
+  Run-to-run determinism (identical predicted sub-question strings vs rep1):
+    progressive_corrected    {'rep1_vs_rep2_identical_samples': '90/120', 'rep1_vs_rep3_identical_samples': '89/120'}
+    baseline_corrected       {'rep1_vs_rep2_identical_samples': '102/120', 'rep1_vs_rep3_identical_samples': '113/120'}
+
+Saved -> cypher_results/corrected_3rep_subq_summary.json

@@ -1,0 +1,21 @@
+
+==========================================================================================
+  Per-sub-question gold_results coverage (exp3 rescue, dict-level, full-match)
+==========================================================================================
+
+  -- overall  (145 sub-questions with >=1 gold result) --
+    Dict-level coverage:         52.6%  [48.6, 56.5]  (328/624)
+    Sub-question fully covered:  71.7%  [63.9, 78.4]
+    Sub-question zero covered:   16.6%  [11.4, 23.4]
+
+  -- seen_80  (90 sub-questions with >=1 gold result) --
+    Dict-level coverage:         94.6%  [89.8, 97.3]  (141/149)
+    Sub-question fully covered:  93.3%  [86.2, 96.9]
+    Sub-question zero covered:    6.7%  [3.1, 13.8]
+
+  -- unseen_40  (55 sub-questions with >=1 gold result) --
+    Dict-level coverage:         39.4%  [35.1, 43.8]  (187/475)
+    Sub-question fully covered:  36.4%  [24.9, 49.6]
+    Sub-question zero covered:   32.7%  [21.8, 45.9]
+
+Saved -> cypher_results/exp3_per_subquestion_coverage_summary.json + _detail.json

@@ -1,0 +1,33 @@
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag] ood_data/progressive_decomp_for_experiments.json: 120 samples
+  processed 10/120 samples (103.9s)
+  processed 20/120 samples (232.2s)
+  processed 30/120 samples (373.8s)
+  processed 40/120 samples (491.5s)
+  processed 50/120 samples (543.2s)
+  processed 60/120 samples (698.2s)
+  processed 70/120 samples (917.2s)
+  processed 80/120 samples (1126.3s)
+  processed 90/120 samples (1342.7s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(b:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 129 AND b.name = 'Creatinine' AND fi.scope = 'local' AND fi.modelType = 'naivebayes' AND fi.classRatio = '1:2' RETURN b.name AS biomarker, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(b:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 25 AND b.name = 'Creatinine' AND fi.scope = 'local' AND fi.modelType = 'decisiontree' AND fi.classRatio = '1:3' RETURN b.name AS biomarker, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 100/120 samples (1580.4s)
+  processed 110/120 samples (1824.5s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 128 AND mr.modelType = 'naivebayes' AND mr.classRatio = '1:4' AND fi.scope = 'global' AND b.name = 'Albumin' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.classRatio, model, biomarker"
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 119 AND mr.modelType = 'decisiontree' AND mr.classRatio = '1:4' AND fi.scope = 'global' AND b.name = 'Vitamin D3' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.classRatio, model, biomarker"
+  processed 120/120 samples (2167.7s)
+{
+  "experiment": "exp2_fewshot_graphrag",
+  "samples": 120,
+  "searching_subquestions": 141,
+  "exec_success": 136,
+  "exec_rate": 0.9645,
+  "nonempty_results": 131,
+  "valid_rate": 0.9291,
+  "samples_all_searching_steps_nonempty": 109,
+  "sample_all_steps_rate": 0.9083,
+  "steps_using_original_input_entity_recovery": 51
+}
+Saved: results_exp2_fewshot_graphrag/progressive_decomp_for_experiments_exp2_fewshot_graphrag.json

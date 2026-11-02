@@ -1,0 +1,319 @@
+
+######################################################################
+### fewshot rep1  2026-09-12T16:45:59Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 61s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment1_5_baseline_original_input.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp1_5_baseline_original_input_test200_rep1
+Neo4j connected: bolt://localhost:7687
+
+[exp1_5_baseline_original_input] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+  processed 10/200 samples (99.8s)
+  processed 20/200 samples (188.4s)
+  processed 30/200 samples (272.6s)
+  processed 40/200 samples (361.5s)
+  processed 50/200 samples (470.2s)
+  processed 60/200 samples (567.2s)
+  processed 70/200 samples (659.6s)
+  processed 80/200 samples (756.1s)
+  processed 90/200 samples (850.6s)
+  processed 100/200 samples (953.0s)
+  processed 110/200 samples (1104.5s)
+  processed 120/200 samples (1234.8s)
+  processed 130/200 samples (1362.6s)
+  processed 140/200 samples (1518.7s)
+  processed 150/200 samples (1666.0s)
+  processed 160/200 samples (1794.0s)
+  processed 170/200 samples (1911.9s)
+  processed 180/200 samples (2038.7s)
+  processed 190/200 samples (2171.3s)
+  processed 200/200 samples (2303.3s)
+{
+  "experiment": "exp1_5_baseline_original_input",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 279,
+  "exec_rate": 0.9654,
+  "nonempty_results": 277,
+  "valid_rate": 0.9585,
+  "samples_all_searching_steps_nonempty": 187,
+  "sample_all_steps_rate": 0.935
+}
+Saved: results_exp1_5_baseline_original_input_test200_rep1/progressive_corrected_decomp_test200_exp1_5_baseline_original_input.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp1_5_baseline_original_input_test200_rep1/progressive_corrected_decomp_test200_exp1_5_baseline_original_input.json
+
+######################################################################
+### fewshot rep2  2026-09-12T17:25:36Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment1_5_baseline_original_input.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp1_5_baseline_original_input_test200_rep2
+Neo4j connected: bolt://localhost:7687
+
+[exp1_5_baseline_original_input] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+  processed 10/200 samples (93.1s)
+  processed 20/200 samples (181.0s)
+  processed 30/200 samples (264.4s)
+  processed 40/200 samples (352.9s)
+  processed 50/200 samples (460.8s)
+  processed 60/200 samples (557.8s)
+  processed 70/200 samples (649.8s)
+  processed 80/200 samples (746.3s)
+  processed 90/200 samples (840.7s)
+  processed 100/200 samples (942.8s)
+  processed 110/200 samples (1093.0s)
+  processed 120/200 samples (1222.8s)
+  processed 130/200 samples (1350.2s)
+  processed 140/200 samples (1505.9s)
+  processed 150/200 samples (1652.9s)
+  processed 160/200 samples (1780.7s)
+  processed 170/200 samples (1898.4s)
+  processed 180/200 samples (2024.8s)
+  processed 190/200 samples (2157.2s)
+  processed 200/200 samples (2289.1s)
+{
+  "experiment": "exp1_5_baseline_original_input",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 279,
+  "exec_rate": 0.9654,
+  "nonempty_results": 277,
+  "valid_rate": 0.9585,
+  "samples_all_searching_steps_nonempty": 187,
+  "sample_all_steps_rate": 0.935
+}
+Saved: results_exp1_5_baseline_original_input_test200_rep2/progressive_corrected_decomp_test200_exp1_5_baseline_original_input.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp1_5_baseline_original_input_test200_rep2/progressive_corrected_decomp_test200_exp1_5_baseline_original_input.json
+
+######################################################################
+### fewshot rep3  2026-09-12T18:04:41Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment1_5_baseline_original_input.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp1_5_baseline_original_input_test200_rep3
+Neo4j connected: bolt://localhost:7687
+
+[exp1_5_baseline_original_input] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+  processed 10/200 samples (93.1s)
+  processed 20/200 samples (181.0s)
+  processed 30/200 samples (264.4s)
+  processed 40/200 samples (352.9s)
+  processed 50/200 samples (460.8s)
+  processed 60/200 samples (557.8s)
+  processed 70/200 samples (649.8s)
+  processed 80/200 samples (746.3s)
+  processed 90/200 samples (840.7s)
+  processed 100/200 samples (942.8s)
+  processed 110/200 samples (1093.0s)
+  processed 120/200 samples (1222.8s)
+  processed 130/200 samples (1350.2s)
+  processed 140/200 samples (1506.0s)
+  processed 150/200 samples (1652.9s)
+  processed 160/200 samples (1780.7s)
+  processed 170/200 samples (1898.5s)
+  processed 180/200 samples (2024.8s)
+  processed 190/200 samples (2157.2s)
+  processed 200/200 samples (2289.1s)
+{
+  "experiment": "exp1_5_baseline_original_input",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 279,
+  "exec_rate": 0.9654,
+  "nonempty_results": 277,
+  "valid_rate": 0.9585,
+  "samples_all_searching_steps_nonempty": 187,
+  "sample_all_steps_rate": 0.935
+}
+Saved: results_exp1_5_baseline_original_input_test200_rep3/progressive_corrected_decomp_test200_exp1_5_baseline_original_input.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp1_5_baseline_original_input_test200_rep3/progressive_corrected_decomp_test200_exp1_5_baseline_original_input.json
+
+######################################################################
+### graphrag rep1  2026-09-12T18:43:44Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment2_fewshot_graphrag.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp2_fewshot_graphrag_test200_rep1
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 123 AND m.name = 'Direct HDL-Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 10/200 samples (90.6s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 36 AND m.name = 'Total Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 20/200 samples (181.7s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 256 AND m.name = 'RBC Folate' AND fi.scope = 'local' AND fi.modelType = 'randomforest' AND fi.classRatio = '1:5' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.direction AS direction"
+  processed 30/200 samples (261.2s)
+  processed 40/200 samples (351.9s)
+  processed 50/200 samples (459.3s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 52 AND m.name = 'Total Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 60/200 samples (553.0s)
+  processed 70/200 samples (643.7s)
+  processed 80/200 samples (742.5s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 24 AND m.name = 'Albumin' AND fi.scope = 'local' AND fi.direction = 'positive' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 90/200 samples (838.1s)
+  processed 100/200 samples (940.8s)
+  processed 110/200 samples (1102.4s)
+  processed 120/200 samples (1239.8s)
+  processed 130/200 samples (1377.8s)
+  processed 140/200 samples (1546.0s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 20 AND mr.modelType IN ['logisticregression', 'randomforest', 'decisiontree'] AND mr.classRatio = '1:5' AND fi.scope = 'global' AND b.name IN ['Vitamin D3'] RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.modelFamily, mr.classRatio, b.name"
+  processed 150/200 samples (1706.3s)
+  processed 160/200 samples (1845.6s)
+  processed 170/200 samples (1968.0s)
+  processed 180/200 samples (2101.6s)
+  processed 190/200 samples (2242.7s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 193 AND mr.modelType = 'logisticregression' AND mr.classRatio = '1:1' AND b.name = 'Total Cholesterol' AND fi.scope = 'global' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.classRatio, model, biomarker"
+  processed 200/200 samples (2387.4s)
+{
+  "experiment": "exp2_fewshot_graphrag",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 277,
+  "exec_rate": 0.9585,
+  "nonempty_results": 265,
+  "valid_rate": 0.917,
+  "samples_all_searching_steps_nonempty": 176,
+  "sample_all_steps_rate": 0.88,
+  "steps_using_original_input_entity_recovery": 171
+}
+Saved: results_exp2_fewshot_graphrag_test200_rep1/progressive_corrected_decomp_test200_exp2_fewshot_graphrag.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp2_fewshot_graphrag_test200_rep1/progressive_corrected_decomp_test200_exp2_fewshot_graphrag.json
+
+######################################################################
+### graphrag rep2  2026-09-12T19:24:28Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment2_fewshot_graphrag.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp2_fewshot_graphrag_test200_rep2
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 123 AND m.name = 'Direct HDL-Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 10/200 samples (88.7s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 36 AND m.name = 'Total Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 20/200 samples (179.5s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 256 AND m.name = 'RBC Folate' AND fi.scope = 'local' AND fi.modelType = 'randomforest' AND fi.classRatio = '1:5' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.direction AS direction"
+  processed 30/200 samples (258.5s)
+  processed 40/200 samples (349.1s)
+  processed 50/200 samples (456.4s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 52 AND m.name = 'Total Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 60/200 samples (550.0s)
+  processed 70/200 samples (640.7s)
+  processed 80/200 samples (739.5s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 24 AND m.name = 'Albumin' AND fi.scope = 'local' AND fi.direction = 'positive' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 90/200 samples (835.0s)
+  processed 100/200 samples (937.5s)
+  processed 110/200 samples (1097.0s)
+  processed 120/200 samples (1234.1s)
+  processed 130/200 samples (1372.1s)
+  processed 140/200 samples (1540.1s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 20 AND mr.modelType IN ['logisticregression', 'randomforest', 'decisiontree'] AND mr.classRatio = '1:5' AND fi.scope = 'global' AND b.name IN ['Vitamin D3'] RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.modelFamily, mr.classRatio, b.name"
+  processed 150/200 samples (1700.1s)
+  processed 160/200 samples (1839.3s)
+  processed 170/200 samples (1961.6s)
+  processed 180/200 samples (2094.8s)
+  processed 190/200 samples (2235.6s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 193 AND mr.modelType = 'logisticregression' AND mr.classRatio = '1:1' AND b.name = 'Total Cholesterol' AND fi.scope = 'global' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.classRatio, model, biomarker"
+  processed 200/200 samples (2379.7s)
+{
+  "experiment": "exp2_fewshot_graphrag",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 277,
+  "exec_rate": 0.9585,
+  "nonempty_results": 265,
+  "valid_rate": 0.917,
+  "samples_all_searching_steps_nonempty": 176,
+  "sample_all_steps_rate": 0.88,
+  "steps_using_original_input_entity_recovery": 171
+}
+Saved: results_exp2_fewshot_graphrag_test200_rep2/progressive_corrected_decomp_test200_exp2_fewshot_graphrag.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp2_fewshot_graphrag_test200_rep2/progressive_corrected_decomp_test200_exp2_fewshot_graphrag.json
+
+######################################################################
+### graphrag rep3  2026-09-12T20:05:02Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment2_fewshot_graphrag.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp2_fewshot_graphrag_test200_rep3
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 123 AND m.name = 'Direct HDL-Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 10/200 samples (88.8s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 36 AND m.name = 'Total Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 20/200 samples (179.5s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 256 AND m.name = 'RBC Folate' AND fi.scope = 'local' AND fi.modelType = 'randomforest' AND fi.classRatio = '1:5' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.direction AS direction"
+  processed 30/200 samples (258.5s)
+  processed 40/200 samples (349.1s)
+  processed 50/200 samples (456.4s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 52 AND m.name = 'Total Cholesterol' AND fi.scope = 'local' AND fi.direction = 'negative' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 60/200 samples (550.0s)
+  processed 70/200 samples (640.7s)
+  processed 80/200 samples (739.5s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `FEATURE_IMPORTANCE` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=84, offset=83>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 83, 'line': 1, 'column': 84}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(m:biomarker)-[:FEATURE_IMPORTANCE]->(fi:FEATURE_IMPORTANCE) WHERE toInteger(p.id) = 24 AND m.name = 'Albumin' AND fi.scope = 'local' AND fi.direction = 'positive' RETURN m.name AS biomarker, m.value AS value, fi.shapValue AS shap_value, fi.absShapValue AS abs_shap_value, fi.direction AS direction"
+  processed 90/200 samples (835.0s)
+  processed 100/200 samples (937.5s)
+  processed 110/200 samples (1097.2s)
+  processed 120/200 samples (1234.3s)
+  processed 130/200 samples (1372.2s)
+  processed 140/200 samples (1540.1s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 20 AND mr.modelType IN ['logisticregression', 'randomforest', 'decisiontree'] AND mr.classRatio = '1:5' AND fi.scope = 'global' AND b.name IN ['Vitamin D3'] RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.modelFamily, mr.classRatio, b.name"
+  processed 150/200 samples (1700.0s)
+  processed 160/200 samples (1839.2s)
+  processed 170/200 samples (1961.0s)
+  processed 180/200 samples (2094.1s)
+  processed 190/200 samples (2234.7s)
+Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 193 AND mr.modelType = 'logisticregression' AND mr.classRatio = '1:1' AND b.name = 'Total Cholesterol' AND fi.scope = 'global' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency ORDER BY mr.classRatio, model, biomarker"
+  processed 200/200 samples (2379.0s)
+{
+  "experiment": "exp2_fewshot_graphrag",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 277,
+  "exec_rate": 0.9585,
+  "nonempty_results": 265,
+  "valid_rate": 0.917,
+  "samples_all_searching_steps_nonempty": 176,
+  "sample_all_steps_rate": 0.88,
+  "steps_using_original_input_entity_recovery": 171
+}
+Saved: results_exp2_fewshot_graphrag_test200_rep3/progressive_corrected_decomp_test200_exp2_fewshot_graphrag.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp2_fewshot_graphrag_test200_rep3/progressive_corrected_decomp_test200_exp2_fewshot_graphrag.json
+merged fewshot: 200 records x reps [1, 2, 3] -> cypher_results/test200_fewshot_exp1_5_3reps.json (2484 KB)
+  rep1 metrics: {"experiment": "exp1_5_baseline_original_input", "samples": 200, "searching_subquestions": 289, "exec_success": 279, "exec_rate": 0.9654, "nonempty_results": 277, "valid_rate": 0.9585, "samples_all_searching_steps_nonempty": 187, "sample_all_steps_rate": 0.935}
+  rep2 metrics: {"experiment": "exp1_5_baseline_original_input", "samples": 200, "searching_subquestions": 289, "exec_success": 279, "exec_rate": 0.9654, "nonempty_results": 277, "valid_rate": 0.9585, "samples_all_searching_steps_nonempty": 187, "sample_all_steps_rate": 0.935}
+  rep3 metrics: {"experiment": "exp1_5_baseline_original_input", "samples": 200, "searching_subquestions": 289, "exec_success": 279, "exec_rate": 0.9654, "nonempty_results": 277, "valid_rate": 0.9585, "samples_all_searching_steps_nonempty": 187, "sample_all_steps_rate": 0.935}
+merged graphrag: 200 records x reps [1, 2, 3] -> cypher_results/test200_graphrag_exp2_3reps.json (5310 KB)
+  rep1 metrics: {"experiment": "exp2_fewshot_graphrag", "samples": 200, "searching_subquestions": 289, "exec_success": 277, "exec_rate": 0.9585, "nonempty_results": 265, "valid_rate": 0.917, "samples_all_searching_steps_nonempty": 176, "sample_all_steps_rate": 0.88, "steps_using_original_input_entity_recovery": 171}
+  rep2 metrics: {"experiment": "exp2_fewshot_graphrag", "samples": 200, "searching_subquestions": 289, "exec_success": 277, "exec_rate": 0.9585, "nonempty_results": 265, "valid_rate": 0.917, "samples_all_searching_steps_nonempty": 176, "sample_all_steps_rate": 0.88, "steps_using_original_input_entity_recovery": 171}
+  rep3 metrics: {"experiment": "exp2_fewshot_graphrag", "samples": 200, "searching_subquestions": 289, "exec_success": 277, "exec_rate": 0.9585, "nonempty_results": 265, "valid_rate": 0.917, "samples_all_searching_steps_nonempty": 176, "sample_all_steps_rate": 0.88, "steps_using_original_input_entity_recovery": 171}
+
+ALL DONE

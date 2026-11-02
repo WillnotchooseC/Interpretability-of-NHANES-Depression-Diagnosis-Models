@@ -1,0 +1,30 @@
+
+=== exp1_baseline_fewshot ===
+  20/120 (18s)
+  40/120 (33s)
+  60/120 (44s)
+  80/120 (90s)
+  100/120 (103s)
+  120/120 (140s)
+  done in 140s; empty final_answer at: []
+  overwrote results_exp1_baseline_fewshot/progressive_decomp_for_experiments_exp1_baseline_fewshot.json
+
+=== exp2_fewshot_graphrag ===
+  20/120 (15s)
+  40/120 (32s)
+  60/120 (43s)
+  80/120 (85s)
+  100/120 (103s)
+  120/120 (154s)
+  done in 154s; empty final_answer at: []
+  overwrote results_exp2_fewshot_graphrag/progressive_decomp_for_experiments_exp2_fewshot_graphrag.json
+
+=== exp3_fewshot_graphrag_rescue ===
+  20/120 (15s)
+  40/120 (33s)
+  60/120 (43s)
+  80/120 (84s)
+  100/120 (104s)
+  120/120 (158s)
+  done in 158s; empty final_answer at: []
+  overwrote results_exp3_fewshot_graphrag_rescue/progressive_decomp_for_experiments_exp3_fewshot_graphrag_rescue.json

@@ -1,0 +1,53 @@
+
+######################################################################
+### graphrag_v2 rep1  2026-09-12T21:24:11Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 298s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment2_fewshot_graphrag_v2.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp2_fewshot_graphrag_v2_test200_rep1
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag_v2] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+  processed 10/200 samples (104.1s)
+  processed 20/200 samples (197.4s)
+  processed 30/200 samples (280.8s)
+  processed 40/200 samples (373.9s)
+  processed 50/200 samples (485.2s)
+  processed 60/200 samples (587.1s)
+  processed 70/200 samples (682.1s)
+  processed 80/200 samples (783.4s)
+  processed 90/200 samples (884.3s)
+  processed 100/200 samples (992.3s)
+  processed 110/200 samples (1152.0s)
+  processed 120/200 samples (1284.4s)
+  processed 130/200 samples (1416.9s)
+  processed 140/200 samples (1582.2s)
+  processed 150/200 samples (1734.6s)
+  processed 160/200 samples (1868.3s)
+  processed 170/200 samples (1987.5s)
+  processed 180/200 samples (2128.4s)
+  processed 190/200 samples (2272.6s)
+  processed 200/200 samples (2413.3s)
+{
+  "experiment": "exp2_fewshot_graphrag_v2",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 287,
+  "exec_rate": 0.9931,
+  "nonempty_results": 286,
+  "valid_rate": 0.9896,
+  "samples_all_searching_steps_nonempty": 196,
+  "sample_all_steps_rate": 0.98,
+  "steps_using_original_input_entity_recovery": 171
+}
+Saved: results_exp2_fewshot_graphrag_v2_test200_rep1/progressive_corrected_decomp_test200_exp2_fewshot_graphrag_v2.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp2_fewshot_graphrag_v2_test200_rep1/progressive_corrected_decomp_test200_exp2_fewshot_graphrag_v2.json
+merged graphrag_v2: 200 records x reps [1] -> cypher_results/test200_graphrag_v2_exp2_reps.json (3135 KB)
+  rep1 metrics: {"experiment": "exp2_fewshot_graphrag_v2", "samples": 200, "searching_subquestions": 289, "exec_success": 287, "exec_rate": 0.9931, "nonempty_results": 286, "valid_rate": 0.9896, "samples_all_searching_steps_nonempty": 196, "sample_all_steps_rate": 0.98, "steps_using_original_input_entity_recovery": 171}
+
+ALL DONE

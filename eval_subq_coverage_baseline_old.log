@@ -1,0 +1,46 @@
+Embedding 363 unique sub-questions (text-embedding-3-large)...
+
+==================================================================
+  Sub-question coverage — baseline_old   (cover threshold cos >= 0.85)
+  120 samples | ref sub-Qs = 230 | pred sub-Qs = 214
+==================================================================
+
+  COVERAGE (ref sub-Qs with an adequate predicted partner; extras ignored)
+    Overall:      105/230 (45.7%)
+    searching:    100/145 (69.0%)
+    aggregation:  5/85 (5.9%)
+
+  PER-SAMPLE — output fully contains the expected sub-questions
+    Full coverage:                 45/120 (37.5%)
+    Full coverage + all types ok:  45/120 (37.5%)
+
+  TYPE CONSISTENCY (among covered pairs)
+    pred type == ref type:  102/105 (97.1%)
+
+  SEMANTIC (covered aligned pairs)
+    cosine mean:  0.9214  (n=105)
+
+  COUNT (redundancy tolerated — 'over' is not a failure)
+    exact count match:  93/120 (77.5%)
+    avg ref / pred:     1.92 / 1.78
+    over / under:       8 / 19   (under = missing sub-Qs = real failure)
+
+  Samples with an uncovered reference sub-question (first 6):
+    - For patient 172 at 1:3, compare the depression probabilities from decision tree 
+        MISSING: At 1:3, what depression probability does each requested model predict for patient 172?
+        MISSING: Which requested model gives the highest depression probability?
+    - For patient 104 at 1:4, compare the depression probabilities from naive bayes, d
+        MISSING: At 1:4, what depression probability does each requested model predict for patient 104?
+        MISSING: Which requested model gives the highest depression probability?
+    - For patient 113 at 1:1, compare the depression probabilities from random forest 
+        MISSING: Which requested model gives the highest depression probability?
+    - For patient 188 at 1:2, compare the depression probabilities from naive bayes, r
+        MISSING: At 1:2, what depression probability does each requested model predict for patient 188?
+        MISSING: Which requested model gives the highest depression probability?
+    - For patient 255 at 1:5, compare the depression probabilities from random forest 
+        MISSING: Which requested model gives the highest depression probability?
+    - For patient 61 at 1:5, compare the depression probabilities from naive bayes, de
+        MISSING: At 1:5, what depression probability does each requested model predict for patient 61?
+        MISSING: Which requested model gives the highest depression probability?
+
+Saved -> /tmp/claude-1000/-teamspace-studios-this-studio/0b7148fe-ea26-41be-89cc-b9d115e6aab8/scratchpad/subq_coverage_old.json

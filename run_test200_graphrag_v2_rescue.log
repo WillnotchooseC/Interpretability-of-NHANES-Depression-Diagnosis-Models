@@ -1,0 +1,57 @@
+
+######################################################################
+### graphrag_v2_rescue rep1  2026-09-13T14:53:28Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 67s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment3_fewshot_graphrag_v2_rescue.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp3_fewshot_graphrag_v2_rescue_test200_rep1
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp3_fewshot_graphrag_v2_rescue] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+  processed 10/200 samples (102.6s)
+  processed 20/200 samples (195.9s)
+  processed 30/200 samples (289.5s)
+  processed 40/200 samples (382.8s)
+  processed 50/200 samples (494.1s)
+  processed 60/200 samples (596.1s)
+  processed 70/200 samples (691.2s)
+  processed 80/200 samples (792.5s)
+  processed 90/200 samples (893.5s)
+  processed 100/200 samples (1001.7s)
+  processed 110/200 samples (1184.4s)
+  processed 120/200 samples (1344.3s)
+  processed 130/200 samples (1480.3s)
+  processed 140/200 samples (1662.1s)
+  processed 150/200 samples (1837.6s)
+  processed 160/200 samples (1975.4s)
+  processed 170/200 samples (2098.7s)
+  processed 180/200 samples (2243.2s)
+  processed 190/200 samples (2390.8s)
+  processed 200/200 samples (2542.5s)
+{
+  "experiment": "exp3_fewshot_graphrag_v2_rescue",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 289,
+  "exec_rate": 1.0,
+  "nonempty_results": 286,
+  "valid_rate": 0.9896,
+  "samples_all_searching_steps_nonempty": 196,
+  "sample_all_steps_rate": 0.98,
+  "steps_using_original_input_entity_recovery": 171,
+  "rescue_triggered_steps": 25,
+  "rescue_trigger_rate": 0.0865,
+  "post_rescue_triggered_steps": 7,
+  "post_rescue_improved_steps": 4
+}
+Saved: results_exp3_fewshot_graphrag_v2_rescue_test200_rep1/progressive_corrected_decomp_test200_exp3_fewshot_graphrag_v2_rescue.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp3_fewshot_graphrag_v2_rescue_test200_rep1/progressive_corrected_decomp_test200_exp3_fewshot_graphrag_v2_rescue.json
+merged graphrag_v2_rescue: 200 records x reps [1] -> cypher_results/test200_graphrag_v2_rescue_exp3_reps.json (2337 KB)
+  rep1 metrics: {"experiment": "exp3_fewshot_graphrag_v2_rescue", "samples": 200, "searching_subquestions": 289, "exec_success": 289, "exec_rate": 1.0, "nonempty_results": 286, "valid_rate": 0.9896, "samples_all_searching_steps_nonempty": 196, "sample_all_steps_rate": 0.98, "steps_using_original_input_entity_recovery": 171, "rescue_triggered_steps": 25, "rescue_trigger_rate": 0.0865, "post_rescue_triggered_steps": 7, "post_rescue_improved_steps": 4}
+
+ALL DONE

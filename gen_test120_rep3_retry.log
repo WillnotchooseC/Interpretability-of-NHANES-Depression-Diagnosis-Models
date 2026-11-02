@@ -1,0 +1,32 @@
+
+======================================================================
+  ood_curriculum_progressive_corrected: reps [3] on ood_data/curriculum_test_120.json
+======================================================================
+
+  --- rep3 (fresh server) ---
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 300s)...
+  Server ready! (took 55s)
+  Test samples: 120
+  Done! 120 samples in 275.3s (0.4 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_120_rep3/test_predictions.json  (0 empty)
+
+======================================================================
+  ood_curriculum_baseline_mixed1076_corrected: reps [3] on ood_data/curriculum_test_120.json
+======================================================================
+
+  --- rep3 (fresh server) ---
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 300s)...
+  Server ready! (took 61s)
+  Test samples: 120
+  Done! 120 samples in 275.6s (0.4 samples/s)
+  Shutting down sglang server...
+  Server stopped.
+  Saved: nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_120_rep3/test_predictions.json  (0 empty)
+
+All reps generated.

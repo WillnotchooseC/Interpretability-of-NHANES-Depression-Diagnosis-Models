@@ -1,0 +1,402 @@
+[2026-06-10 17:19:14] Watchdog started (interval=30s)
+[2026-06-10 17:19:14] ==> Restarting stack
+[2026-06-10 17:19:17]     app.py PID=37034, waiting up to 300s for ready...
+[2026-06-10 17:20:08] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-10 18:51:25] SGLang health failing
+[2026-06-10 18:51:25] ==> Restarting stack
+[2026-06-10 18:51:28]     app.py PID=56702, waiting up to 300s for ready...
+[2026-06-10 18:52:19] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-10 20:23:36] SGLang health failing
+[2026-06-10 20:23:36] ==> Restarting stack
+[2026-06-10 20:23:39]     app.py PID=123849, waiting up to 300s for ready...
+[2026-06-10 20:24:31] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-10 21:55:48] SGLang health failing
+[2026-06-10 21:55:48] ==> Restarting stack
+[2026-06-10 21:55:51]     app.py PID=152246, waiting up to 300s for ready...
+[2026-06-10 21:56:42] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-10 23:25:55] SGLang health failing
+[2026-06-10 23:25:55] ==> Restarting stack
+[2026-06-10 23:25:58]     app.py PID=264793, waiting up to 300s for ready...
+[2026-06-10 23:26:49] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-11 00:55:31] SGLang health failing
+[2026-06-11 00:55:31] ==> Restarting stack
+[2026-06-11 00:55:34]     app.py PID=497160, waiting up to 300s for ready...
+[2026-06-11 00:56:25] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-11 02:27:43] SGLang health failing
+[2026-06-11 02:27:43] ==> Restarting stack
+[2026-06-11 02:27:46]     app.py PID=590582, waiting up to 300s for ready...
+[2026-06-11 02:28:43] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 03:51:12] SGLang health failing
+[2026-06-11 03:51:12] ==> Restarting stack
+[2026-06-11 03:51:15]     app.py PID=879480, waiting up to 300s for ready...
+[2026-06-11 03:52:13] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 05:22:59] SGLang health failing
+[2026-06-11 05:22:59] ==> Restarting stack
+[2026-06-11 05:23:02]     app.py PID=1222531, waiting up to 300s for ready...
+[2026-06-11 05:23:59] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 06:54:45] SGLang health failing
+[2026-06-11 06:54:45] ==> Restarting stack
+[2026-06-11 06:54:48]     app.py PID=1568907, waiting up to 300s for ready...
+[2026-06-11 06:55:46] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 08:26:32] SGLang health failing
+[2026-06-11 08:26:32] ==> Restarting stack
+[2026-06-11 08:26:35]     app.py PID=1915584, waiting up to 300s for ready...
+[2026-06-11 08:27:26] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-11 09:58:43] SGLang health failing
+[2026-06-11 09:58:43] ==> Restarting stack
+[2026-06-11 09:58:46]     app.py PID=2263715, waiting up to 300s for ready...
+[2026-06-11 09:59:38] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-11 11:30:55] SGLang health failing
+[2026-06-11 11:30:55] ==> Restarting stack
+[2026-06-11 11:30:58]     app.py PID=2611342, waiting up to 300s for ready...
+[2026-06-11 11:31:55] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 13:02:41] SGLang health failing
+[2026-06-11 13:02:41] ==> Restarting stack
+[2026-06-11 13:02:44]     app.py PID=2953768, waiting up to 300s for ready...
+[2026-06-11 13:03:41] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 14:34:58] SGLang health failing
+[2026-06-11 14:34:58] ==> Restarting stack
+[2026-06-11 14:35:01]     app.py PID=3293240, waiting up to 300s for ready...
+[2026-06-11 14:35:57] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 16:07:14] SGLang health failing
+[2026-06-11 16:07:14] ==> Restarting stack
+[2026-06-11 16:07:17]     app.py PID=3627905, waiting up to 300s for ready...
+[2026-06-11 16:08:14] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 17:39:31] SGLang health failing
+[2026-06-11 17:39:31] ==> Restarting stack
+[2026-06-11 17:39:34]     app.py PID=3766123, waiting up to 300s for ready...
+[2026-06-11 17:40:31] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 19:11:18] SGLang health failing
+[2026-06-11 19:11:18] ==> Restarting stack
+[2026-06-11 19:11:21]     app.py PID=3783129, waiting up to 300s for ready...
+[2026-06-11 19:12:12] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-11 20:43:29] SGLang health failing
+[2026-06-11 20:43:29] ==> Restarting stack
+[2026-06-11 20:43:32]     app.py PID=3801407, waiting up to 300s for ready...
+[2026-06-11 20:44:28] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-11 22:15:46] SGLang health failing
+[2026-06-11 22:15:46] ==> Restarting stack
+[2026-06-11 22:15:49]     app.py PID=3818582, waiting up to 300s for ready...
+[2026-06-11 22:16:40] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-11 23:47:57] SGLang health failing
+[2026-06-11 23:47:57] ==> Restarting stack
+[2026-06-11 23:48:01]     app.py PID=4029512, waiting up to 300s for ready...
+[2026-06-11 23:48:57] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-12 01:20:14] SGLang health failing
+[2026-06-12 01:20:14] ==> Restarting stack
+[2026-06-12 01:20:17]     app.py PID=4080442, waiting up to 300s for ready...
+[2026-06-12 01:21:08] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 02:52:26] SGLang health failing
+[2026-06-12 02:52:26] ==> Restarting stack
+[2026-06-12 02:52:29]     app.py PID=4113745, waiting up to 300s for ready...
+[2026-06-12 02:53:26] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-12 04:24:12] SGLang health failing
+[2026-06-12 04:24:12] ==> Restarting stack
+[2026-06-12 04:24:15]     app.py PID=29248, waiting up to 300s for ready...
+[2026-06-12 04:25:06] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 05:56:24] SGLang health failing
+[2026-06-12 05:56:24] ==> Restarting stack
+[2026-06-12 05:56:27]     app.py PID=187922, waiting up to 300s for ready...
+[2026-06-12 05:57:18] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 07:28:35] SGLang health failing
+[2026-06-12 07:28:35] ==> Restarting stack
+[2026-06-12 07:28:38]     app.py PID=218033, waiting up to 300s for ready...
+[2026-06-12 07:29:30] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 09:00:47] SGLang health failing
+[2026-06-12 09:00:47] ==> Restarting stack
+[2026-06-12 09:00:50]     app.py PID=247473, waiting up to 300s for ready...
+[2026-06-12 09:01:41] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 10:32:58] SGLang health failing
+[2026-06-12 10:32:58] ==> Restarting stack
+[2026-06-12 10:33:01]     app.py PID=270082, waiting up to 300s for ready...
+[2026-06-12 10:33:52] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 12:05:09] SGLang health failing
+[2026-06-12 12:05:09] ==> Restarting stack
+[2026-06-12 12:05:12]     app.py PID=307342, waiting up to 300s for ready...
+[2026-06-12 12:06:04] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 13:37:21] SGLang health failing
+[2026-06-12 13:37:21] ==> Restarting stack
+[2026-06-12 13:37:24]     app.py PID=350981, waiting up to 300s for ready...
+[2026-06-12 13:38:15] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 15:09:33] SGLang health failing
+[2026-06-12 15:09:33] ==> Restarting stack
+[2026-06-12 15:09:36]     app.py PID=540569, waiting up to 300s for ready...
+[2026-06-12 15:10:27] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 16:41:44] SGLang health failing
+[2026-06-12 16:41:44] ==> Restarting stack
+[2026-06-12 16:41:47]     app.py PID=566538, waiting up to 300s for ready...
+[2026-06-12 16:42:38] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 18:13:56] SGLang health failing
+[2026-06-12 18:13:56] ==> Restarting stack
+[2026-06-12 18:13:59]     app.py PID=583779, waiting up to 300s for ready...
+[2026-06-12 18:14:50] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 19:46:07] SGLang health failing
+[2026-06-12 19:46:07] ==> Restarting stack
+[2026-06-12 19:46:10]     app.py PID=600986, waiting up to 300s for ready...
+[2026-06-12 19:47:01] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 21:18:18] SGLang health failing
+[2026-06-12 21:18:18] ==> Restarting stack
+[2026-06-12 21:18:21]     app.py PID=618066, waiting up to 300s for ready...
+[2026-06-12 21:19:13] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-12 22:50:30] SGLang health failing
+[2026-06-12 22:50:30] ==> Restarting stack
+[2026-06-12 22:50:33]     app.py PID=635186, waiting up to 300s for ready...
+[2026-06-12 22:51:24] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 00:22:41] SGLang health failing
+[2026-06-13 00:22:41] ==> Restarting stack
+[2026-06-13 00:22:44]     app.py PID=652362, waiting up to 300s for ready...
+[2026-06-13 00:23:35] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 01:54:53] SGLang health failing
+[2026-06-13 01:54:53] ==> Restarting stack
+[2026-06-13 01:54:56]     app.py PID=669614, waiting up to 300s for ready...
+[2026-06-13 01:55:47] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 03:27:04] SGLang health failing
+[2026-06-13 03:27:04] ==> Restarting stack
+[2026-06-13 03:27:07]     app.py PID=686906, waiting up to 300s for ready...
+[2026-06-13 03:27:58] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 04:59:15] SGLang health failing
+[2026-06-13 04:59:15] ==> Restarting stack
+[2026-06-13 04:59:18]     app.py PID=704115, waiting up to 300s for ready...
+[2026-06-13 05:00:10] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 06:31:27] SGLang health failing
+[2026-06-13 06:31:27] ==> Restarting stack
+[2026-06-13 06:31:30]     app.py PID=721212, waiting up to 300s for ready...
+[2026-06-13 06:32:21] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 08:03:38] SGLang health failing
+[2026-06-13 08:03:38] ==> Restarting stack
+[2026-06-13 08:03:41]     app.py PID=738348, waiting up to 300s for ready...
+[2026-06-13 08:04:32] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 09:35:49] SGLang health failing
+[2026-06-13 09:35:49] ==> Restarting stack
+[2026-06-13 09:35:52]     app.py PID=755527, waiting up to 300s for ready...
+[2026-06-13 09:36:44] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 11:08:01] SGLang health failing
+[2026-06-13 11:08:01] ==> Restarting stack
+[2026-06-13 11:08:04]     app.py PID=772794, waiting up to 300s for ready...
+[2026-06-13 11:08:55] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 12:40:12] SGLang health failing
+[2026-06-13 12:40:12] ==> Restarting stack
+[2026-06-13 12:40:15]     app.py PID=790032, waiting up to 300s for ready...
+[2026-06-13 12:41:06] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 14:12:23] SGLang health failing
+[2026-06-13 14:12:23] ==> Restarting stack
+[2026-06-13 14:12:26]     app.py PID=807820, waiting up to 300s for ready...
+[2026-06-13 14:13:18] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 15:44:35] SGLang health failing
+[2026-06-13 15:44:35] ==> Restarting stack
+[2026-06-13 15:44:38]     app.py PID=839622, waiting up to 300s for ready...
+[2026-06-13 15:45:29] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 17:16:46] SGLang health failing
+[2026-06-13 17:16:46] ==> Restarting stack
+[2026-06-13 17:16:49]     app.py PID=1186398, waiting up to 300s for ready...
+[2026-06-13 17:17:41] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 18:48:58] SGLang health failing
+[2026-06-13 18:48:58] ==> Restarting stack
+[2026-06-13 18:49:01]     app.py PID=1534539, waiting up to 300s for ready...
+[2026-06-13 18:49:52] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 20:21:10] SGLang health failing
+[2026-06-13 20:21:10] ==> Restarting stack
+[2026-06-13 20:21:13]     app.py PID=, waiting up to 300s for ready...
+[2026-06-13 20:22:04] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 21:53:21] SGLang health failing
+[2026-06-13 21:53:21] ==> Restarting stack
+[2026-06-13 21:53:24]     app.py PID=2220247, waiting up to 300s for ready...
+[2026-06-13 21:54:15] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-13 23:25:33] SGLang health failing
+[2026-06-13 23:25:33] ==> Restarting stack
+[2026-06-13 23:25:36]     app.py PID=2307893, waiting up to 300s for ready...
+[2026-06-13 23:26:33] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-14 00:57:20] SGLang health failing
+[2026-06-14 00:57:20] ==> Restarting stack
+[2026-06-14 00:57:23]     app.py PID=2652559, waiting up to 300s for ready...
+[2026-06-14 00:58:19] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-14 02:29:36] SGLang health failing
+[2026-06-14 02:29:36] ==> Restarting stack
+[2026-06-14 02:29:39]     app.py PID=2851075, waiting up to 300s for ready...
+[2026-06-14 02:30:37] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-14 04:01:23] SGLang health failing
+[2026-06-14 04:01:23] ==> Restarting stack
+[2026-06-14 04:01:26]     app.py PID=3196429, waiting up to 300s for ready...
+[2026-06-14 04:02:17] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 05:33:34] SGLang health failing
+[2026-06-14 05:33:34] ==> Restarting stack
+[2026-06-14 05:33:38]     app.py PID=3543203, waiting up to 300s for ready...
+[2026-06-14 05:34:29] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 07:05:46] SGLang health failing
+[2026-06-14 07:05:46] ==> Restarting stack
+[2026-06-14 07:05:49]     app.py PID=3890653, waiting up to 300s for ready...
+[2026-06-14 07:06:47] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-14 08:37:33] SGLang health failing
+[2026-06-14 08:37:33] ==> Restarting stack
+[2026-06-14 08:37:36]     app.py PID=42267, waiting up to 300s for ready...
+[2026-06-14 08:38:27] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 10:09:44] SGLang health failing
+[2026-06-14 10:09:44] ==> Restarting stack
+[2026-06-14 10:09:47]     app.py PID=389704, waiting up to 300s for ready...
+[2026-06-14 10:10:39] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 11:41:56] SGLang health failing
+[2026-06-14 11:41:56] ==> Restarting stack
+[2026-06-14 11:41:59]     app.py PID=737155, waiting up to 300s for ready...
+[2026-06-14 11:42:50] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 13:14:08] SGLang health failing
+[2026-06-14 13:14:08] ==> Restarting stack
+[2026-06-14 13:14:11]     app.py PID=1084254, waiting up to 300s for ready...
+[2026-06-14 13:15:07] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-14 14:28:29] Watchdog started (interval=30s)
+[2026-06-14 14:28:29] ==> Restarting stack
+[2026-06-14 14:28:32]     app.py PID=1343458, waiting up to 300s for ready...
+[2026-06-14 14:29:29] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-14 15:59:44] SGLang health failing
+[2026-06-14 15:59:44] ==> Restarting stack
+[2026-06-14 15:59:47]     app.py PID=1481252, waiting up to 300s for ready...
+[2026-06-14 16:00:38] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 17:31:55] SGLang health failing
+[2026-06-14 17:31:55] ==> Restarting stack
+[2026-06-14 17:31:58]     app.py PID=1498438, waiting up to 300s for ready...
+[2026-06-14 17:32:56] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-14 19:03:42] SGLang health failing
+[2026-06-14 19:03:42] ==> Restarting stack
+[2026-06-14 19:03:45]     app.py PID=1516426, waiting up to 300s for ready...
+[2026-06-14 19:04:36] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 20:35:53] SGLang health failing
+[2026-06-14 20:35:53] ==> Restarting stack
+[2026-06-14 20:35:56]     app.py PID=1533604, waiting up to 300s for ready...
+[2026-06-14 20:36:48] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 22:08:05] SGLang health failing
+[2026-06-14 22:08:05] ==> Restarting stack
+[2026-06-14 22:08:08]     app.py PID=1550835, waiting up to 300s for ready...
+[2026-06-14 22:08:59] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-14 23:40:16] SGLang health failing
+[2026-06-14 23:40:16] ==> Restarting stack
+[2026-06-14 23:40:20]     app.py PID=1627359, waiting up to 300s for ready...
+[2026-06-14 23:41:17] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-15 01:12:03] SGLang health failing
+[2026-06-15 01:12:03] ==> Restarting stack
+[2026-06-15 01:12:06]     app.py PID=1972663, waiting up to 300s for ready...
+[2026-06-15 01:12:58] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 02:44:15] SGLang health failing
+[2026-06-15 02:44:15] ==> Restarting stack
+[2026-06-15 02:44:18]     app.py PID=2318120, waiting up to 300s for ready...
+[2026-06-15 02:45:09] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 04:16:26] SGLang health failing
+[2026-06-15 04:16:26] ==> Restarting stack
+[2026-06-15 04:16:29]     app.py PID=2664851, waiting up to 300s for ready...
+[2026-06-15 04:17:21] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 05:48:38] SGLang health failing
+[2026-06-15 05:48:38] ==> Restarting stack
+[2026-06-15 05:48:41]     app.py PID=3012591, waiting up to 300s for ready...
+[2026-06-15 05:49:32] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 07:20:49] SGLang health failing
+[2026-06-15 07:20:49] ==> Restarting stack
+[2026-06-15 07:20:53]     app.py PID=3359663, waiting up to 300s for ready...
+[2026-06-15 07:21:50] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-15 08:49:30] SGLang health failing
+[2026-06-15 08:49:30] ==> Restarting stack
+[2026-06-15 08:49:33]     app.py PID=3694003, waiting up to 300s for ready...
+[2026-06-15 08:50:24] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 10:21:41] SGLang health failing
+[2026-06-15 10:21:41] ==> Restarting stack
+[2026-06-15 10:21:44]     app.py PID=4041408, waiting up to 300s for ready...
+[2026-06-15 10:22:41] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-15 11:53:27] SGLang health failing
+[2026-06-15 11:53:27] ==> Restarting stack
+[2026-06-15 11:53:30]     app.py PID=193654, waiting up to 300s for ready...
+[2026-06-15 11:54:22] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 13:22:32] SGLang health failing
+[2026-06-15 13:22:32] ==> Restarting stack
+[2026-06-15 13:22:35]     app.py PID=529741, waiting up to 300s for ready...
+[2026-06-15 13:23:27] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 14:54:44] SGLang health failing
+[2026-06-15 14:54:44] ==> Restarting stack
+[2026-06-15 14:54:47]     app.py PID=875872, waiting up to 300s for ready...
+[2026-06-15 14:55:38] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 16:26:55] SGLang health failing
+[2026-06-15 16:26:55] ==> Restarting stack
+[2026-06-15 16:26:58]     app.py PID=1117527, waiting up to 300s for ready...
+[2026-06-15 16:27:56] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-15 17:58:42] SGLang health failing
+[2026-06-15 17:58:42] ==> Restarting stack
+[2026-06-15 17:58:45]     app.py PID=1399588, waiting up to 300s for ready...
+[2026-06-15 17:59:36] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 19:30:53] SGLang health failing
+[2026-06-15 19:30:53] ==> Restarting stack
+[2026-06-15 19:30:56]     app.py PID=1607461, waiting up to 300s for ready...
+[2026-06-15 19:31:47] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 21:03:05] SGLang health failing
+[2026-06-15 21:03:05] ==> Restarting stack
+[2026-06-15 21:03:08]     app.py PID=1953540, waiting up to 300s for ready...
+[2026-06-15 21:03:59] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-15 22:35:16] SGLang health failing
+[2026-06-15 22:35:16] ==> Restarting stack
+[2026-06-15 22:35:19]     app.py PID=2299960, waiting up to 300s for ready...
+[2026-06-15 22:36:11] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 00:07:28] SGLang health failing
+[2026-06-16 00:07:28] ==> Restarting stack
+[2026-06-16 00:07:31]     app.py PID=2644330, waiting up to 300s for ready...
+[2026-06-16 00:08:22] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 01:39:39] SGLang health failing
+[2026-06-16 01:39:39] ==> Restarting stack
+[2026-06-16 01:39:42]     app.py PID=2990752, waiting up to 300s for ready...
+[2026-06-16 01:40:40] ==> READY in 55s · URL: https://nhanes-depression-qa.com
+[2026-06-16 03:11:26] SGLang health failing
+[2026-06-16 03:11:26] ==> Restarting stack
+[2026-06-16 03:11:29]     app.py PID=3261608, waiting up to 300s for ready...
+[2026-06-16 03:12:20] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 04:43:37] SGLang health failing
+[2026-06-16 04:43:37] ==> Restarting stack
+[2026-06-16 04:43:41]     app.py PID=3278636, waiting up to 300s for ready...
+[2026-06-16 04:44:32] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 06:15:49] SGLang health failing
+[2026-06-16 06:15:49] ==> Restarting stack
+[2026-06-16 06:15:52]     app.py PID=3295733, waiting up to 300s for ready...
+[2026-06-16 06:16:43] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 07:48:00] SGLang health failing
+[2026-06-16 07:48:00] ==> Restarting stack
+[2026-06-16 07:48:04]     app.py PID=3312885, waiting up to 300s for ready...
+[2026-06-16 07:48:55] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 09:20:12] SGLang health failing
+[2026-06-16 09:20:12] ==> Restarting stack
+[2026-06-16 09:20:15]     app.py PID=3330134, waiting up to 300s for ready...
+[2026-06-16 09:21:06] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 10:52:23] SGLang health failing
+[2026-06-16 10:52:23] ==> Restarting stack
+[2026-06-16 10:52:26]     app.py PID=3347326, waiting up to 300s for ready...
+[2026-06-16 10:53:17] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 12:24:35] SGLang health failing
+[2026-06-16 12:24:35] ==> Restarting stack
+[2026-06-16 12:24:38]     app.py PID=3364392, waiting up to 300s for ready...
+[2026-06-16 12:25:29] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 13:56:46] SGLang health failing
+[2026-06-16 13:56:46] ==> Restarting stack
+[2026-06-16 13:56:49]     app.py PID=3384693, waiting up to 300s for ready...
+[2026-06-16 13:57:40] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 15:28:57] SGLang health failing
+[2026-06-16 15:28:57] ==> Restarting stack
+[2026-06-16 15:29:00]     app.py PID=3401805, waiting up to 300s for ready...
+[2026-06-16 15:29:52] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-06-16 17:01:09] SGLang health failing
+[2026-06-16 17:01:09] ==> Restarting stack
+[2026-06-16 17:01:12]     app.py PID=3418972, waiting up to 300s for ready...
+[2026-06-16 17:02:03] ==> READY in 50s · URL: https://nhanes-depression-qa.com
+[2026-09-14 00:45:56] Watchdog started (interval=30s)
+[2026-09-14 00:45:56] ==> Restarting stack
+[2026-09-14 00:45:59]     app.py PID=8501, waiting up to 300s for ready...
+[2026-09-14 00:49:00] ==> READY in 180s · URL: https://nhanes-depression-qa.com
+[2026-09-14 01:11:43] Watchdog started (interval=30s)
+[2026-09-14 01:11:43] ==> Restarting stack
+[2026-09-14 01:11:46]     app.py PID=18351, waiting up to 300s for ready...
+[2026-09-14 01:12:47] ==> READY in 60s · URL: https://nhanes-depression-qa.com
+[2026-09-14 15:25:25] Watchdog started (interval=30s)
+[2026-09-14 15:25:25] ==> Restarting stack
+[2026-09-14 15:25:28]     app.py PID=7231, waiting up to 300s for ready...
+[2026-09-14 15:30:30] ==> TIMEOUT after 300s — will retry next cycle
+[2026-09-14 15:31:10] process(es) missing
+[2026-09-14 15:31:10] ==> Restarting stack
+[2026-09-14 15:31:13]     app.py PID=10841, waiting up to 300s for ready...
+[2026-09-14 15:31:51] Watchdog started (interval=30s)
+[2026-09-14 15:31:51] ==> Restarting stack
+[2026-09-14 15:31:54]     app.py PID=11406, waiting up to 900s for ready...
+[2026-09-14 15:36:36] Watchdog started (interval=30s)
+[2026-09-14 15:36:36] ==> Restarting stack
+[2026-09-14 15:36:39]     app.py PID=14668, waiting up to 900s for ready...
+[2026-09-14 15:38:07] ==> READY in 85s · URL: https://nhanes-depression-qa.com

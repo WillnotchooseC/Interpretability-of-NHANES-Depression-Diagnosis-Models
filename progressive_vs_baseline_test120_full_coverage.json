@@ -1,0 +1,1237 @@
+[
+  {
+    "idx": 0,
+    "input": "For patient 59, what depression probability does decision tree predict when trained at 1:1?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 1,
+    "input": "At the 1:5 training ratio, how likely does naive bayes consider depression for patient 260?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 2,
+    "input": "What probability of depression does random forest assign to patient 191 at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 3,
+    "input": "For patient 11, what depression probability does logistic regression predict when trained at 1:4?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 4,
+    "input": "At the 1:2 training ratio, how likely does random forest consider depression for patient 92?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 5,
+    "input": "What probability of depression does logistic regression assign to patient 209 at 1:5?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 6,
+    "input": "For patient 233, what depression probability does decision tree predict when trained at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 7,
+    "input": "At the 1:2 training ratio, how likely does naive bayes consider depression for patient 273?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 8,
+    "input": "What probability of depression does random forest assign to patient 20 at 1:1?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 9,
+    "input": "For patient 94, what depression probability does naive bayes predict when trained at 1:4?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 10,
+    "input": "For patient 172 at 1:3, compare the depression probabilities from decision tree and logistic regression. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 11,
+    "input": "For patient 104 at 1:4, compare the depression probabilities from naive bayes, decision tree and logistic regression. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 12,
+    "input": "For patient 113 at 1:1, compare the depression probabilities from random forest and logistic regression. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 13,
+    "input": "For patient 188 at 1:2, compare the depression probabilities from naive bayes, random forest and decision tree. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "At 1:2, what depression probability does each requested model predict for patient 188?",
+      "Which requested model gives the highest depression probability?"
+    ]
+  },
+  {
+    "idx": 14,
+    "input": "For patient 255 at 1:5, compare the depression probabilities from random forest and logistic regression. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "At 1:5, what depression probability does each requested model predict for patient 255?",
+      "Which requested model gives the highest depression probability?"
+    ]
+  },
+  {
+    "idx": 15,
+    "input": "For patient 61 at 1:5, compare the depression probabilities from naive bayes, decision tree and logistic regression. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "At 1:5, what depression probability does each requested model predict for patient 61?",
+      "Which requested model gives the highest depression probability?"
+    ]
+  },
+  {
+    "idx": 16,
+    "input": "For patient 283 at 1:2, compare the depression probabilities from naive bayes and decision tree. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 17,
+    "input": "For patient 226 at 1:1, compare the depression probabilities from naive bayes, random forest and decision tree. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 18,
+    "input": "For patient 26 at 1:4, compare the depression probabilities from random forest and logistic regression. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 19,
+    "input": "For patient 154 at 1:3, compare the depression probabilities from naive bayes, decision tree and logistic regression. Which model gives the highest probability?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 20,
+    "input": "For patient 23, how does random forest's depression probability vary across 1:2, 1:3, and 1:4? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 21,
+    "input": "For patient 111, how does logistic regression's depression probability vary across 1:1, 1:3, and 1:5? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 22,
+    "input": "For patient 222, how does naive bayes's depression probability vary across 1:1, 1:2, and 1:4? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 23,
+    "input": "For patient 108, how does random forest's depression probability vary across 1:2, 1:3, and 1:5? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 24,
+    "input": "For patient 112, how does logistic regression's depression probability vary across 1:1, 1:4, and 1:5? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 25,
+    "input": "For patient 265, how does random forest's depression probability vary across 1:2, 1:4, and 1:5? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 26,
+    "input": "For patient 261, how does naive bayes's depression probability vary across 1:1, 1:3, and 1:5? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 27,
+    "input": "For patient 49, how does naive bayes's depression probability vary across 1:1, 1:2, and 1:4? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 28,
+    "input": "For patient 7, how does logistic regression's depression probability vary across 1:1, 1:2, 1:3, and 1:5? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 29,
+    "input": "For patient 183, how does naive bayes's depression probability vary across 1:1, 1:2, 1:3, and 1:4? Which ratio gives the highest and lowest probability?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 30,
+    "input": "Using decision tree at 1:4, is patient 81 predicted to have depression?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 31,
+    "input": "What prediction label does decision tree assign to patient 182 when trained at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What prediction label does decision tree trained at 1:3 assign to patient 182?"
+    ]
+  },
+  {
+    "idx": 32,
+    "input": "For patient 217, what does random forest predict at the 1:5 training ratio?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 33,
+    "input": "Using decision tree at 1:2, is patient 142 predicted to have depression?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 34,
+    "input": "What prediction label does decision tree assign to patient 241 when trained at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 35,
+    "input": "For patient 224, what does random forest predict at the 1:1 training ratio?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 36,
+    "input": "Using logistic regression at 1:4, is patient 52 predicted to have depression?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 37,
+    "input": "What prediction label does naive bayes assign to patient 50 when trained at 1:5?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 38,
+    "input": "For patient 5, what does logistic regression predict at the 1:5 training ratio?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What prediction label does logistic regression trained at 1:5 assign to patient 5?"
+    ]
+  },
+  {
+    "idx": 39,
+    "input": "Using decision tree at 1:2, is patient 254 predicted to have depression?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 40,
+    "input": "What is patient 42's blood mercury value?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 41,
+    "input": "What blood lead measurement is recorded for patient 263?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 42,
+    "input": "Can you give me the recorded albumin value for patient 173?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 43,
+    "input": "What is patient 78's blood selenium value?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What is patient 78's blood selenium value?"
+    ]
+  },
+  {
+    "idx": 44,
+    "input": "What vitamin D3 measurement is recorded for patient 54?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 45,
+    "input": "Can you give me the recorded blood manganese value for patient 144?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 46,
+    "input": "What is patient 186's glycohemoglobin value?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 47,
+    "input": "What total cholesterol measurement is recorded for patient 214?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What is patient 214's total cholesterol value?"
+    ]
+  },
+  {
+    "idx": 48,
+    "input": "Can you give me the recorded direct HDL-cholesterol value for patient 83?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 49,
+    "input": "What is patient 274's creatinine value?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 50,
+    "input": "For patient 267, how does RBC folate influence the random forest prediction at 1:4?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 51,
+    "input": "What is vitamin D2's local effect on patient 180's logistic regression prediction at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 52,
+    "input": "For patient 8 in decision tree at 1:1, does blood manganese push the prediction toward or away from depression, and by how much?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 53,
+    "input": "For patient 276, how does total cholesterol influence the random forest prediction at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 54,
+    "input": "What is direct HDL-cholesterol's local effect on patient 175's naive bayes prediction at 1:1?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 55,
+    "input": "For patient 189 in decision tree at 1:5, does vitamin D2 push the prediction toward or away from depression, and by how much?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 56,
+    "input": "For patient 203, how does blood selenium influence the logistic regression prediction at 1:2?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 57,
+    "input": "What is blood mercury's local effect on patient 17's random forest prediction at 1:4?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "For patient 17 in random forest trained at 1:4, what is the local SHAP value of blood mercury?"
+    ]
+  },
+  {
+    "idx": 58,
+    "input": "For patient 207 in naive bayes at 1:2, does glycohemoglobin push the prediction toward or away from depression, and by how much?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 59,
+    "input": "For patient 148, how does vitamin D3 influence the naive bayes prediction at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 60,
+    "input": "For patient 114 at 1:5, compare albumin's local influence across random forest and decision tree. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 61,
+    "input": "For patient 74 at 1:1, compare creatinine's local influence across random forest, decision tree and logistic regression. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 62,
+    "input": "For patient 97 at 1:4, compare RBC folate's local influence across naive bayes and logistic regression. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 63,
+    "input": "For patient 285 at 1:4, compare blood lead's local influence across naive bayes, decision tree and logistic regression. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 64,
+    "input": "For patient 234 at 1:2, compare albumin's local influence across naive bayes and random forest. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 65,
+    "input": "For patient 14 at 1:1, compare blood manganese's local influence across random forest, decision tree and logistic regression. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 66,
+    "input": "For patient 141 at 1:5, compare total cholesterol's local influence across naive bayes and decision tree. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 67,
+    "input": "For patient 262 at 1:3, compare glycohemoglobin's local influence across naive bayes, random forest and logistic regression. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "At 1:3, what local SHAP value does glycohemoglobin have for patient 262 in each requested model?",
+      "How do the direction and strength of the feature contribution differ across the requested models?"
+    ],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 68,
+    "input": "For patient 198 at 1:5, compare RBC folate's local influence across random forest and logistic regression. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 69,
+    "input": "For patient 39 at 1:3, compare blood mercury's local influence across random forest, decision tree and logistic regression. How do direction and strength differ?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "At 1:3, what local SHAP value does blood mercury have for patient 39 in each requested model?",
+      "How do the direction and strength of the feature contribution differ across the requested models?"
+    ]
+  },
+  {
+    "idx": 70,
+    "input": "For patient 35, how does creatinine's local SHAP effect in naive bayes change across 1:1, 1:2, and 1:4? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 71,
+    "input": "For patient 239, how does vitamin D3's local SHAP effect in decision tree change across 1:1, 1:2, and 1:5? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 72,
+    "input": "For patient 290, how does direct HDL-cholesterol's local SHAP effect in random forest change across 1:1, 1:3, and 1:4? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 73,
+    "input": "For patient 76, how does vitamin D2's local SHAP effect in naive bayes change across 1:2, 1:3, and 1:4? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What local SHAP value does vitamin D2 have for patient 76 in naive bayes at each requested ratio?",
+      "How do the direction and strength of the feature contribution change across the requested ratios?"
+    ]
+  },
+  {
+    "idx": 74,
+    "input": "For patient 251, how does blood selenium's local SHAP effect in logistic regression change across 1:1, 1:2, and 1:5? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 75,
+    "input": "For patient 87, how does blood lead's local SHAP effect in decision tree change across 1:3, 1:4, and 1:5? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 76,
+    "input": "For patient 140, how does total cholesterol's local SHAP effect in random forest change across 1:1, 1:3, and 1:4? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 77,
+    "input": "For patient 163, how does blood selenium's local SHAP effect in naive bayes change across 1:2, 1:4, and 1:5? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 78,
+    "input": "For patient 107, how does vitamin D3's local SHAP effect in logistic regression change across 1:1, 1:2, 1:3, and 1:5? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What local SHAP value does vitamin D3 have for patient 107 in logistic regression at each requested ratio?",
+      "How do the direction and strength of the feature contribution change across the requested ratios?"
+    ]
+  },
+  {
+    "idx": 79,
+    "input": "For patient 184, how does blood mercury's local SHAP effect in decision tree change across 1:2, 1:3, 1:4, and 1:5? Compare both direction and magnitude.",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What local SHAP value does blood mercury have for patient 184 in decision tree at each requested ratio?",
+      "How do the direction and strength of the feature contribution change across the requested ratios?"
+    ]
+  },
+  {
+    "idx": 80,
+    "input": "For patient 280 in decision tree at 1:1, which biomarkers push the prediction toward depression and which push it away?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which biomarkers have positive local SHAP values and which have negative local SHAP values?"
+    ]
+  },
+  {
+    "idx": 81,
+    "input": "For patient 167 in naive bayes at 1:1, which biomarkers push the prediction toward depression and which push it away?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which biomarkers have positive local SHAP values and which have negative local SHAP values?"
+    ]
+  },
+  {
+    "idx": 82,
+    "input": "For patient 56 in logistic regression at 1:2, which biomarkers push the prediction toward depression and which push it away?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 83,
+    "input": "For patient 221 in random forest at 1:4, which biomarkers push the prediction toward depression and which push it away?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which biomarkers have positive local SHAP values and which have negative local SHAP values?"
+    ]
+  },
+  {
+    "idx": 84,
+    "input": "For patient 105 in logistic regression at 1:5, which biomarkers push the prediction toward depression and which push it away?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which biomarkers have positive local SHAP values and which have negative local SHAP values?"
+    ]
+  },
+  {
+    "idx": 85,
+    "input": "Which 3 biomarkers have the strongest local influence on patient 89's decision tree prediction at 1:3? Rank them by absolute SHAP magnitude.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What local SHAP value does each available biomarker have for patient 89 in decision tree at 1:3?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which 3 biomarkers have the largest absolute local SHAP values?"
+    ]
+  },
+  {
+    "idx": 86,
+    "input": "Which 4 biomarkers have the strongest local influence on patient 86's random forest prediction at 1:1? Rank them by absolute SHAP magnitude.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What local SHAP value does each available biomarker have for patient 86 in random forest at 1:1?",
+      "Which 4 biomarkers have the largest absolute local SHAP values?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which 4 biomarkers have the largest absolute local SHAP values?"
+    ]
+  },
+  {
+    "idx": 87,
+    "input": "Which 3 biomarkers have the strongest local influence on patient 194's naive bayes prediction at 1:3? Rank them by absolute SHAP magnitude.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What local SHAP value does each available biomarker have for patient 194 in naive bayes at 1:3?"
+    ],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 88,
+    "input": "Which 4 biomarkers have the strongest local influence on patient 270's random forest prediction at 1:2? Rank them by absolute SHAP magnitude.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What local SHAP value does each available biomarker have for patient 270 in random forest at 1:2?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which 4 biomarkers have the largest absolute local SHAP values?"
+    ]
+  },
+  {
+    "idx": 89,
+    "input": "Which 3 biomarkers have the strongest local influence on patient 199's decision tree prediction at 1:4? Rank them by absolute SHAP magnitude.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What local SHAP value does each available biomarker have for patient 199 in decision tree at 1:4?",
+      "Which 3 biomarkers have the largest absolute local SHAP values?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which 3 biomarkers have the largest absolute local SHAP values?"
+    ]
+  },
+  {
+    "idx": 90,
+    "input": "What does naive bayes predict for patient 257 at 1:5, and how does blood lead affect that prediction locally?",
+    "split": "seen_80",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What prediction label does naive bayes at 1:5 assign to patient 257?",
+      "What local SHAP value does blood lead have for patient 257 in naive bayes at 1:5?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What prediction label does naive bayes at 1:5 assign to patient 257?",
+      "What local SHAP value does blood lead have for patient 257 in naive bayes at 1:5?"
+    ]
+  },
+  {
+    "idx": 91,
+    "input": "What does logistic regression predict for patient 215 at 1:4, and how does vitamin D2 affect that prediction locally?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 92,
+    "input": "What does random forest predict for patient 47 at 1:1, and how does albumin affect that prediction locally?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 93,
+    "input": "What does decision tree predict for patient 115 at 1:5, and how does blood manganese affect that prediction locally?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 94,
+    "input": "What does logistic regression predict for patient 126 at 1:3, and how does glycohemoglobin affect that prediction locally?",
+    "split": "seen_80",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What prediction label does logistic regression at 1:3 assign to patient 126?",
+      "What local SHAP value does glycohemoglobin have for patient 126 in logistic regression at 1:3?"
+    ],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 95,
+    "input": "What is patient 129's creatinine value, and what local SHAP effect does that biomarker have in naive bayes at 1:2?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 96,
+    "input": "What is patient 123's direct HDL-cholesterol value, and what local SHAP effect does that biomarker have in naive bayes at 1:1?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 97,
+    "input": "What is patient 256's RBC folate value, and what local SHAP effect does that biomarker have in random forest at 1:5?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 98,
+    "input": "What is patient 36's total cholesterol value, and what local SHAP effect does that biomarker have in logistic regression at 1:4?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 99,
+    "input": "What is patient 25's creatinine value, and what local SHAP effect does that biomarker have in decision tree at 1:3?",
+    "split": "seen_80",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 100,
+    "input": "For patient 57 in logistic regression at 1:5, rank the 2 strongest biomarkers pushing the prediction toward depression and the 2 strongest pushing it away.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "Which biomarkers push the prediction toward depression and which push it away?",
+      "Which 2 biomarkers have the largest positive local SHAP values?",
+      "Which 2 biomarkers have the largest absolute local SHAP values among the negative contributions?"
+    ],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 101,
+    "input": "For patient 200 in random forest at 1:4, rank the 3 strongest biomarkers pushing the prediction toward depression and the 3 strongest pushing it away.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "Which biomarkers push the prediction toward depression and which push it away?",
+      "Which 3 biomarkers have the largest positive local SHAP values?",
+      "Which 3 biomarkers have the largest absolute local SHAP values among the negative contributions?"
+    ],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 102,
+    "input": "For patient 174 in naive bayes at 1:5, rank the 2 strongest biomarkers pushing the prediction toward depression and the 2 strongest pushing it away.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "Which biomarkers push the prediction toward depression and which push it away?",
+      "Which 2 biomarkers have the largest positive local SHAP values?",
+      "Which 2 biomarkers have the largest absolute local SHAP values among the negative contributions?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What local SHAP value does each available biomarker have for patient 174 in naive bayes at 1:5?",
+      "Which biomarkers push the prediction toward depression and which push it away?",
+      "Which 2 biomarkers have the largest positive local SHAP values?",
+      "Which 2 biomarkers have the largest absolute local SHAP values among the negative contributions?"
+    ]
+  },
+  {
+    "idx": 103,
+    "input": "For patient 150 in decision tree at 1:5, rank the 3 strongest biomarkers pushing the prediction toward depression and the 3 strongest pushing it away.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What local SHAP value does each available biomarker have for patient 150 in decision tree at 1:5?",
+      "Which biomarkers push the prediction toward depression and which push it away?",
+      "Which 3 biomarkers have the largest positive local SHAP values?",
+      "Which 3 biomarkers have the largest absolute local SHAP values among the negative contributions?"
+    ],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 104,
+    "input": "For patient 31 in logistic regression at 1:2, rank the 2 strongest biomarkers pushing the prediction toward depression and the 2 strongest pushing it away.",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "Which biomarkers push the prediction toward depression and which push it away?",
+      "Which 2 biomarkers have the largest positive local SHAP values?",
+      "Which 2 biomarkers have the largest absolute local SHAP values among the negative contributions?"
+    ],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 105,
+    "input": "For patient 46 at 1:1, compare decision tree, logistic regression, and naive bayes: which biomarker is the single strongest local influence in each model, and how do those strongest effects differ in direction and magnitude?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "For patient 46 at 1:1, what local SHAP value and direction does each available biomarker have in each of decision tree, logistic regression, and naive bayes?",
+      "What is the single strongest local biomarker influence in each requested model?",
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ]
+  },
+  {
+    "idx": 106,
+    "input": "For patient 225 at 1:1, compare logistic regression, naive bayes, and random forest: which biomarker is the single strongest local influence in each model, and how do those strongest effects differ in direction and magnitude?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ]
+  },
+  {
+    "idx": 107,
+    "input": "For patient 210 at 1:1, compare decision tree, logistic regression, and naive bayes: which biomarker is the single strongest local influence in each model, and how do those strongest effects differ in direction and magnitude?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What is the single strongest local biomarker influence in each requested model?",
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ]
+  },
+  {
+    "idx": 108,
+    "input": "For patient 58 at 1:1, compare decision tree, logistic regression, and naive bayes: which biomarker is the single strongest local influence in each model, and how do those strongest effects differ in direction and magnitude?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "For patient 58 at 1:1, what local SHAP value and direction does each available biomarker have in each of decision tree, logistic regression, and naive bayes?",
+      "What is the single strongest local biomarker influence in each requested model?",
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ]
+  },
+  {
+    "idx": 109,
+    "input": "For patient 6 at 1:1, compare logistic regression, naive bayes, and random forest: which biomarker is the single strongest local influence in each model, and how do those strongest effects differ in direction and magnitude?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What is the single strongest local biomarker influence in each requested model?",
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "How do the selected biomarkers, their directions, and their absolute local SHAP magnitudes differ across the requested models?"
+    ]
+  },
+  {
+    "idx": 110,
+    "input": "For patient 128 in naive bayes at 1:4, which biomarker has the strongest local influence? What is that patient's recorded value for the biomarker, and does a higher value of it generally move the depression prediction up or down in the same model setting?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What is patient 128's recorded value for that biomarker?"
+    ]
+  },
+  {
+    "idx": 111,
+    "input": "For patient 120 in random forest at 1:3, which biomarker has the strongest local influence? What is that patient's recorded value for the biomarker, and does a higher value of it generally move the depression prediction up or down in the same model setting?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "For patient 120 in random forest at 1:3, what local SHAP value does each available biomarker have?",
+      "Which biomarker has the strongest local influence on patient 120's prediction?",
+      "What is patient 120's recorded value for that biomarker?",
+      "As that biomarker increases in random forest at 1:3, does its global SHAP tendency increase or decrease the depression prediction?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What is patient 120's recorded value for that biomarker?"
+    ]
+  },
+  {
+    "idx": 112,
+    "input": "For patient 119 in decision tree at 1:4, which biomarker has the strongest local influence? What is that patient's recorded value for the biomarker, and does a higher value of it generally move the depression prediction up or down in the same model setting?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which biomarker has the strongest local influence on patient 119's prediction?",
+      "What is patient 119's recorded value for that biomarker?"
+    ]
+  },
+  {
+    "idx": 113,
+    "input": "For patient 213 in logistic regression at 1:4, which biomarker has the strongest local influence? What is that patient's recorded value for the biomarker, and does a higher value of it generally move the depression prediction up or down in the same model setting?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which biomarker has the strongest local influence on patient 213's prediction?",
+      "What is patient 213's recorded value for that biomarker?"
+    ]
+  },
+  {
+    "idx": 114,
+    "input": "For patient 155 in random forest at 1:4, which biomarker has the strongest local influence? What is that patient's recorded value for the biomarker, and does a higher value of it generally move the depression prediction up or down in the same model setting?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "Which biomarker has the strongest local influence on patient 155's prediction?",
+      "What is patient 155's recorded value for that biomarker?"
+    ]
+  },
+  {
+    "idx": 115,
+    "input": "Across 1:1, 1:3, and 1:5, where does logistic regression achieve its best accuracy? At that best-performing ratio, does a higher blood lead generally move the depression prediction up or down?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": false,
+    "progressive_missing": [
+      "What accuracy does logistic regression achieve at each of 1:1, 1:3, and 1:5?",
+      "Which requested training ratio gives logistic regression its best accuracy?",
+      "At the best-performing requested ratio, as blood lead increases, does its global SHAP tendency increase or decrease the depression prediction in logistic regression?"
+    ],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What accuracy does logistic regression achieve at each of 1:1, 1:3, and 1:5?",
+      "Which requested training ratio gives logistic regression its best accuracy?",
+      "At the best-performing requested ratio, as blood lead increases, does its global SHAP tendency increase or decrease the depression prediction in logistic regression?"
+    ]
+  },
+  {
+    "idx": 116,
+    "input": "Across 1:1, 1:2, and 1:4, where does random forest achieve its best accuracy? At that best-performing ratio, does a higher vitamin D3 generally move the depression prediction up or down?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "At the best-performing requested ratio, as vitamin D3 increases, does its global SHAP tendency increase or decrease the depression prediction in random forest?"
+    ]
+  },
+  {
+    "idx": 117,
+    "input": "Across 1:2, 1:3, and 1:5, where does naive bayes achieve its best accuracy? At that best-performing ratio, does a higher total cholesterol generally move the depression prediction up or down?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": true,
+    "baseline_mixed1076_missing": []
+  },
+  {
+    "idx": 118,
+    "input": "Across 1:1, 1:4, and 1:5, where does decision tree achieve its best accuracy? At that best-performing ratio, does a higher blood manganese generally move the depression prediction up or down?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What accuracy does decision tree achieve at each of 1:1, 1:4, and 1:5?",
+      "Which requested training ratio gives decision tree its best accuracy?",
+      "At the best-performing requested ratio, as blood manganese increases, does its global SHAP tendency increase or decrease the depression prediction in decision tree?"
+    ]
+  },
+  {
+    "idx": 119,
+    "input": "Across 1:2, 1:4, and 1:5, where does logistic regression achieve its best accuracy? At that best-performing ratio, does a higher RBC folate generally move the depression prediction up or down?",
+    "split": "unseen_40_OOD",
+    "progressive_full_cov": true,
+    "progressive_missing": [],
+    "baseline_mixed1076_full_cov": false,
+    "baseline_mixed1076_missing": [
+      "What accuracy does logistic regression achieve at each of 1:2, 1:4, and 1:5?",
+      "Which requested training ratio gives logistic regression its best accuracy?",
+      "At the best-performing requested ratio, as RBC folate increases, does its global SHAP tendency increase or decrease the depression prediction in logistic regression?"
+    ]
+  }
+]

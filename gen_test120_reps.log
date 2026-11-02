@@ -1,0 +1,140 @@
+
+======================================================================
+  ood_curriculum_progressive_corrected: reps [2, 3] on ood_data/curriculum_test_120.json
+======================================================================
+Launching SGLang for nhanes_model/ood_curriculum_progressive_corrected/merged_model ...
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_progressive_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 300s)...
+  Server ready! (took 49s)
+
+  --- rep2 ---
+  Test samples: 120
+  Done! 120 samples in 275.3s (0.4 samples/s)
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_120_rep2/test_predictions.json
+
+  --- rep3 ---
+  Test samples: 120
+    [94] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [87] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [93] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [92] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [80] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [84] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+
+    [89] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [86] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [91] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [83] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [88] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [90] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [95] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [85] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [82] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [81] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [105] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [102] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [96] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [104] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [108] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [97] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [98] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [103] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [101] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [100] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [110] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [109] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [106] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [99] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [107] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [111] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [112] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [115] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [118] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [113] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [117] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [114] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [119] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [116] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+  Done! 120 samples in 719.5s (0.2 samples/s)
+  Saved: nhanes_model/ood_curriculum_progressive_corrected/eval_curriculum_test_120_rep3/test_predictions.json
+  Shutting down sglang server...
+  Server stopped.
+
+======================================================================
+  ood_curriculum_baseline_mixed1076_corrected: reps [2, 3] on ood_data/curriculum_test_120.json
+======================================================================
+Launching SGLang for nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model ...
+  Launching sglang server...
+  Command: python -m sglang.launch_server --model-path nhanes_model/ood_curriculum_baseline_mixed1076_corrected/merged_model --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 300s)...
+  Server ready! (took 64s)
+
+  --- rep2 ---
+  Test samples: 120
+  Done! 120 samples in 275.9s (0.4 samples/s)
+  Saved: nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_120_rep2/test_predictions.json
+
+  --- rep3 ---
+  Test samples: 120
+    [74] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [64] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [77] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [68] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [79] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [76] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [73] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [66] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [71] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [69] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [72] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+
+    [70] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [75] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [67] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [65] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [78] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+
+    [83] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [87] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [85] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+
+    [80] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [81] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [82] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [84] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [94] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [86] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [88] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [91] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [95] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [92] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [90] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [89] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [93] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [97] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [98] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [96] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [99] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [100] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [101] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [106] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [102] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [103] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [107] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [104] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [105] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [108] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)    [111] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+
+    [109] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [110] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [112] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [114] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [113] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [115] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [116] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [119] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [118] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+    [117] failed: HTTPConnectionPool(host='localhost', port=30000): Read timed out. (read timeout=60)
+  Done! 120 samples in 867.3s (0.1 samples/s)
+  Saved: nhanes_model/ood_curriculum_baseline_mixed1076_corrected/eval_curriculum_test_120_rep3/test_predictions.json
+  Shutting down sglang server...
+  Server stopped.
+
+All reps generated.

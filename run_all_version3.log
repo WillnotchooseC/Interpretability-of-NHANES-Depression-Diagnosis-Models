@@ -1,0 +1,116 @@
+Few-shot provenance audit: {"demo_count": 12, "training_searching_question_count": 1492, "all_demos_in_training_split": true, "missing_demo_questions": []}
+Evaluation preflight: {"files": 1, "samples": 120, "prediction_only": true}
+Rescue context mode: structure_only
+Loading model: Qwen/Qwen3-8B-Base
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:01<00:05,  1.29s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:02<00:03,  1.31s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:03<00:02,  1.30s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:04<00:01,  1.20s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.09it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.07s/it]
+Neo4j connected: bolt://localhost:7687
+
+[exp1_baseline_fewshot_version3] ood_data/progressive_decomp_for_experiments.json: 120 samples
+  processed 10/120 samples (125.6s)
+  processed 20/120 samples (275.0s)
+  processed 30/120 samples (474.9s)
+  processed 40/120 samples (600.8s)
+  processed 50/120 samples (662.8s)
+  processed 60/120 samples (823.5s)
+  processed 70/120 samples (1036.9s)
+  processed 80/120 samples (1278.3s)
+  processed 90/120 samples (1534.0s)
+  processed 100/120 samples (1773.4s)
+WARNING:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='01N51', status_description='warn: relationship type does not exist. The relationship type `EXPLAINS` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=389, offset=388>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 388, 'line': 1, 'column': 389}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 210 AND mr.classRatio = '1:1' AND fi.scope = 'local' WITH mr.modelType AS model_type, b.name AS biomarker, max(fi.absShapValue) AS max_abs_shap_value MATCH (mr)-[:GENERATED_BY]->(pred)-[:EXPLAINS]->(le)-[:GENERATED_BY]->(mr) WHERE mr.modelType = model_type AND mr.classRatio = '1:1' AND le.scope = 'local' RETURN model_type AS model, biomarker, max_abs_shap_value ORDER BY max_abs_shap_value DESC"
+  processed 110/120 samples (1990.4s)
+  processed 120/120 samples (2277.0s)
+{
+  "experiment": "exp1_baseline_fewshot_version3",
+  "samples": 120,
+  "searching_subquestions": 141,
+  "exec_success": 135,
+  "exec_rate": 0.9574,
+  "nonempty_results": 132,
+  "valid_rate": 0.9362,
+  "samples_all_searching_steps_nonempty": 111,
+  "sample_all_steps_rate": 0.925
+}
+Saved: results_exp1_baseline_fewshot_version3/progressive_decomp_for_experiments_exp1_baseline_fewshot_version3.json
+=== EXP1_VERSION3 DONE ===
+Few-shot provenance audit: {"demo_count": 12, "training_searching_question_count": 1492, "all_demos_in_training_split": true, "missing_demo_questions": []}
+Evaluation preflight: {"files": 1, "samples": 120, "prediction_only": true}
+Rescue context mode: structure_only
+Loading model: Qwen/Qwen3-8B-Base
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:01<00:05,  1.37s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:02<00:04,  1.42s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:04<00:02,  1.42s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:05<00:01,  1.30s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.01it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.16s/it]
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp2_fewshot_graphrag_version3] ood_data/progressive_decomp_for_experiments.json: 120 samples
+  processed 10/120 samples (125.7s)
+  processed 20/120 samples (273.0s)
+  processed 30/120 samples (439.5s)
+  processed 40/120 samples (566.1s)
+  processed 50/120 samples (628.8s)
+  processed 60/120 samples (789.9s)
+  processed 70/120 samples (1018.8s)
+  processed 80/120 samples (1261.8s)
+  processed 90/120 samples (1490.9s)
+  processed 100/120 samples (1726.3s)
+WARNING:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 6 AND mr.modelType IN ['logisticregression', 'randomforest', 'naivebayes'] AND mr.classRatio = '1:1' AND fi.scope = 'global' AND b.name = 'Albumin' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency"
+  processed 110/120 samples (1939.1s)
+WARNING:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 128 AND mr.modelType = 'naivebayes' AND mr.classRatio = '1:4' AND fi.scope = 'global' AND b.name = 'Albumin' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency"
+WARNING:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `accuracy` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=426, offset=425>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 425, 'line': 1, 'column': 426}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(b:biomarker), (pred:prediction)-[:GENERATED_BY]->(mr:model_run) WHERE p.id = 115 AND mr.modelType = 'naivebayes' AND mr.classRatio IN ['1:2', '1:3', '1:5'] AND b.name = 'Total Cholesterol' AND pred.correct IS NOT NULL RETURN mr.classRatio AS ratio, avg(CASE WHEN pred.correct THEN 1.0 ELSE 0.0 END) AS accuracy, collect(DISTINCT mr.classRatio) AS unique_ratios, collect(DISTINCT mr.accuracy) AS accuracies, collect(DISTINCT mr.influence) AS tendencies ORDER BY mr.classRatio"
+  processed 120/120 samples (2228.6s)
+{
+  "experiment": "exp2_fewshot_graphrag_version3",
+  "samples": 120,
+  "searching_subquestions": 141,
+  "exec_success": 141,
+  "exec_rate": 1.0,
+  "nonempty_results": 138,
+  "valid_rate": 0.9787,
+  "samples_all_searching_steps_nonempty": 116,
+  "sample_all_steps_rate": 0.9667,
+  "steps_using_original_input_entity_recovery": 51
+}
+Saved: results_exp2_fewshot_graphrag_version3/progressive_decomp_for_experiments_exp2_fewshot_graphrag_version3.json
+=== EXP2_VERSION3 DONE ===
+Few-shot provenance audit: {"demo_count": 12, "training_searching_question_count": 1492, "all_demos_in_training_split": true, "missing_demo_questions": []}
+Evaluation preflight: {"files": 1, "samples": 120, "prediction_only": true}
+Rescue context mode: structure_only
+Loading model: Qwen/Qwen3-8B-Base
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:01<00:04,  1.23s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:02<00:03,  1.25s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:03<00:02,  1.28s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:04<00:01,  1.19s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.11it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:05<00:00,  1.05s/it]
+Neo4j connected: bolt://localhost:7687
+GraphRAG vocabulary built from live graph
+
+[exp3_fewshot_graphrag_rescue_version3] ood_data/progressive_decomp_for_experiments.json: 120 samples
+  processed 10/120 samples (125.6s)
+  processed 20/120 samples (273.3s)
+  processed 30/120 samples (439.8s)
+  processed 40/120 samples (566.3s)
+  processed 50/120 samples (629.3s)
+  processed 60/120 samples (790.2s)
+  processed 70/120 samples (1018.7s)
+  processed 80/120 samples (1261.4s)
+  processed 90/120 samples (1490.8s)
+  processed 100/120 samples (1726.0s)
+WARNING:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 6 AND mr.modelType IN ['logisticregression', 'randomforest', 'naivebayes'] AND mr.classRatio = '1:1' AND fi.scope = 'global' AND b.name = 'Albumin' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency"
+  processed 110/120 samples (1938.1s)
+WARNING:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `patient_id` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=80, offset=79>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 79, 'line': 1, 'column': 80}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (mr:model_run)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(mr.patient_id) = 128 AND mr.modelType = 'naivebayes' AND mr.classRatio = '1:4' AND fi.scope = 'global' AND b.name = 'Albumin' RETURN mr.modelFamily AS model, mr.classRatio AS ratio, b.name AS biomarker, fi.influence AS increase_related_tendency"
+WARNING:neo4j.notifications:Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `accuracy` does not exist in database `neo4j`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=426, offset=425>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 425, 'line': 1, 'column': 426}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "MATCH (p:patient)-[:HAS_BIOMARKER_VALUE]->(b:biomarker), (pred:prediction)-[:GENERATED_BY]->(mr:model_run) WHERE p.id = 115 AND mr.modelType = 'naivebayes' AND mr.classRatio IN ['1:2', '1:3', '1:5'] AND b.name = 'Total Cholesterol' AND pred.correct IS NOT NULL RETURN mr.classRatio AS ratio, avg(CASE WHEN pred.correct THEN 1.0 ELSE 0.0 END) AS accuracy, collect(DISTINCT mr.classRatio) AS unique_ratios, collect(DISTINCT mr.accuracy) AS accuracies, collect(DISTINCT mr.influence) AS tendencies ORDER BY mr.classRatio"
+  processed 120/120 samples (2241.7s)
+{
+  "experiment": "exp3_fewshot_graphrag_rescue_version3",
+  "samples": 120,
+  "searching_subquestions": 141,
+  "exec_success": 141,
+  "exec_rate": 1.0,
+  "nonempty_results": 138,
+  "valid_rate": 0.9787,
+  "samples_all_searching_steps_nonempty": 116,
+  "sample_all_steps_rate": 0.9667,
+  "steps_using_original_input_entity_recovery": 51,
+  "rescue_triggered_steps": 6,
+  "rescue_trigger_rate": 0.0426
+}
+Saved: results_exp3_fewshot_graphrag_rescue_version3/progressive_decomp_for_experiments_exp3_fewshot_graphrag_rescue_version3.json
+=== EXP3_VERSION3 DONE ===
+=== ALL_VERSION3_DONE ===

@@ -1,0 +1,15 @@
+
+=== exp1_baseline_fewshot ===
+  20/120 (16s)
+  40/120 (33s)
+  60/120 (46s)
+  80/120 (89s)
+  100/120 (111s)
+  120/120 (146s)
+  done in 146s; empty final_answer at: []
+  overwrote results_exp1_baseline_fewshot/progressive_decomp_for_experiments_exp1_baseline_fewshot.json
+
+=== exp2_fewshot_graphrag ===
+  20/120 (17s)
+  40/120 (33s)
+  60/120 (45s)

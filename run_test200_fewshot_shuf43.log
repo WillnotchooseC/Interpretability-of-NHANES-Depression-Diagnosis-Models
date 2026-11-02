@@ -1,0 +1,66 @@
+shuffled input: ood_data/progressive_corrected_decomp_test200_shuf43.json (first 10 orig idx: [35, 139, 40, 21, 160, 162, 132, 89, 189, 163])
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 43s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment1_5_baseline_original_input.py --files ood_data/progressive_corrected_decomp_test200_shuf43.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp1_5_baseline_original_input_test200_shuf43
+Neo4j connected: bolt://localhost:7687
+
+[exp1_5_baseline_original_input] ood_data/progressive_corrected_decomp_test200_shuf43.json: 200 samples
+  processed 10/200 samples (98.7s)
+  processed 20/200 samples (222.9s)
+  processed 30/200 samples (350.1s)
+  processed 40/200 samples (450.5s)
+  processed 50/200 samples (539.1s)
+  processed 60/200 samples (662.5s)
+  processed 70/200 samples (772.0s)
+  processed 80/200 samples (883.6s)
+  processed 90/200 samples (1005.0s)
+  processed 100/200 samples (1134.6s)
+  processed 110/200 samples (1270.4s)
+  processed 120/200 samples (1394.2s)
+  processed 130/200 samples (1476.6s)
+  processed 140/200 samples (1582.9s)
+  processed 150/200 samples (1685.0s)
+  processed 160/200 samples (1802.1s)
+  processed 170/200 samples (1938.1s)
+  processed 180/200 samples (2049.7s)
+  processed 190/200 samples (2175.3s)
+  processed 200/200 samples (2291.5s)
+{
+  "experiment": "exp1_5_baseline_original_input",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 279,
+  "exec_rate": 0.9654,
+  "nonempty_results": 277,
+  "valid_rate": 0.9585,
+  "samples_all_searching_steps_nonempty": 187,
+  "sample_all_steps_rate": 0.935
+}
+Saved: results_exp1_5_baseline_original_input_test200_shuf43/progressive_corrected_decomp_test200_shuf43_exp1_5_baseline_original_input.json
+  Shutting down sglang server...
+  Server stopped.
+
+===== fewshot: rep1 (original order) vs shuffled pass (seed=43) =====
+  steps: 289 | Cypher text differs: 22 | returned rows differ: 10 | non-empty flag flips: 0
+  samples with any changed Cypher: 21/200 -> [10, 24, 42, 60, 66, 82, 84, 94, 118, 129, 132, 133, 138, 155, 168, 169, 172, 174, 179, 183, 192]
+  graph_coverage overall : rep1=0.7513  shuffled=0.7514  delta=+0.0001  (samples better/worse/same = 1/0/199)
+  graph_coverage seen    : rep1=0.9542  shuffled=0.9542  delta=+0.0000  (samples better/worse/same = 0/0/100)
+  graph_coverage unseen  : rep1=0.5484  shuffled=0.5487  delta=+0.0003  (samples better/worse/same = 1/0/99)
+
+  e.g. idx 10 [seen] For patient 198 and models trained with a 1:5 positive-to-negative ratio, what local SHAP 
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 198 AND mr.modelType IN ['logisticregression', 'randomfores
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 198 AND mr.modelType IN ['logisticregression', 'randomfores
+
+  e.g. idx 24 [seen] For patient 14 and models trained with a 1:1 positive-to-negative ratio, what local SHAP v
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 14 AND mr.modelType IN ['logisticregression', 'decisiontree
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 14 AND mr.modelType IN ['logisticregression', 'decisiontree
+
+  e.g. idx 42 [seen] What depression probability does random forest predict for patient 108 when trained with p
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 108 AND mr.modelType = 'randomforest' AND mr.classRatio IN ['1:2', '1:3', '1:5'] AND c.name = 'depression' 
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:GENERATED_BY]->(mr:model_run) MATCH (pred)-[pr:PREDICTS]->(c:condition) WHERE toInteger(p.id) = 108 AND mr.modelType IN ['randomforest'] AND mr.classRatio IN ['1:2', '1:3', '1:5'] AND c.name = 'depressio
+
+  e.g. idx 60 [seen] For patient 114 and models trained with a 1:5 positive-to-negative ratio, what local SHAP 
+     rep1:     MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 114 AND mr.modelType IN ['decisiontree', 'randomforest'] AN
+     shuffled: MATCH (p:patient)-[:HAS_PREDICTION]->(pred:prediction)-[:EXPLAINED_BY]->(le:local_explanation)-[:GENERATED_BY]->(mr:model_run) MATCH (le)-[fi:FEATURE_IMPORTANCE]->(b:biomarker) WHERE toInteger(p.id) = 114 AND mr.modelType IN ['decisiontree', 'randomforest'] AN

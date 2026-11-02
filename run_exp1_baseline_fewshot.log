@@ -1,0 +1,27 @@
+Neo4j connected: bolt://localhost:7687
+
+[exp1_baseline_fewshot] ood_data/progressive_decomp_for_experiments.json: 120 samples
+  processed 10/120 samples (107.3s)
+  processed 20/120 samples (241.8s)
+  processed 30/120 samples (411.8s)
+  processed 40/120 samples (528.6s)
+  processed 50/120 samples (583.1s)
+  processed 60/120 samples (742.0s)
+  processed 70/120 samples (956.7s)
+  processed 80/120 samples (1187.5s)
+  processed 90/120 samples (1415.8s)
+  processed 100/120 samples (1664.1s)
+  processed 110/120 samples (1871.8s)
+  processed 120/120 samples (2177.1s)
+{
+  "experiment": "exp1_baseline_fewshot",
+  "samples": 120,
+  "searching_subquestions": 141,
+  "exec_success": 138,
+  "exec_rate": 0.9787,
+  "nonempty_results": 137,
+  "valid_rate": 0.9716,
+  "samples_all_searching_steps_nonempty": 115,
+  "sample_all_steps_rate": 0.9583
+}
+Saved: results_exp1_baseline_fewshot/progressive_decomp_for_experiments_exp1_baseline_fewshot.json

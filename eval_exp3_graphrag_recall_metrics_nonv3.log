@@ -1,0 +1,45 @@
+Judging 141 grounding steps for irrelevance + 120 final answers ...
+  grounding judge done in 128s
+  answer judge done in 108s
+
+==============================================================================
+  exp3_fewshot_graphrag_rescue_version3 metrics (progressive decomp)
+==============================================================================
+
+  -- overall  (n=120) --
+    Cypher exec failure rate:          0.0%  [0.0, 2.7]  (0/141)
+    Gold recall (strict full-match):  87.2%  [84.3, 89.6]  (544/624)
+    Gold recall (lenient >=50%):      95.2%  [93.2, 96.6]
+    Gold coverage (soft mean):        93.0%  [89.2, 96.3]
+    Irrelevant grounding (rows):      15.2%  [12.7, 18.0]  (110/725)
+    Irrelevant grounding (steps):      8.5%  [4.9, 14.3]
+    Final answer correct:             78.3%  [70.1, 84.8]
+    Final answer complete:            89.2%  [82.3, 93.6]
+    Final answer no-hallucination:    79.2%  [71.1, 85.5]
+    Final answer score (mean):       0.842  [0.784, 0.895]
+
+  -- seen_80  (n=80) --
+    Cypher exec failure rate:          0.0%  [0.0, 4.1]  (0/90)
+    Gold recall (strict full-match):  94.6%  [89.8, 97.3]  (141/149)
+    Gold recall (lenient >=50%):      94.6%  [89.8, 97.3]
+    Gold coverage (soft mean):        95.6%  [91.9, 98.8]
+    Irrelevant grounding (rows):       0.7%  [0.1, 3.8]  (1/146)
+    Irrelevant grounding (steps):      1.1%  [0.2, 6.0]
+    Final answer correct:             83.8%  [74.2, 90.3]
+    Final answer complete:            92.5%  [84.6, 96.5]
+    Final answer no-hallucination:    86.2%  [77.0, 92.1]
+    Final answer score (mean):       0.894  [0.835, 0.948]
+
+  -- unseen_40  (n=40) --
+    Cypher exec failure rate:          0.0%  [0.0, 7.0]  (0/51)
+    Gold recall (strict full-match):  84.8%  [81.3, 87.8]  (403/475)
+    Gold recall (lenient >=50%):      95.4%  [93.1, 96.9]
+    Gold coverage (soft mean):        87.6%  [79.0, 94.6]
+    Irrelevant grounding (rows):      18.8%  [15.9, 22.2]  (109/579)
+    Irrelevant grounding (steps):     21.6%  [12.5, 34.6]
+    Final answer correct:             67.5%  [52.0, 79.9]
+    Final answer complete:            82.5%  [68.0, 91.3]
+    Final answer no-hallucination:    65.0%  [49.5, 77.9]
+    Final answer score (mean):       0.738  [0.613, 0.853]
+
+Saved -> cypher_results/exp3_graphrag_recall_metrics_summary.json + _per_sample.json

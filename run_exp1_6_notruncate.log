@@ -1,0 +1,51 @@
+
+######################################################################
+### fewshot_notruncate rep1  2026-10-14T20:41:00Z
+######################################################################
+  Launching sglang server...
+  Command: /home/zeus/miniconda3/envs/cloudspace/bin/python -m sglang.launch_server --model-path Qwen/Qwen3-8B-Base --port 30000 --dtype bfloat16 --host 0.0.0.0
+  Waiting for server to start (max 900s)... (log: /tmp/sglang_server_30000.log)
+  Server ready! (took 178s)
+  $ /home/zeus/miniconda3/envs/cloudspace/bin/python -u experiment1_6_baseline_notruncate.py --files ood_data/progressive_corrected_decomp_test200.json --sglang_url http://localhost:30000 --no_answer --output_dir results_exp1_6_baseline_notruncate_test200_rep1
+Neo4j connected: bolt://localhost:7687
+
+[exp1_6_baseline_notruncate] ood_data/progressive_corrected_decomp_test200.json: 200 samples
+  processed 10/200 samples (108.5s)
+  processed 20/200 samples (197.3s)
+  processed 30/200 samples (281.6s)
+  processed 40/200 samples (370.4s)
+  processed 50/200 samples (479.1s)
+  processed 60/200 samples (576.1s)
+  processed 70/200 samples (668.6s)
+  processed 80/200 samples (765.1s)
+  processed 90/200 samples (859.7s)
+  processed 100/200 samples (962.2s)
+  processed 110/200 samples (1110.1s)
+  processed 120/200 samples (1236.8s)
+  processed 130/200 samples (1364.4s)
+  processed 140/200 samples (1519.8s)
+  processed 150/200 samples (1665.8s)
+  processed 160/200 samples (1794.8s)
+  processed 170/200 samples (1910.9s)
+  processed 180/200 samples (2038.5s)
+  processed 190/200 samples (2170.3s)
+  processed 200/200 samples (2302.6s)
+{
+  "experiment": "exp1_6_baseline_notruncate",
+  "samples": 200,
+  "searching_subquestions": 289,
+  "exec_success": 280,
+  "exec_rate": 0.9689,
+  "nonempty_results": 278,
+  "valid_rate": 0.9619,
+  "samples_all_searching_steps_nonempty": 188,
+  "sample_all_steps_rate": 0.94
+}
+Saved: results_exp1_6_baseline_notruncate_test200_rep1/progressive_corrected_decomp_test200_exp1_6_baseline_notruncate.json
+  Shutting down sglang server...
+  Server stopped.
+  -> results_exp1_6_baseline_notruncate_test200_rep1/progressive_corrected_decomp_test200_exp1_6_baseline_notruncate.json
+merged fewshot_notruncate: 200 records x reps [1] -> cypher_results/test200_fewshot_notruncate_exp1_6_reps.json (1392 KB)
+  rep1 metrics: {"experiment": "exp1_6_baseline_notruncate", "samples": 200, "searching_subquestions": 289, "exec_success": 280, "exec_rate": 0.9689, "nonempty_results": 278, "valid_rate": 0.9619, "samples_all_searching_steps_nonempty": 188, "sample_all_steps_rate": 0.94}
+
+ALL DONE

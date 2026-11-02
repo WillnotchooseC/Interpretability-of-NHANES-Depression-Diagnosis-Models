@@ -1,0 +1,62 @@
+{
+  "exp1_baseline_fewshot_version3": {
+    "all": {
+      "n": 120,
+      "graph_coverage_mean": 0.786,
+      "graph_coverage_n": 120,
+      "answer_cosine_mean": 0.736
+    },
+    "seen_80": {
+      "n": 80,
+      "graph_coverage_mean": 0.9219,
+      "graph_coverage_n": 80,
+      "answer_cosine_mean": 0.7395
+    },
+    "unseen_40": {
+      "n": 40,
+      "graph_coverage_mean": 0.5142,
+      "graph_coverage_n": 40,
+      "answer_cosine_mean": 0.7289
+    }
+  },
+  "exp2_fewshot_graphrag_version3": {
+    "all": {
+      "n": 120,
+      "graph_coverage_mean": 0.7752,
+      "graph_coverage_n": 120,
+      "answer_cosine_mean": 0.7514
+    },
+    "seen_80": {
+      "n": 80,
+      "graph_coverage_mean": 0.9094,
+      "graph_coverage_n": 80,
+      "answer_cosine_mean": 0.7514
+    },
+    "unseen_40": {
+      "n": 40,
+      "graph_coverage_mean": 0.5068,
+      "graph_coverage_n": 40,
+      "answer_cosine_mean": 0.7515
+    }
+  },
+  "exp3_fewshot_graphrag_rescue_version3": {
+    "all": {
+      "n": 120,
+      "graph_coverage_mean": 0.7752,
+      "graph_coverage_n": 120,
+      "answer_cosine_mean": 0.7514
+    },
+    "seen_80": {
+      "n": 80,
+      "graph_coverage_mean": 0.9094,
+      "graph_coverage_n": 80,
+      "answer_cosine_mean": 0.7514
+    },
+    "unseen_40": {
+      "n": 40,
+      "graph_coverage_mean": 0.5068,
+      "graph_coverage_n": 40,
+      "answer_cosine_mean": 0.7515
+    }
+  }
+}

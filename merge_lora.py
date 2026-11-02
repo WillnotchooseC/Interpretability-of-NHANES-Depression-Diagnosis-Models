@@ -22,16 +22,17 @@ OUTPUT_ROOT = os.path.join(BASE_DIR, "nhanes_model")
 MODEL_NAME = "Qwen/Qwen3-8B-Base"
 
 
-def merge_one(exp_id, model_name):
-    lora_dir = os.path.join(OUTPUT_ROOT, f"exp{exp_id}", "best_model")
-    merged_dir = os.path.join(OUTPUT_ROOT, f"exp{exp_id}", "merged_model")
+def merge_one(exp_id, model_name, lora_dir=None, merged_dir=None):
+    label = exp_id if exp_id is not None else os.path.basename(os.path.dirname(lora_dir.rstrip("/")))
+    lora_dir = lora_dir or os.path.join(OUTPUT_ROOT, f"exp{exp_id}", "best_model")
+    merged_dir = merged_dir or os.path.join(OUTPUT_ROOT, f"exp{exp_id}", "merged_model")
 
     if not os.path.exists(lora_dir):
         print(f"  ERROR: LoRA not found at {lora_dir}")
         return
 
     print(f"\n{'='*60}")
-    print(f"  Merging Exp{exp_id}: {lora_dir}")
+    print(f"  Merging {label}: {lora_dir}")
     print(f"  Output: {merged_dir}")
     print(f"{'='*60}")
 
@@ -70,12 +71,22 @@ def merge_one(exp_id, model_name):
 
 def main():
     parser = argparse.ArgumentParser(description="Merge LoRA into base model")
-    parser.add_argument("--exp", type=int, nargs="+", required=True)
+    parser.add_argument("--exp", type=int, nargs="+", default=None)
+    parser.add_argument("--run_name", type=str, default=None,
+                        help="Merge nhanes_model/<run_name>/best_model instead of an --exp "
+                             "(for runs created via train.py --output_name).")
     parser.add_argument("--model_name", type=str, default=MODEL_NAME)
     args = parser.parse_args()
 
-    for exp_id in args.exp:
-        merge_one(exp_id, args.model_name)
+    if args.run_name:
+        lora_dir = os.path.join(OUTPUT_ROOT, args.run_name, "best_model")
+        merged_dir = os.path.join(OUTPUT_ROOT, args.run_name, "merged_model")
+        merge_one(None, args.model_name, lora_dir=lora_dir, merged_dir=merged_dir)
+    else:
+        if not args.exp:
+            parser.error("either --exp or --run_name is required")
+        for exp_id in args.exp:
+            merge_one(exp_id, args.model_name)
 
     print(f"\nAll done!")
 
