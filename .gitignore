@@ -110,3 +110,25 @@ __pycache__/
 *.bak
 *.bak_*
 *.backup
+# ==========================================
+# Local environment and personal files
+# ==========================================
+/.config/Code/User/
+/.npm/
+/.bashrc
+/.gitconfig
+/.vimrc
+/.zsh_history
+/.zshrc
+/.zcompdump
+/.nvm.lightninglink
+
+# ==========================================
+# Local runtime logs and temporary files
+# ==========================================
+/cloudflared
+/cloudflared.log
+/current_url_history.log
+/ui_logs/
+/app_run.log
+/cypher_dev_run.log
